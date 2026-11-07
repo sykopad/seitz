@@ -4,6 +4,7 @@ import React, { useState } from 'react';
 import Link from 'next/link';
 import Image from 'next/image';
 import { Menu, X, ArrowLeft, Smartphone, ArrowRight, Layers, ShieldCheck } from 'lucide-react';
+import { UserAuthButton } from '@/components/auth/UserAuthButton';
 
 export function TesterNavbar() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
@@ -77,6 +78,8 @@ export function TesterNavbar() {
 
           {/* Right Action CTA */}
           <div className="hidden sm:flex items-center gap-2.5">
+            <UserAuthButton compact={false} />
+
             <Link
               href="/services/google-play-testing"
               className="hidden md:inline-flex items-center gap-1.5 px-3 py-2 rounded-xl text-xs font-mono text-amber-800 bg-amber-500/10 hover:bg-amber-500/15 border border-amber-500/25 transition font-semibold"
@@ -96,6 +99,7 @@ export function TesterNavbar() {
 
           {/* Mobile menu toggle */}
           <div className="flex lg:hidden items-center gap-2">
+            <UserAuthButton compact={true} />
             <a
               href="/testers#apply"
               className="px-3 py-1.5 rounded-lg bg-emerald-500 text-white font-display font-bold text-xs shadow-xs"

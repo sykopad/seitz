@@ -4,6 +4,7 @@ import React, { useState } from 'react';
 import Link from 'next/link';
 import Image from 'next/image';
 import { Menu, X, ArrowUpRight, Smartphone, Layers, ShieldCheck } from 'lucide-react';
+import { UserAuthButton } from '@/components/auth/UserAuthButton';
 
 export function Navbar() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
@@ -85,6 +86,8 @@ export function Navbar() {
 
           {/* Right Action CTAs */}
           <div className="hidden sm:flex items-center gap-2.5">
+            <UserAuthButton compact={false} />
+
             <Link
               href="/testers"
               className="xl:hidden inline-flex items-center gap-1.5 px-3 py-2 rounded-xl text-xs font-mono font-medium text-emerald-700 border border-emerald-500/30 bg-emerald-500/10 hover:bg-emerald-500/20 transition"
@@ -104,6 +107,7 @@ export function Navbar() {
 
           {/* Mobile menu toggle */}
           <div className="flex lg:hidden items-center gap-2">
+            <UserAuthButton compact={true} />
             <Link
               href="/testers"
               className="px-2.5 py-1.5 rounded-lg border border-emerald-500/30 bg-emerald-500/10 text-emerald-700 text-xs font-mono flex items-center gap-1"
