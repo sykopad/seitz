@@ -99,8 +99,12 @@ export function UserAuthButton({ compact = false }: UserAuthButtonProps) {
     try {
       setSigningIn(true);
       await signInWithGoogle('/account');
-    } catch {
+    } catch (err: unknown) {
       setSigningIn(false);
+      const msg = err instanceof Error ? encodeURIComponent(err.message) : 'auth_failed';
+      if (typeof window !== 'undefined') {
+        window.location.href = `/login?error=${msg}`;
+      }
     }
   };
 
