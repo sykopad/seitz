@@ -1,0 +1,156 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" width="512" height="512">
+  <defs>
+    <!-- Background Gradient -->
+    <linearGradient id="bgGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#0f131d" />
+      <stop offset="50%" stop-color="#0a0c13" />
+      <stop offset="100%" stop-color="#040507" />
+    </linearGradient>
+
+    <!-- Outer Squircle Border Glow -->
+    <linearGradient id="squircleBorder" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#00F2FE" stop-opacity="0.6" />
+      <stop offset="50%" stop-color="#8A2387" stop-opacity="0.4" />
+      <stop offset="100%" stop-color="#FF2A6D" stop-opacity="0.5" />
+    </linearGradient>
+
+    <!-- TV Display Metallic Bezel -->
+    <linearGradient id="tvBezel" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#2d3345" />
+      <stop offset="50%" stop-color="#191c28" />
+      <stop offset="100%" stop-color="#0f1118" />
+    </linearGradient>
+
+    <!-- TV Screen Gradient -->
+    <linearGradient id="tvScreen" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#121829" />
+      <stop offset="100%" stop-color="#080a11" />
+    </linearGradient>
+
+    <!-- Remote Chassis Gradient -->
+    <linearGradient id="remoteBody" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#22283a" />
+      <stop offset="40%" stop-color="#161925" />
+      <stop offset="100%" stop-color="#0d0f17" />
+    </linearGradient>
+
+    <!-- Tricolor Omni Gradient (Samsung Cyan -> Roku Purple -> LG Ruby) -->
+    <linearGradient id="omniTricolor" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#00F2FE" />
+      <stop offset="50%" stop-color="#9B51E0" />
+      <stop offset="100%" stop-color="#FF2A6D" />
+    </linearGradient>
+
+    <!-- Cyan Transceiver Glow -->
+    <radialGradient id="cyanGlow" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" stop-color="#00F2FE" stop-opacity="1" />
+      <stop offset="40%" stop-color="#00F2FE" stop-opacity="0.6" />
+      <stop offset="100%" stop-color="#00F2FE" stop-opacity="0" />
+    </radialGradient>
+
+    <!-- Purple/Ruby Background Ambient Glow -->
+    <radialGradient id="ambientGlow" cx="50%" cy="40%" r="60%">
+      <stop offset="0%" stop-color="#9B51E0" stop-opacity="0.25" />
+      <stop offset="60%" stop-color="#00F2FE" stop-opacity="0.08" />
+      <stop offset="100%" stop-color="#000000" stop-opacity="0" />
+    </radialGradient>
+
+    <!-- Drop Shadows -->
+    <filter id="shadowElevation" x="-20%" y="-20%" width="140%" height="140%">
+      <feDropShadow dx="0" dy="12" stdDeviation="16" flood-color="#000000" flood-opacity="0.85" />
+    </filter>
+
+    <filter id="glowFilter" x="-30%" y="-30%" width="160%" height="160%">
+      <feGaussianBlur stdDeviation="8" result="blur" />
+      <feComposite in="SourceGraphic" in2="blur" operator="over" />
+    </filter>
+  </defs>
+
+  <!-- Base Icon Squircle Canvas -->
+  <rect x="16" y="16" width="480" height="480" rx="108" fill="url(#bgGrad)" />
+  <rect x="16" y="16" width="480" height="480" rx="108" fill="none" stroke="url(#squircleBorder)" stroke-width="4" stroke-opacity="0.8" />
+  
+  <!-- Subtle Ambient Glow -->
+  <circle cx="256" cy="220" r="210" fill="url(#ambientGlow)" />
+
+  <!-- Smart TV Monitor / Display in Background -->
+  <g filter="url(#shadowElevation)">
+    <!-- TV Outer Bezel -->
+    <rect x="96" y="86" width="320" height="206" rx="24" fill="url(#tvBezel)" stroke="#3a4256" stroke-width="2" />
+    <!-- TV Screen Inner Glass -->
+    <rect x="108" y="98" width="296" height="182" rx="16" fill="url(#tvScreen)" />
+    
+    <!-- TV Glass Screen Sheen Highlight -->
+    <path d="M 108 98 L 290 98 L 108 230 Z" fill="#ffffff" fill-opacity="0.03" />
+
+    <!-- Radiating Smart Waves from Screen Center -->
+    <path d="M 196 156 A 68 68 0 0 1 316 156" fill="none" stroke="url(#omniTricolor)" stroke-width="3" stroke-linecap="round" opacity="0.4" />
+    <path d="M 176 136 A 96 96 0 0 1 336 136" fill="none" stroke="url(#omniTricolor)" stroke-width="3.5" stroke-linecap="round" opacity="0.65" />
+    <path d="M 156 116 A 126 126 0 0 1 356 116" fill="none" stroke="url(#omniTricolor)" stroke-width="4" stroke-linecap="round" opacity="0.9" />
+
+    <!-- TV Stand Base Minimalist Stem -->
+    <rect x="238" y="292" width="36" height="18" fill="#1b1e2a" />
+    <path d="M 206 310 L 306 310" stroke="#3a4256" stroke-width="4" stroke-linecap="round" />
+  </g>
+
+  <!-- Foreground Ergonomic Universal Remote Chassis -->
+  <g filter="url(#shadowElevation)">
+    <!-- Remote Outer Contour -->
+    <rect x="176" y="206" width="160" height="246" rx="34" fill="url(#remoteBody)" stroke="#363e54" stroke-width="2.5" />
+    
+    <!-- Remote Top Beveled Gloss Ridge -->
+    <path d="M 182 236 C 182 218 194 210 212 210 L 300 210 C 318 210 330 218 330 236" fill="none" stroke="#ffffff" stroke-width="1" stroke-opacity="0.15" />
+
+    <!-- Top Infrared Transceiver Window & LED -->
+    <rect x="234" y="214" width="44" height="6" rx="3" fill="#080b12" />
+    <circle cx="256" cy="217" r="12" fill="url(#cyanGlow)" />
+    <circle cx="256" cy="217" r="3" fill="#00F2FE" />
+
+    <!-- Upper Quick Action Pills (Power & Input) -->
+    <circle cx="212" cy="246" r="11" fill="#121520" stroke="#ff3b30" stroke-width="1.8" />
+    <path d="M 212 240 L 212 246" stroke="#ff3b30" stroke-width="1.8" stroke-linecap="round" />
+    <path d="M 207 243 A 6 6 0 1 0 217 243" fill="none" stroke="#ff3b30" stroke-width="1.8" stroke-linecap="round" />
+
+    <rect x="285" y="235" width="22" height="22" rx="6" fill="#121520" stroke="#48536e" stroke-width="1.5" />
+    <polygon points="293,243 299,246 293,249" fill="#00F2FE" />
+
+    <!-- Central Omni D-Pad Navigation Ring (Tricolor Aura) -->
+    <g transform="translate(256, 318)">
+      <!-- Outer Glow Aura -->
+      <circle cx="0" cy="0" r="46" fill="none" stroke="url(#omniTricolor)" stroke-width="4.5" filter="url(#glowFilter)" opacity="0.6" />
+      <!-- Sharp Ring -->
+      <circle cx="0" cy="0" r="46" fill="#111420" stroke="url(#omniTricolor)" stroke-width="4" />
+      
+      <!-- Directional Arrow Hints -->
+      <polygon points="0,-37 -4,-31 4,-31" fill="#ffffff" opacity="0.8" />
+      <polygon points="0,37 -4,31 4,31" fill="#ffffff" opacity="0.8" />
+      <polygon points="-37,0 -31,-4 -31,4" fill="#ffffff" opacity="0.8" />
+      <polygon points="37,0 31,-4 31,4" fill="#ffffff" opacity="0.8" />
+
+      <!-- Center OK / Select Button -->
+      <circle cx="0" cy="0" r="22" fill="#191e2c" stroke="#363e54" stroke-width="1.5" />
+      <circle cx="0" cy="0" r="6" fill="url(#omniTricolor)" />
+    </g>
+
+    <!-- Volume & Channel Dual Tactile Rocker Bars -->
+    <!-- Volume Rocker (Left) -->
+    <g transform="translate(204, 394)">
+      <rect x="-8" y="-18" width="16" height="36" rx="8" fill="#121520" stroke="#333a4e" stroke-width="1.5" />
+      <text x="0" y="-5" fill="#a0aec0" font-family="-apple-system,system-ui,sans-serif" font-weight="bold" font-size="9" text-anchor="middle">+</text>
+      <text x="0" y="10" fill="#a0aec0" font-family="-apple-system,system-ui,sans-serif" font-weight="bold" font-size="9" text-anchor="middle">-</text>
+    </g>
+
+    <!-- Channel Rocker (Right) -->
+    <g transform="translate(308, 394)">
+      <rect x="-8" y="-18" width="16" height="36" rx="8" fill="#121520" stroke="#333a4e" stroke-width="1.5" />
+      <polygon points="0,-10 -3,-6 3,-6" fill="#a0aec0" />
+      <polygon points="0,10 -3,6 3,6" fill="#a0aec0" />
+    </g>
+
+    <!-- Bottom Chin Omni Dot Bar -->
+    <circle cx="248" cy="432" r="2.5" fill="#00F2FE" />
+    <circle cx="256" cy="432" r="2.5" fill="#9B51E0" />
+    <circle cx="264" cy="432" r="2.5" fill="#FF2A6D" />
+  </g>
+</svg>
+
