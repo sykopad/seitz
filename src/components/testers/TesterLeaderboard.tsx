@@ -18,6 +18,7 @@ import {
 } from 'lucide-react';
 import { appsCatalog } from '@/data/apps-catalog';
 import { claimPromoCode } from '@/app/actions/promo';
+import { GooglePlayIcon } from '@/components/icons/GooglePlayIcon';
 
 export function TesterLeaderboard() {
   const [email, setEmail] = useState('');
@@ -27,6 +28,8 @@ export function TesterLeaderboard() {
     success: boolean;
     message: string;
     code?: string;
+    redeemUrl?: string;
+    isOfficialConsoleCode?: boolean;
   } | null>(null);
   const [copied, setCopied] = useState(false);
 
@@ -176,34 +179,61 @@ export function TesterLeaderboard() {
 
         {claimResult && (
           <div
-            className={`p-5 rounded-2xl border text-xs sm:text-sm space-y-3 ${
+            className={`p-6 rounded-2xl border text-xs sm:text-sm space-y-4 ${
               claimResult.success
                 ? 'bg-emerald-500/10 border-emerald-500/30 text-emerald-300'
                 : 'bg-red-500/10 border-red-500/30 text-red-400'
             }`}
           >
-            <p className="leading-relaxed">{claimResult.message}</p>
+            <div className="flex items-center gap-2 font-semibold">
+              <Sparkles className="w-4 h-4 text-emerald-400" />
+              <span>{claimResult.message}</span>
+            </div>
+
             {claimResult.code && (
-              <div className="flex items-center gap-3 pt-1">
-                <div className="px-4 py-2 rounded-xl bg-black border border-emerald-500/50 font-mono font-black text-base text-white tracking-widest">
-                  {claimResult.code}
+              <div className="space-y-4 pt-1">
+                <div className="flex flex-wrap items-center gap-3">
+                  <div className="px-5 py-2.5 rounded-xl bg-black border border-emerald-500/50 font-mono font-black text-lg text-white tracking-widest shadow-inner">
+                    {claimResult.code}
+                  </div>
+
+                  <button
+                    onClick={() => copyCode(claimResult.code!)}
+                    className="px-4 py-2.5 rounded-xl bg-white/10 hover:bg-white/20 text-white font-mono text-xs flex items-center gap-1.5 transition cursor-pointer"
+                  >
+                    {copied ? (
+                      <>
+                        <Check className="w-3.5 h-3.5 text-emerald-400" />
+                        <span>Copied to Clipboard!</span>
+                      </>
+                    ) : (
+                      <>
+                        <Copy className="w-3.5 h-3.5" />
+                        <span>Copy Promo Code</span>
+                      </>
+                    )}
+                  </button>
+
+                  <a
+                    href={claimResult.redeemUrl || `https://play.google.com/redeem?code=${claimResult.code}`}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="px-4 py-2.5 rounded-xl bg-gradient-to-r from-emerald-400 to-sky-400 hover:from-emerald-300 hover:to-sky-300 text-slate-950 font-display font-bold text-xs uppercase tracking-wider flex items-center gap-1.5 transition shadow-md shadow-emerald-500/20"
+                  >
+                    <GooglePlayIcon className="w-3.5 h-3.5" />
+                    <span>Redeem on Google Play ↗</span>
+                  </a>
                 </div>
-                <button
-                  onClick={() => copyCode(claimResult.code!)}
-                  className="px-3 py-2 rounded-xl bg-white/10 hover:bg-white/20 text-white font-mono text-xs flex items-center gap-1.5 transition"
-                >
-                  {copied ? (
-                    <>
-                      <Check className="w-3.5 h-3.5 text-emerald-400" />
-                      <span>Copied!</span>
-                    </>
-                  ) : (
-                    <>
-                      <Copy className="w-3.5 h-3.5" />
-                      <span>Copy Promo Code</span>
-                    </>
-                  )}
-                </button>
+
+                {/* Play Store redemption instructions */}
+                <div className="p-3.5 rounded-xl bg-black/40 border border-white/10 text-[11px] text-slate-300 space-y-1 font-mono">
+                  <span className="text-emerald-400 font-bold block">How to Redeem on Android:</span>
+                  <ol className="list-decimal list-inside space-y-0.5 text-slate-400">
+                    <li>Open the <strong className="text-white">Google Play Store</strong> app on your Android device.</li>
+                    <li>Tap your profile icon at top right &gt; <strong className="text-white">Payments &amp; subscriptions</strong> &gt; <strong className="text-white">Redeem code</strong>.</li>
+                    <li>Paste your 23-character code to unlock permanent lifetime license for free.</li>
+                  </ol>
+                </div>
               </div>
             )}
           </div>

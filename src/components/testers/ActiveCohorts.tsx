@@ -3,6 +3,7 @@ import Link from 'next/link';
 import Image from 'next/image';
 import { Smartphone, Clock, Gift, Users, ArrowRight, ExternalLink } from 'lucide-react';
 import { getActiveTestingApps } from '@/data/apps-catalog';
+import { GooglePlayIcon } from '@/components/icons/GooglePlayIcon';
 
 export function ActiveCohorts() {
   const activeApps = getActiveTestingApps();
@@ -21,7 +22,7 @@ export function ActiveCohorts() {
         </p>
       </div>
 
-      <div className="grid grid-cols-1 md:grid-cols-3 gap-6 lg:gap-8 max-w-7xl mx-auto">
+      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 max-w-7xl mx-auto">
         {activeApps.map((app) => (
           <div
             key={app.slug}
@@ -116,21 +117,33 @@ export function ActiveCohorts() {
             </div>
 
             {/* Action Buttons */}
-            <div className="mt-6 pt-1 flex flex-col gap-2.5">
+            <div className="mt-6 pt-1 flex flex-col gap-2">
               <Link
                 href="/testers#apply"
-                className="w-full py-3 rounded-xl bg-gradient-to-r from-emerald-400 to-sky-400 hover:from-emerald-300 hover:to-sky-300 text-slate-950 font-display font-bold text-xs uppercase tracking-wider text-center flex items-center justify-center gap-2 transition shadow-md shadow-emerald-500/20 active:scale-[0.98]"
+                className="w-full py-2.5 rounded-xl bg-gradient-to-r from-emerald-400 to-sky-400 hover:from-emerald-300 hover:to-sky-300 text-slate-950 font-display font-bold text-xs uppercase tracking-wider text-center flex items-center justify-center gap-1.5 transition shadow-md shadow-emerald-500/20 active:scale-[0.98]"
               >
                 <Smartphone className="w-3.5 h-3.5" />
                 <span>Reserve Testing Slot</span>
-                <ArrowRight className="w-3.5 h-3.5" />
+                <ArrowRight className="w-3 h-3" />
               </Link>
+
+              {app.playStoreUrl && (
+                <a
+                  href={app.playStoreUrl}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="w-full py-2 rounded-xl bg-sky-500/10 hover:bg-sky-500/20 text-sky-300 font-mono text-[11px] text-center flex items-center justify-center gap-1.5 transition border border-sky-500/25"
+                >
+                  <GooglePlayIcon className="w-3 h-3 text-sky-400" />
+                  <span>Google Play Link ↗</span>
+                </a>
+              )}
 
               <Link
                 href={`/apps/${app.slug}`}
-                className="w-full py-2.5 rounded-xl bg-white/[0.04] hover:bg-white/[0.09] text-slate-300 hover:text-white font-mono text-xs text-center flex items-center justify-center gap-1.5 transition border border-white/10"
+                className="w-full py-2 rounded-xl bg-white/[0.04] hover:bg-white/[0.08] text-slate-300 hover:text-white font-mono text-[11px] text-center flex items-center justify-center gap-1 transition border border-white/[0.07]"
               >
-                <span>Inspect Architecture & Screenshots</span>
+                <span>Architecture & Screenshots</span>
                 <ExternalLink className="w-3 h-3 text-slate-400" />
               </Link>
             </div>

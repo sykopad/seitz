@@ -45,7 +45,7 @@ export function TesterHero() {
         <div className="flex flex-wrap items-center justify-between gap-3 mb-10 pb-5 border-b border-white/[0.07]">
           <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-emerald-500/10 border border-emerald-500/30 text-emerald-300 text-xs font-mono">
             <span className="w-2 h-2 rounded-full bg-emerald-400 animate-pulse" />
-            <span>LAB STATUS: 3 ACTIVE CLOSED BETA TRACKS • 7 PIPELINE BUILDS</span>
+            <span>LAB STATUS: 4 ACTIVE CLOSED BETA TRACKS • 6 PIPELINE BUILDS</span>
           </div>
 
           <div className="inline-flex items-center gap-2 text-xs font-mono text-slate-400 bg-white/[0.03] px-3.5 py-1.5 rounded-full border border-white/[0.07]">
@@ -84,7 +84,7 @@ export function TesterHero() {
               href="#cohorts"
               className="w-full sm:w-auto px-7 py-4 rounded-xl bg-white/[0.04] hover:bg-white/[0.09] text-white font-display font-semibold text-sm transition border border-white/10 flex items-center justify-center gap-2"
             >
-              <span>Explore 3 Active Cohorts</span>
+              <span>Explore 4 Active Cohorts</span>
             </a>
             <Link
               href="/testers/leaderboard"

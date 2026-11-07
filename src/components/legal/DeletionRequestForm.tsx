@@ -116,14 +116,17 @@ export function DeletionRequestForm() {
               <option value="Clean and Clean" className="bg-[#05070b]">
                 Clean and Clean (za.co.cleanandclean.app)
               </option>
-              <option value="The Seitz Testing Lab" className="bg-[#05070b]">
-                The Seitz Testing Lab (seitz.co.za/testers)
+              <option value="OmniRemote" className="bg-[#05070b]">
+                OmniRemote (co.za.omniremote.app)
               </option>
               <option value="Mzansi Midnight" className="bg-[#05070b]">
-                Mzansi Midnight (za.co.seitz.mzansimidnight)
+                Mzansi Midnight (za.co.mzansimidnight.app)
               </option>
-              <option value="OmniRemote" className="bg-[#05070b]">
-                OmniRemote (com.omniremote.universal)
+              <option value="Would You Rather" className="bg-[#05070b]">
+                Would You Rather (co.za.wouldyourather.app)
+              </option>
+              <option value="The Seitz Testing Lab" className="bg-[#05070b]">
+                The Seitz Testing Lab (seitz.co.za/testers)
               </option>
               <option value="Client Project / Inquiry Record" className="bg-[#05070b]">
                 Client Inquiries &amp; Service Quotes

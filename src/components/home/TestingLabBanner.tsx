@@ -70,7 +70,7 @@ export function TestingLabBanner() {
                 href="/testers/vote"
                 className="w-full sm:w-auto px-6 py-2.5 rounded-xl bg-white/[0.04] hover:bg-white/[0.09] text-slate-200 hover:text-white font-mono text-xs text-center flex items-center justify-center gap-1.5 transition border border-white/10"
               >
-                <span>Vote on 7 Pipeline Apps →</span>
+                <span>Vote on 6 Pipeline Apps →</span>
               </Link>
             </div>
           </div>

@@ -43,6 +43,7 @@ export interface AppCatalogItem {
   techStack: AppTechStack;
   workspacePath: string;
   googlePlayPackage?: string;
+  playStoreUrl?: string;
   featured: boolean;
 }
 
@@ -115,7 +116,8 @@ export const appsCatalog: AppCatalogItem[] = [
       specialized: 'Deterministic Dice Engine, 107 Vitest Unit & Narrative Tests',
     },
     workspacePath: 'C:\\Users\\Faiz\\Documents\\workspaces\\mzansi-midnight',
-    googlePlayPackage: 'za.co.seitz.mzansimidnight',
+    googlePlayPackage: 'za.co.mzansimidnight.app',
+    playStoreUrl: 'https://play.google.com/store/apps/details?id=za.co.mzansimidnight.app&hl=en',
     featured: true,
   },
   {
@@ -186,7 +188,8 @@ export const appsCatalog: AppCatalogItem[] = [
       specialized: 'Capacitor Haptics, Web Speech API, Wake-on-LAN Magic Packets',
     },
     workspacePath: 'C:\\Users\\Faiz\\Documents\\workspaces\\samsung-remote',
-    googlePlayPackage: 'com.omniremote.universal',
+    googlePlayPackage: 'co.za.omniremote.app',
+    playStoreUrl: 'https://play.google.com/store/apps/details?id=co.za.omniremote.app',
     featured: true,
   },
   {
@@ -253,6 +256,7 @@ export const appsCatalog: AppCatalogItem[] = [
     },
     workspacePath: 'C:\\Users\\Faiz\\Documents\\workspaces\\cleanandclean',
     googlePlayPackage: 'za.co.cleanandclean.app',
+    playStoreUrl: 'https://play.google.com/store/apps/details?id=za.co.cleanandclean.app&hl=en',
     featured: true,
   },
   {
@@ -576,14 +580,14 @@ export const appsCatalog: AppCatalogItem[] = [
     shortName: 'Would You Rather',
     tagline: 'Multi-Age Cultural Dilemma Party Game with Synchronized Rooms & Live Duels',
     category: 'Party Games & Social Dilemmas',
-    status: 'in_development',
-    trackStatus: 'Community Voting Track (Target: 50 Votes)',
-    currentTesters: 0,
+    status: 'closed_testing',
+    trackStatus: 'Active Closed Beta Track (14-Day Retention)',
+    currentTesters: 8,
     targetTesters: 15,
-    openSlots: 15,
-    communityVotes: 27,
+    openSlots: 7,
+    communityVotes: 52,
     voteThreshold: 50,
-    testingDuration: '14 Days upon Closed Beta Release',
+    testingDuration: '14 Continuous Days on Real Android Device',
     reward: 'Lifetime Party Host Pass + Custom Duel Rooms',
     rewardValue: '$9.99 USD / R180 ZAR',
     media: {
@@ -631,6 +635,8 @@ export const appsCatalog: AppCatalogItem[] = [
       specialized: 'Web Speech API Text-to-Speech, Session Tracking',
     },
     workspacePath: 'C:\\Users\\Faiz\\Documents\\workspaces\\would-you-rather',
+    googlePlayPackage: 'co.za.wouldyourather.app',
+    playStoreUrl: 'https://play.google.com/store/apps/details?id=co.za.wouldyourather.app',
     featured: true,
   },
   {

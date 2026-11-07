@@ -65,7 +65,7 @@ export function CaseStudiesSection() {
       accent: 'text-emerald-400 bg-emerald-500/10 border-emerald-500/25',
     },
     {
-      slug: 'clean-and-clean',
+      slug: 'cleanandclean',
       name: 'Clean and Clean',
       category: 'Civic GIS Platform',
       status: 'Closed Beta (9/15)',
@@ -78,6 +78,14 @@ export function CaseStudiesSection() {
       category: 'Universal Smart TV Remote',
       status: 'Closed Beta (10/15)',
       icon: '/images/projects/omniremote/icon.png',
+      accent: 'text-emerald-400 bg-emerald-500/10 border-emerald-500/25',
+    },
+    {
+      slug: 'would-you-rather',
+      name: 'Would You Rather',
+      category: 'Party Game & Dilemmas',
+      status: 'Closed Beta (8/15)',
+      icon: '/images/projects/would-you-rather/icon.png',
       accent: 'text-emerald-400 bg-emerald-500/10 border-emerald-500/25',
     },
     {

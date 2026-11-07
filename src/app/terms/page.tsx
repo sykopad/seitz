@@ -119,8 +119,16 @@ export default function TermsOfServicePage() {
                 Mobile Application License Grant (EULA)
               </h2>
               <p>
-                Subject to your compliance with these Terms, Seitz grants you a personal, revocable, non-exclusive, non-transferable, non-sublicensable limited license to download, install, and use our mobile applications (including <em>Mzansi Midnight</em>, <em>OmniRemote</em>, <em>Clean and Clean</em>, and related experimental builds) solely for your personal, non-commercial entertainment and utility on compatible Android devices that you own or control.
+                Subject to your compliance with these Terms, Seitz grants you a personal, revocable, non-exclusive, non-transferable, non-sublicensable limited license to download, install, and use our mobile applications (including <em>Mzansi Midnight</em>, <em>OmniRemote</em>, <em>Clean and Clean</em>, <em>Would You Rather</em>, and related experimental builds) solely for your personal, non-commercial entertainment and utility on compatible Android devices that you own or control.
               </p>
+              <div className="flex flex-wrap gap-2 pt-1">
+                {publishedApps.map((app) => (
+                  <span key={app.slug} className="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-lg bg-black/40 border border-white/[0.08] text-xs font-mono text-slate-300">
+                    <span className="w-1.5 h-1.5 rounded-full bg-emerald-400" />
+                    <strong className="text-white">{app.name}</strong> ({app.googlePlayPackage})
+                  </span>
+                ))}
+              </div>
               <div className="p-4 rounded-xl bg-black/40 border border-white/[0.08] space-y-2">
                 <strong className="text-white font-display text-sm block">License Restrictions:</strong>
                 <p className="text-slate-300/90 text-xs">You explicitly agree that you shall not:</p>

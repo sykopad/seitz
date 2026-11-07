@@ -41,7 +41,7 @@ export default function PrivacyPolicyPage() {
     {
       permission: 'Local Network Access & Wi-Fi Multicast',
       technicalName: 'ACCESS_WIFI_STATE, CHANGE_WIFI_MULTICAST_STATE, INTERNET',
-      apps: 'OmniRemote: Universal Smart TV Remote (com.omniremote.universal)',
+      apps: 'OmniRemote: Universal Smart TV Remote (co.za.omniremote.app)',
       purpose:
         'Used solely on your local Wi-Fi network to discover Smart TVs via UPnP / SSDP protocols, authenticate local TLS WebSockets with Samsung (port 8001/8002) and LG displays (port 3000/3001), and dispatch HTTP ECP commands to Roku TVs (port 8060). Zero video, audio, or display control telemetry is ever sent to or processed by external cloud servers.',
     },
@@ -186,7 +186,19 @@ export default function PrivacyPolicyPage() {
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 pt-1">
                 {publishedApps.map((app) => (
                   <div key={app.slug} className="p-3.5 rounded-xl bg-black/40 border border-white/[0.08] space-y-1">
-                    <span className="font-display font-bold text-white block">{app.name}</span>
+                    <div className="flex items-center justify-between">
+                      <span className="font-display font-bold text-white">{app.name}</span>
+                      {app.playStoreUrl && (
+                        <a
+                          href={app.playStoreUrl}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          className="text-[10px] font-mono text-emerald-400 hover:underline"
+                        >
+                          Play Store ↗
+                        </a>
+                      )}
+                    </div>
                     <span className="text-[11px] font-mono text-sky-400 block">{app.googlePlayPackage}</span>
                     <span className="text-[11px] text-slate-400 block">{app.tagline}</span>
                   </div>
@@ -195,7 +207,7 @@ export default function PrivacyPolicyPage() {
                   <span className="font-display font-bold text-white block">Pipeline Apps & Games</span>
                   <span className="text-[11px] font-mono text-amber-400 block">za.co.seitz.*</span>
                   <span className="text-[11px] text-slate-400 block">
-                    Decolonize: South Africa, Mira AI, Payday (Trust-Buster), Mzansi Syndicate, Toll Plaza, Would You Rather, Debate League.
+                    Decolonize: South Africa, Mira AI, Payday (Trust-Buster), Mzansi Syndicate, Toll Plaza, Debate League.
                   </span>
                 </div>
               </div>

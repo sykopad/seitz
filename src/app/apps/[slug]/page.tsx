@@ -21,6 +21,7 @@ import {
 import { appsCatalog, getAppBySlug } from '@/data/apps-catalog';
 import { AppMediaGallery } from '@/components/apps/AppMediaGallery';
 import { AppVoteButton } from '@/components/apps/AppVoteButton';
+import { GooglePlayIcon } from '@/components/icons/GooglePlayIcon';
 import { Footer } from '@/components/shared/Footer';
 
 interface PageProps {
@@ -149,6 +150,17 @@ export default async function AppDetailPage({ params }: PageProps) {
                         {app.googlePlayPackage}
                       </span>
                     )}
+                    {app.playStoreUrl && (
+                      <a
+                        href={app.playStoreUrl}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="inline-flex items-center gap-1.5 text-xs font-mono px-2.5 py-0.5 rounded bg-emerald-500/15 text-emerald-300 border border-emerald-500/30 hover:bg-emerald-500/25 transition"
+                      >
+                        <GooglePlayIcon className="w-3 h-3 text-emerald-400" />
+                        <span>Live on Play Store ↗</span>
+                      </a>
+                    )}
                   </div>
 
                   <h1 className="text-3xl sm:text-4xl lg:text-5xl font-extrabold text-white tracking-tight">
@@ -196,13 +208,27 @@ export default async function AppDetailPage({ params }: PageProps) {
                       <span className="text-emerald-300">14-Day Closed Track</span>
                     </div>
 
-                    <Link
-                      href="/testers#apply"
-                      className="w-full py-3 rounded-xl bg-gradient-to-r from-emerald-400 to-sky-400 hover:from-emerald-300 hover:to-sky-300 text-slate-950 font-display font-bold text-xs uppercase tracking-wider text-center flex items-center justify-center gap-2 transition shadow-lg shadow-emerald-500/20"
-                    >
-                      <Smartphone className="w-4 h-4" />
-                      <span>Reserve Closed Beta Slot</span>
-                    </Link>
+                    <div className="flex flex-col gap-2 pt-1">
+                      <Link
+                        href="/testers#apply"
+                        className="w-full py-3 rounded-xl bg-gradient-to-r from-emerald-400 to-sky-400 hover:from-emerald-300 hover:to-sky-300 text-slate-950 font-display font-bold text-xs uppercase tracking-wider text-center flex items-center justify-center gap-2 transition shadow-lg shadow-emerald-500/20"
+                      >
+                        <Smartphone className="w-4 h-4" />
+                        <span>Reserve Closed Beta Slot</span>
+                      </Link>
+
+                      {app.playStoreUrl && (
+                        <a
+                          href={app.playStoreUrl}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          className="w-full py-2.5 rounded-xl bg-white/[0.05] hover:bg-white/[0.1] border border-white/10 text-white font-mono text-xs text-center flex items-center justify-center gap-2 transition"
+                        >
+                          <GooglePlayIcon className="w-3.5 h-3.5 text-sky-400" />
+                          <span>View on Google Play ↗</span>
+                        </a>
+                      )}
+                    </div>
                   </div>
                 ) : (
                   <AppVoteButton
@@ -369,9 +395,17 @@ export default async function AppDetailPage({ params }: PageProps) {
                   Testers who keep {app.name} installed on their registered Android device for the mandatory 14-day continuous closed-testing window receive:
                 </p>
 
-                <div className="p-4 rounded-xl bg-black/40 border border-emerald-500/30 text-emerald-300 font-bold text-sm">
-                  {app.reward} ({app.rewardValue || 'Permanent Promo Code'})
+                <div className="p-4 rounded-xl bg-black/40 border border-emerald-500/30 text-emerald-300 font-bold text-sm flex items-center justify-between">
+                  <span>{app.reward} ({app.rewardValue || 'Permanent Promo Code'})</span>
                 </div>
+
+                <Link
+                  href="/testers/leaderboard"
+                  className="w-full py-2.5 px-3 rounded-xl bg-amber-500/10 hover:bg-amber-500/20 border border-amber-500/30 text-amber-300 font-mono text-xs text-center flex items-center justify-center gap-2 transition"
+                >
+                  <Gift className="w-3.5 h-3.5 text-amber-400" />
+                  <span>Claim Earned Promo Code ↗</span>
+                </Link>
 
                 <div className="p-3.5 rounded-xl bg-black/30 border border-white/5 text-[11px] text-white/50 leading-relaxed space-y-1">
                   <span className="font-semibold text-white/80 block">Google Play Policy Compliance:</span>
