@@ -381,3 +381,70 @@ export async function sendClientOrderConfirmationEmail(order: {
     return { success: false, error: err instanceof Error ? err.message : 'Unknown error' };
   }
 }
+
+/**
+ * Dispatches an email notification to admin when an account or data deletion request is submitted
+ */
+export async function sendDeletionRequestNotification(request: {
+  email: string;
+  appName: string;
+  scope: string;
+  notes?: string | null;
+}): Promise<EmailResult> {
+  if (!resend) {
+    console.log('[Dev Resend Mock] Data Deletion Request Received:', request);
+    return { success: true, messageId: 'mock-deletion-request-id' };
+  }
+
+  try {
+    const { data, error } = await resend.emails.send({
+      from: fromEmail,
+      to: adminEmail,
+      replyTo: request.email,
+      subject: `[DATA DELETION REQUEST] ${request.appName} - ${request.email}`,
+      html: `
+        <div style="font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif; max-width: 600px; margin: 0 auto; padding: 24px; background: #090a0f; color: #f3f4f6; border-radius: 12px; border: 1px solid rgba(239, 68, 68, 0.3);">
+          <h2 style="color: #ef4444; margin-top: 0;">⚠️ Account & Data Deletion Request</h2>
+          <p style="color: #9ca3af; font-size: 14px;">A user has submitted an official data erasure request under Google Play / POPIA / GDPR.</p>
+          
+          <table style="width: 100%; border-collapse: collapse; margin: 20px 0; font-size: 14px;">
+            <tr>
+              <td style="padding: 8px 0; color: #9ca3af; width: 140px;">User Email:</td>
+              <td style="padding: 8px 0; color: #ffffff; font-weight: 600;">${request.email}</td>
+            </tr>
+            <tr>
+              <td style="padding: 8px 0; color: #9ca3af;">App / Service:</td>
+              <td style="padding: 8px 0; color: #38bdf8; font-weight: bold;">${request.appName}</td>
+            </tr>
+            <tr>
+              <td style="padding: 8px 0; color: #9ca3af;">Deletion Scope:</td>
+              <td style="padding: 8px 0; color: #f59e0b;">${request.scope}</td>
+            </tr>
+            ${request.notes ? `
+            <tr>
+              <td style="padding: 8px 0; color: #9ca3af;">User Notes:</td>
+              <td style="padding: 8px 0; color: #e2e8f0;">${request.notes}</td>
+            </tr>
+            ` : ''}
+          </table>
+
+          <div style="background: rgba(239, 68, 68, 0.08); padding: 14px; border-radius: 8px; border: 1px solid rgba(239, 68, 68, 0.2); margin-top: 16px;">
+            <p style="margin: 0; font-size: 12px; color: #fca5a5;">
+              Statutory Requirement: Purge account records in Supabase Auth, associated database tables, and cloud storage within 30 days. Send confirmation to user once complete.
+            </p>
+          </div>
+        </div>
+      `,
+    });
+
+    if (error) {
+      console.error('Resend deletion request admin email error:', error);
+      return { success: false, error: error.message };
+    }
+
+    return { success: true, messageId: data?.id };
+  } catch (err: unknown) {
+    console.error('Unexpected deletion request email dispatch error:', err);
+    return { success: false, error: err instanceof Error ? err.message : 'Unknown error' };
+  }
+}

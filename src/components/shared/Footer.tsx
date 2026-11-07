@@ -202,6 +202,10 @@ export function Footer() {
             <Link href="/anti-incentive" className="hover:text-white transition">
               Anti-Incentive Policy
             </Link>
+            <span>•</span>
+            <Link href="/delete-account" className="text-amber-400 hover:text-amber-300 transition">
+              Data &amp; Account Deletion
+            </Link>
           </div>
         </div>
       </div>
