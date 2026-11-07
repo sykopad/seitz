@@ -1,5 +1,5 @@
 import React from 'react';
-import { ArrowUpRight, ShieldCheck, CheckCircle2 } from 'lucide-react';
+import { ArrowUpRight, ShieldCheck } from 'lucide-react';
 import { GooglePlayIcon } from '@/components/icons/GooglePlayIcon';
 import { UpworkIcon } from '@/components/icons/UpworkIcon';
 import { FiverrIcon } from '@/components/icons/FiverrIcon';
@@ -60,13 +60,13 @@ export function VerificationMatrix() {
   return (
     <section id="platforms" className="py-20 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto">
       <div className="text-center max-w-3xl mx-auto mb-16">
-        <div className="inline-flex items-center gap-2 px-3.5 py-1 rounded-full border border-sky-500/20 bg-sky-500/10 text-sky-400 text-xs font-mono uppercase tracking-wider mb-4">
+        <div className="inline-flex items-center gap-2 px-3.5 py-1 rounded-full border border-sky-500/25 bg-sky-500/10 text-sky-300 text-xs font-mono uppercase tracking-wider mb-4">
           Verification Matrix
         </div>
-        <h2 className="text-3xl sm:text-4xl font-extrabold text-white tracking-tight mb-4">
+        <h2 className="font-display text-3xl sm:text-4xl lg:text-5xl font-bold text-white tracking-tight mb-4">
           Verified Track Record Across Global Platforms
         </h2>
-        <p className="text-base sm:text-lg text-white/70 leading-relaxed">
+        <p className="text-base sm:text-lg text-slate-300/85 leading-relaxed">
           Engage directly for enterprise custom contracts or hire through established freelance escrow networks where my developer track record is identity-verified and contract-protected.
         </p>
       </div>
@@ -75,32 +75,32 @@ export function VerificationMatrix() {
         {platforms.map((p) => (
           <div
             key={p.name}
-            className="glass-card rounded-2xl p-6 border border-white/10 hover:border-white/25 flex flex-col justify-between transition-all group"
+            className="studio-card rounded-2xl p-6 border border-white/10 hover:border-white/25 flex flex-col justify-between transition-all group"
           >
             <div>
               <div className="flex items-center justify-between mb-4">
-                <div className="w-10 h-10 rounded-xl bg-white/5 border border-white/10 flex items-center justify-center">
+                <div className="w-11 h-11 rounded-xl bg-white/[0.04] border border-white/10 flex items-center justify-center">
                   <p.icon className={`w-5 h-5 ${p.accent}`} />
                 </div>
                 <span
-                  className={`inline-flex items-center gap-1 px-2.5 py-0.5 rounded-full text-[10px] font-mono font-medium border ${p.badgeBorder} ${p.badgeBg} ${p.accent}`}
+                  className={`inline-flex items-center gap-1 px-2.5 py-0.5 rounded-full text-[10px] font-mono font-semibold border ${p.badgeBorder} ${p.badgeBg} ${p.accent}`}
                 >
                   <ShieldCheck className="w-3 h-3" />
                   Verified
                 </span>
               </div>
 
-              <h3 className="text-base font-bold text-white mb-1">{p.name}</h3>
-              <div className="text-xs font-mono text-white/50 mb-3">{p.brand}</div>
-              <p className="text-xs text-white/70 leading-relaxed mb-6">{p.scope}</p>
+              <h3 className="font-display text-base font-bold text-white mb-1">{p.name}</h3>
+              <div className="text-xs font-mono text-slate-400 mb-3">{p.brand}</div>
+              <p className="text-xs text-slate-300/80 leading-relaxed mb-6">{p.scope}</p>
             </div>
 
-            <div className="pt-4 border-t border-white/5">
+            <div className="pt-4 border-t border-white/[0.07]">
               <a
                 href={p.href}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="inline-flex items-center gap-1.5 text-xs font-semibold text-white/80 group-hover:text-sky-400 transition"
+                className="inline-flex items-center gap-1.5 text-xs font-display font-bold text-slate-200 group-hover:text-sky-400 transition"
               >
                 <span>{p.linkText}</span>
                 <ArrowUpRight className="w-3.5 h-3.5 transition-transform group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />

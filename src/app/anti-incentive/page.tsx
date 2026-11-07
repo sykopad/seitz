@@ -12,9 +12,9 @@ export const metadata: Metadata = {
 
 export default function AntiIncentivePage() {
   return (
-    <div className="min-h-screen bg-[#090a0f] text-[#f3f4f6] relative selection:bg-emerald-400 selection:text-black">
+    <div className="min-h-screen bg-[#05070b] text-[#f8fafc] relative selection:bg-emerald-400 selection:text-black">
       {/* Background Grid Pattern */}
-      <div className="fixed inset-0 bg-grid-pattern pointer-events-none opacity-60 z-0" />
+      <div className="fixed inset-0 bg-grid-pattern pointer-events-none opacity-75 z-0" />
 
       {/* Main Container */}
       <div className="relative z-10 flex flex-col min-h-screen">

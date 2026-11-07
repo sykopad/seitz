@@ -64,29 +64,29 @@ export default function GooglePlayTestingServicePage() {
   ];
 
   return (
-    <div className="min-h-screen bg-[#090a0f] text-[#f3f4f6] relative selection:bg-emerald-400 selection:text-black">
+    <div className="min-h-screen bg-[#05070b] text-[#f8fafc] relative selection:bg-emerald-400 selection:text-black">
       {/* Background Grid Pattern */}
-      <div className="fixed inset-0 bg-grid-pattern pointer-events-none opacity-60 z-0" />
+      <div className="fixed inset-0 bg-grid-pattern pointer-events-none opacity-75 z-0" />
 
       {/* Main Container */}
       <div className="relative z-10 flex flex-col min-h-screen">
         {/* Navigation Bar */}
-        <header className="border-b border-white/10 bg-black/60 backdrop-blur-xl sticky top-0 z-40">
+        <header className="border-b border-white/[0.08] bg-[#05070b]/85 backdrop-blur-2xl sticky top-0 z-40">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-20 flex items-center justify-between">
             <Link href="/" className="flex items-center gap-3 group">
               <div className="w-10 h-10 rounded-xl bg-gradient-to-tr from-emerald-500 to-sky-500 p-[1px] shadow-lg shadow-emerald-500/20">
-                <div className="w-full h-full bg-[#090a0f] rounded-[11px] flex items-center justify-center">
+                <div className="w-full h-full bg-[#05070b] rounded-[11px] flex items-center justify-center">
                   <Smartphone className="w-5 h-5 text-emerald-400" />
                 </div>
               </div>
               <div className="flex flex-col">
-                <span className="font-extrabold text-lg text-white tracking-tight flex items-center gap-2">
-                  Seitz
-                  <span className="text-xs px-2 py-0.5 rounded-full bg-emerald-500/10 border border-emerald-500/20 text-emerald-400 font-mono">
+                <span className="font-display font-bold text-lg text-white tracking-tight flex items-center gap-2">
+                  SEITZ
+                  <span className="text-[10px] px-2 py-0.5 rounded-md bg-emerald-500/15 border border-emerald-500/30 text-emerald-300 font-mono uppercase tracking-wider">
                     Fast-Track
                   </span>
                 </span>
-                <span className="text-[11px] text-white/50 font-mono tracking-tight">
+                <span className="text-[11px] text-slate-400 font-mono tracking-tight">
                   Google Play Closed Testing Service
                 </span>
               </div>

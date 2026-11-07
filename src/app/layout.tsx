@@ -1,10 +1,32 @@
 import type { Metadata, Viewport } from "next";
+import { Space_Grotesk, Plus_Jakarta_Sans, JetBrains_Mono } from "next/font/google";
 import "./globals.css";
+
+const spaceGrotesk = Space_Grotesk({
+  subsets: ["latin"],
+  weight: ["500", "600", "700"],
+  variable: "--font-display",
+  display: "swap",
+});
+
+const plusJakartaSans = Plus_Jakarta_Sans({
+  subsets: ["latin"],
+  weight: ["400", "500", "600", "700", "800"],
+  variable: "--font-sans",
+  display: "swap",
+});
+
+const jetbrainsMono = JetBrains_Mono({
+  subsets: ["latin"],
+  weight: ["400", "500", "600", "700"],
+  variable: "--font-mono",
+  display: "swap",
+});
 
 const siteUrl = process.env.NEXT_PUBLIC_SITE_URL || 'https://seitz.co.za';
 
 export const viewport: Viewport = {
-  themeColor: '#090a0f',
+  themeColor: '#05070b',
   colorScheme: 'dark',
   width: 'device-width',
   initialScale: 1,
@@ -14,7 +36,7 @@ export const viewport: Viewport = {
 export const metadata: Metadata = {
   metadataBase: new URL(siteUrl),
   title: {
-    default: "Seitz | Application Architect & Full-Stack Engineer",
+    default: "Seitz | Application Architect & Full-Stack Systems Studio",
     template: "%s | Seitz",
   },
   description: "Production-grade web and mobile engineering, Google Play verified Android applications, and scalable Apify automation pipelines. Home of the Seitz Testing Lab.",
@@ -44,13 +66,13 @@ export const metadata: Metadata = {
     type: "website",
     locale: "en_ZA",
     url: siteUrl,
-    title: "Seitz | Application Architect & Full-Stack Engineer",
+    title: "Seitz | Application Architect & Full-Stack Systems Studio",
     description: "Production-grade web & mobile systems from concept to production. Specialized in Next.js, Android store releases, and Apify data pipelines.",
     siteName: "Seitz",
   },
   twitter: {
     card: "summary_large_image",
-    title: "Seitz | Application Architect & Full-Stack Engineer",
+    title: "Seitz | Application Architect & Full-Stack Systems Studio",
     description: "Production-grade web & mobile systems, Android Google Play testing cohorts, and Apify actors.",
   },
   robots: {
@@ -105,16 +127,17 @@ export default function RootLayout({
   };
 
   return (
-    <html lang="en" className="dark scroll-smooth">
+    <html
+      lang="en"
+      className={`dark scroll-smooth ${spaceGrotesk.variable} ${plusJakartaSans.variable} ${jetbrainsMono.variable}`}
+    >
       <head>
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
         />
       </head>
-      <body
-        className="antialiased bg-[#090a0f] text-[#f3f4f6] min-h-screen selection:bg-sky-400 selection:text-black"
-      >
+      <body className="antialiased bg-[#05070b] text-[#f8fafc] font-sans min-h-screen selection:bg-sky-400 selection:text-black">
         {children}
       </body>
     </html>

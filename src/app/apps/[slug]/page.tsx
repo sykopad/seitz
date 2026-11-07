@@ -71,18 +71,18 @@ export default async function AppDetailPage({ params }: PageProps) {
   const otherApps = appsCatalog.filter((item) => item.slug !== app.slug).slice(0, 3);
 
   return (
-    <div className="min-h-screen bg-[#090a0f] text-[#f3f4f6] relative selection:bg-emerald-400 selection:text-black">
+    <div className="min-h-screen bg-[#05070b] text-[#f8fafc] relative selection:bg-emerald-400 selection:text-black">
       {/* Background Grid Pattern */}
-      <div className="fixed inset-0 bg-grid-pattern pointer-events-none opacity-60 z-0" />
+      <div className="fixed inset-0 bg-grid-pattern pointer-events-none opacity-70 z-0" />
 
       {/* Main Container */}
       <div className="relative z-10 flex flex-col min-h-screen">
         {/* Top Mini-Navbar */}
-        <header className="border-b border-white/10 bg-black/60 backdrop-blur-xl sticky top-0 z-40">
+        <header className="border-b border-white/[0.08] bg-[#05070b]/85 backdrop-blur-2xl sticky top-0 z-40">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-16 flex items-center justify-between">
             <Link
               href="/testers"
-              className="inline-flex items-center gap-2 text-xs font-mono text-white/70 hover:text-emerald-400 transition"
+              className="inline-flex items-center gap-2 text-xs font-mono text-slate-300 hover:text-emerald-400 transition"
             >
               <ArrowLeft className="w-4 h-4" />
               <span>Back to Testing Lab</span>
@@ -90,10 +90,10 @@ export default async function AppDetailPage({ params }: PageProps) {
 
             <div className="flex items-center gap-3">
               <span
-                className={`inline-flex items-center gap-1.5 px-3 py-1 rounded-full text-xs font-mono font-medium border ${
+                className={`inline-flex items-center gap-1.5 px-3 py-1 rounded-full text-xs font-mono font-semibold border ${
                   isClosedTesting
-                    ? 'bg-emerald-500/10 text-emerald-400 border-emerald-500/20'
-                    : 'bg-amber-500/10 text-amber-400 border-amber-500/20'
+                    ? 'bg-emerald-500/15 text-emerald-300 border-emerald-500/30'
+                    : 'bg-amber-500/15 text-amber-300 border-amber-500/30'
                 }`}
               >
                 <span
@@ -106,7 +106,7 @@ export default async function AppDetailPage({ params }: PageProps) {
 
               <Link
                 href="/"
-                className="hidden sm:inline-block text-xs font-mono text-white/50 hover:text-white transition"
+                className="hidden sm:inline-block text-xs font-mono text-slate-400 hover:text-white transition"
               >
                 seitz.co.za
               </Link>
@@ -116,8 +116,8 @@ export default async function AppDetailPage({ params }: PageProps) {
 
         <main className="flex-1 py-10 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto w-full space-y-12">
           {/* Breadcrumb */}
-          <nav className="text-xs font-mono text-white/50 flex items-center gap-2">
-            <Link href="/" className="hover:text-white transition">Home</Link>
+          <nav className="text-xs font-mono text-slate-400 flex items-center gap-2">
+            <Link href="/" className="hover:text-white transition">Studio</Link>
             <span>/</span>
             <Link href="/testers" className="hover:text-white transition">Testing Lab</Link>
             <span>/</span>
@@ -125,7 +125,7 @@ export default async function AppDetailPage({ params }: PageProps) {
           </nav>
 
           {/* Hero Header Card */}
-          <div className="glass-card rounded-3xl p-6 sm:p-10 border border-white/10 relative overflow-hidden">
+          <div className="studio-panel rounded-3xl p-6 sm:p-10 border border-white/10 relative overflow-hidden">
             <div className="flex flex-col md:flex-row gap-8 items-start justify-between">
               <div className="flex items-start gap-6">
                 {/* App Icon */}
@@ -164,34 +164,41 @@ export default async function AppDetailPage({ params }: PageProps) {
               {/* Status & Tester Metrics Box */}
               <div className="w-full md:w-auto shrink-0 flex flex-col gap-3 min-w-[280px]">
                 {isClosedTesting ? (
-                  <div className="p-4 rounded-2xl bg-emerald-500/10 border border-emerald-500/20 space-y-3">
+                  <div className="p-4 rounded-2xl bg-emerald-500/10 border border-emerald-500/25 space-y-3">
                     <div className="flex items-center justify-between text-xs font-mono">
-                      <span className="text-white/60 flex items-center gap-1.5">
+                      <span className="text-slate-300 flex items-center gap-1.5">
                         <Users className="w-4 h-4 text-emerald-400" />
                         Tester Capacity:
                       </span>
-                      <span className="text-emerald-400 font-bold">
+                      <span className="text-emerald-300 font-bold">
                         {app.currentTesters} / {app.targetTesters} Enrolled
                       </span>
                     </div>
 
-                    <div className="w-full h-2 bg-black/40 rounded-full overflow-hidden">
-                      <div
-                        className="h-full bg-emerald-400 rounded-full"
-                        style={{
-                          width: `${Math.round((app.currentTesters / app.targetTesters) * 100)}%`,
-                        }}
-                      />
+                    <div className="grid grid-cols-15 gap-1">
+                      {Array.from({ length: app.targetTesters }).map((_, idx) => {
+                        const isFilled = idx < app.currentTesters;
+                        return (
+                          <div
+                            key={idx}
+                            className={`h-2 rounded-sm ${
+                              isFilled
+                                ? 'bg-gradient-to-t from-emerald-500 to-emerald-300'
+                                : 'bg-white/10'
+                            }`}
+                          />
+                        );
+                      })}
                     </div>
 
-                    <div className="flex items-center justify-between text-[11px] font-mono text-white/50 pt-1">
+                    <div className="flex items-center justify-between text-[11px] font-mono text-slate-400 pt-1">
                       <span>{app.openSlots} buffer spots remaining</span>
                       <span className="text-emerald-300">14-Day Closed Track</span>
                     </div>
 
                     <Link
                       href="/testers#apply"
-                      className="w-full py-3 rounded-xl bg-gradient-to-r from-emerald-500 to-sky-500 hover:from-emerald-400 hover:to-sky-400 text-black font-bold text-xs uppercase tracking-wider text-center flex items-center justify-center gap-2 transition shadow-lg shadow-emerald-500/20"
+                      className="w-full py-3 rounded-xl bg-gradient-to-r from-emerald-400 to-sky-400 hover:from-emerald-300 hover:to-sky-300 text-slate-950 font-display font-bold text-xs uppercase tracking-wider text-center flex items-center justify-center gap-2 transition shadow-lg shadow-emerald-500/20"
                     >
                       <Smartphone className="w-4 h-4" />
                       <span>Reserve Closed Beta Slot</span>
