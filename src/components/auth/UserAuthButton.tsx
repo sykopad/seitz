@@ -264,7 +264,14 @@ export function UserAuthButton({ compact = false }: UserAuthButtonProps) {
         </svg>
       )}
       <span className="font-semibold text-slate-700">
-        {compact ? 'Sign In' : 'Sign in with Google'}
+        {compact ? (
+          'Sign In'
+        ) : (
+          <>
+            <span className="hidden xl:inline">Sign in with Google</span>
+            <span className="inline xl:hidden">Sign In</span>
+          </>
+        )}
       </span>
     </button>
   );
