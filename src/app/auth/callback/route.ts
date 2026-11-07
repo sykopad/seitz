@@ -1,5 +1,6 @@
 import { NextResponse } from 'next/server';
 import { createClient } from '@/lib/supabase/server';
+import { enrollUserInSeitzGoogleGroup } from '@/app/actions/google-group';
 
 export async function GET(request: Request) {
   const { searchParams, origin } = new URL(request.url);
@@ -26,6 +27,17 @@ export async function GET(request: Request) {
       const { error: exchangeError } = await supabase.auth.exchangeCodeForSession(code);
 
       if (!exchangeError) {
+        // Auto-enroll authenticated user in Seitz Google Group (covers all 4 games)
+        try {
+          const { data: { user } } = await supabase.auth.getUser();
+          if (user?.email) {
+            const fullName = user.user_metadata?.full_name || user.user_metadata?.name || user.email.split('@')[0];
+            await enrollUserInSeitzGoogleGroup(user.email, fullName);
+          }
+        } catch (enrollErr) {
+          console.error('[Google SSO Auto-Enroll Background Error]:', enrollErr);
+        }
+
         const forwardedHost = request.headers.get('x-forwarded-host');
         const isLocalEnv = process.env.NODE_ENV === 'development';
         if (isLocalEnv) {

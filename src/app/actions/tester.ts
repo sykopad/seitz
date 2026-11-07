@@ -2,6 +2,7 @@
 
 import { createClient } from '@/lib/supabase/server';
 import { sendTesterWelcomeEmail } from '@/lib/email';
+import { enrollUserInSeitzGoogleGroup } from '@/app/actions/google-group';
 
 export interface TesterRegistrationData {
   fullName: string;
@@ -91,16 +92,16 @@ export async function registerTester(data: TesterRegistrationData): Promise<Test
       };
     }
 
-    // Send welcome email with Google Group invite via Resend
-    await sendTesterWelcomeEmail({
-      fullName: data.fullName.trim(),
-      googleEmail: data.googleEmail.trim().toLowerCase(),
-      deviceModel: data.deviceModel.trim(),
-    });
+    // Automatically enroll user in Seitz Google Group (authorizes all 4 Google Play apps)
+    await enrollUserInSeitzGoogleGroup(
+      data.googleEmail.trim().toLowerCase(),
+      data.fullName.trim(),
+      data.deviceModel.trim()
+    );
 
     return {
       success: true,
-      message: `Welcome to the Seitz Testing Lab, ${data.fullName.split(' ')[0]}! Your device has been added to our priority cohort list. You will receive an email as soon as the next testing round opens on Google Play.`,
+      message: `Welcome to the Seitz Testing Lab, ${data.fullName.split(' ')[0]}! You are officially enrolled in seitz@googlegroups.com with instant closed-track access to all 4 live Google Play apps. Check your inbox for your 1-click opt-in links!`,
     };
   } catch (err: unknown) {
     console.error('Unexpected tester registration error:', err);

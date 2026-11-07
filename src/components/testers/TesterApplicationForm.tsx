@@ -1,8 +1,9 @@
 'use client';
 
 import React, { useState } from 'react';
+import Link from 'next/link';
 import confetti from 'canvas-confetti';
-import { CheckCircle2, AlertCircle, Send, Sparkles, Smartphone } from 'lucide-react';
+import { CheckCircle2, AlertCircle, Send, Sparkles, Smartphone, ExternalLink } from 'lucide-react';
 import { registerTester, TesterRegistrationData } from '@/app/actions/tester';
 
 export function TesterApplicationForm() {
@@ -111,9 +112,28 @@ export function TesterApplicationForm() {
               )}
               <div className="space-y-1">
                 <span className="font-display font-bold block text-slate-900">
-                  {status.success ? 'Device Registered Successfully!' : 'Application Notice'}
+                  {status.success ? 'Device Registered & Google Group Pre-Authorized!' : 'Application Notice'}
                 </span>
                 <span className="leading-relaxed block">{status.message}</span>
+                {status.success && (
+                  <div className="pt-2 flex flex-wrap items-center gap-2">
+                    <a
+                      href="https://groups.google.com/g/seitz"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-lg bg-emerald-600 hover:bg-emerald-500 text-white font-medium text-xs shadow-xs transition"
+                    >
+                      <span>Confirm Google Group Join (1-Click)</span>
+                      <ExternalLink className="w-3 h-3" />
+                    </a>
+                    <Link
+                      href="/account"
+                      className="inline-flex items-center gap-1 px-3 py-1.5 rounded-lg bg-white border border-emerald-300 text-emerald-800 hover:bg-emerald-50 font-medium text-xs transition"
+                    >
+                      <span>View All-Access Pass (/account) →</span>
+                    </Link>
+                  </div>
+                )}
               </div>
             </div>
           )}

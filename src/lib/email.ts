@@ -91,6 +91,7 @@ export async function sendInquiryNotification(inquiry: {
 
 /**
  * Sends a welcome email to a newly enrolled tester with Google Group access links
+ * and direct closed-testing opt-in links for all 4 Google Play apps.
  */
 export async function sendTesterWelcomeEmail(tester: {
   fullName: string;
@@ -98,7 +99,7 @@ export async function sendTesterWelcomeEmail(tester: {
   deviceModel: string;
 }): Promise<EmailResult> {
   if (!resend) {
-    console.log('[Dev Resend Mock] Tester Welcome Email to:', tester.googleEmail);
+    console.log('[Dev Resend Mock] Tester All-Access Pass Email to:', tester.googleEmail);
     return { success: true, messageId: 'mock-tester-welcome-id' };
   }
 
@@ -107,35 +108,120 @@ export async function sendTesterWelcomeEmail(tester: {
     const { data, error } = await resend.emails.send({
       from: fromEmail,
       to: tester.googleEmail,
-      subject: 'Welcome to the Seitz Testing Lab — Your Priority Testing Access',
+      subject: 'Seitz Testing Lab — Google Play All-Access Pass (4 Apps)',
       html: `
-        <div style="font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif; max-width: 600px; margin: 0 auto; padding: 24px; background: #090a0f; color: #f3f4f6; border-radius: 12px; border: 1px solid rgba(255,255,255,0.1);">
-          <h2 style="color: #10b981; margin-top: 0;">Welcome to the Seitz Testing Lab, ${firstName}!</h2>
-          <p style="color: #e5e7eb; font-size: 14px; line-height: 1.6;">
-            Your Android device (<strong>${tester.deviceModel}</strong>) is officially registered in our private beta community.
+        <div style="font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif; max-width: 620px; margin: 0 auto; padding: 28px 20px; background: #ffffff; color: #1e293b; border-radius: 16px; border: 1px solid #e2e8f0;">
+          <div style="border-bottom: 2px solid #10b981; padding-bottom: 16px; margin-bottom: 20px;">
+            <span style="font-family: monospace; font-size: 11px; text-transform: uppercase; letter-spacing: 0.1em; color: #047857; font-weight: bold; background: #ecfdf5; padding: 4px 10px; border-radius: 6px; border: 1px solid #a7f3d0;">
+              Google Play Closed Beta • All-Access Pass
+            </span>
+            <h1 style="color: #0f172a; margin: 12px 0 4px 0; font-size: 22px;">Welcome to the Seitz Testing Lab, ${firstName}!</h1>
+            <p style="color: #64748b; font-size: 13px; margin: 0;">Registered Google Email: <strong>${tester.googleEmail}</strong></p>
+          </div>
+
+          <p style="color: #334155; font-size: 14px; line-height: 1.6;">
+            Your single email registration connects you to our centralized testing group: <strong style="color: #047857;">seitz@googlegroups.com</strong>. Because this group is linked across all our apps on Google Play Console, <strong>you have instant access to test all 4 live apps</strong>!
           </p>
 
-          <div style="background: rgba(16, 185, 129, 0.08); border: 1px solid rgba(16, 185, 129, 0.2); padding: 16px; border-radius: 8px; margin: 20px 0;">
-            <h4 style="color: #10b981; margin-top: 0; margin-bottom: 8px;">Next Step: Join Our Google Group</h4>
-            <p style="font-size: 13px; color: #d1d5db; margin: 0 0 12px 0; line-height: 1.5;">
-              To automatically receive direct closed-track Google Play links without manual individual invites, please confirm you are a member of our centralized testing group:
+          <!-- Group Confirmation Box -->
+          <div style="background: #f0fdf4; border: 1px solid #bbf7d0; padding: 18px; border-radius: 12px; margin: 20px 0;">
+            <div style="display: flex; align-items: center; margin-bottom: 8px;">
+              <span style="font-size: 14px; font-weight: bold; color: #166534;">Step 1: Confirm Google Group Membership</span>
+            </div>
+            <p style="font-size: 13px; color: #15803d; margin: 0 0 12px 0; line-height: 1.5;">
+              Tap below to confirm you are in <strong>seitz@googlegroups.com</strong> (1-click auto-join):
             </p>
-            <a href="https://groups.google.com/u/2/g/seitz/" style="display: inline-block; background: #10b981; color: #000000; font-weight: bold; font-size: 12px; padding: 10px 16px; border-radius: 6px; text-decoration: none; text-transform: uppercase;">
-              Open Seitz Google Group →
+            <a href="https://groups.google.com/g/seitz" target="_blank" style="display: inline-block; background: #10b981; color: #ffffff; font-weight: bold; font-size: 13px; padding: 10px 18px; border-radius: 8px; text-decoration: none;">
+              Open Seitz Google Group (1-Click Join) →
             </a>
           </div>
 
-          <h4 style="color: #ffffff; margin-bottom: 8px;">How You Earn Your Lifetime Promo Code:</h4>
-          <ol style="font-size: 13px; color: #9ca3af; line-height: 1.6; padding-left: 20px;">
-            <li>Install upcoming test builds via the Google Play Store closed track.</li>
-            <li>Keep the app installed for the continuous 14-day evaluation window.</li>
-            <li>Complete a quick 3-minute check-in halfway through to confirm app stability.</li>
-          </ol>
+          <!-- Apps Grid -->
+          <h3 style="color: #0f172a; font-size: 16px; margin: 24px 0 12px 0;">Step 2: Tap "Become a Tester" on Each App</h3>
+          <p style="font-size: 13px; color: #64748b; margin-bottom: 16px;">
+            Tap the web opt-in links below from your Android device or browser to enroll in the closed track:
+          </p>
 
-          <p style="font-size: 13px; color: #9ca3af; margin-top: 24px; border-top: 1px solid rgba(255,255,255,0.05); padding-top: 16px;">
+          <table style="width: 100%; border-collapse: separate; border-spacing: 0 10px;">
+            <!-- OmniRemote -->
+            <tr>
+              <td style="background: #f8fafc; border: 1px solid #e2e8f0; border-radius: 10px; padding: 14px;">
+                <div style="font-weight: bold; color: #0f172a; font-size: 14px;">1. OmniRemote (Universal IR & WiFi Remote)</div>
+                <div style="font-size: 12px; color: #64748b; margin: 4px 0 10px 0;">Samsung, LG, Sony, Roku & Android TV hardware protocol control.</div>
+                <div>
+                  <a href="https://play.google.com/apps/testing/co.za.omniremote.app" target="_blank" style="display: inline-block; background: #0284c7; color: #ffffff; font-size: 11px; font-weight: bold; padding: 6px 12px; border-radius: 6px; text-decoration: none; margin-right: 8px;">
+                    Opt-In on Play Store →
+                  </a>
+                  <a href="https://play.google.com/store/apps/details?id=co.za.omniremote.app" target="_blank" style="display: inline-block; background: #e2e8f0; color: #334155; font-size: 11px; font-weight: 600; padding: 6px 12px; border-radius: 6px; text-decoration: none;">
+                    Direct Store Page
+                  </a>
+                </div>
+              </td>
+            </tr>
+
+            <!-- Would You Rather -->
+            <tr>
+              <td style="background: #f8fafc; border: 1px solid #e2e8f0; border-radius: 10px; padding: 14px;">
+                <div style="font-weight: bold; color: #0f172a; font-size: 14px;">2. Would You Rather (Dilemmas & Party Game)</div>
+                <div style="font-size: 12px; color: #64748b; margin: 4px 0 10px 0;">500+ philosophical, absurd, and party dilemma cards with local multiplayer.</div>
+                <div>
+                  <a href="https://play.google.com/apps/testing/co.za.wouldyourather.app" target="_blank" style="display: inline-block; background: #0284c7; color: #ffffff; font-size: 11px; font-weight: bold; padding: 6px 12px; border-radius: 6px; text-decoration: none; margin-right: 8px;">
+                    Opt-In on Play Store →
+                  </a>
+                  <a href="https://play.google.com/store/apps/details?id=co.za.wouldyourather.app" target="_blank" style="display: inline-block; background: #e2e8f0; color: #334155; font-size: 11px; font-weight: 600; padding: 6px 12px; border-radius: 6px; text-decoration: none;">
+                    Direct Store Page
+                  </a>
+                </div>
+              </td>
+            </tr>
+
+            <!-- Mzansi Midnight -->
+            <tr>
+              <td style="background: #f8fafc; border: 1px solid #e2e8f0; border-radius: 10px; padding: 14px;">
+                <div style="font-weight: bold; color: #0f172a; font-size: 14px;">3. Mzansi Midnight (SA True Crime & Paranormal)</div>
+                <div style="font-size: 12px; color: #64748b; margin: 4px 0 10px 0;">Audio-narrated investigative South African mysteries and folklore stories.</div>
+                <div>
+                  <a href="https://play.google.com/apps/testing/za.co.mzansimidnight.app" target="_blank" style="display: inline-block; background: #0284c7; color: #ffffff; font-size: 11px; font-weight: bold; padding: 6px 12px; border-radius: 6px; text-decoration: none; margin-right: 8px;">
+                    Opt-In on Play Store →
+                  </a>
+                  <a href="https://play.google.com/store/apps/details?id=za.co.mzansimidnight.app" target="_blank" style="display: inline-block; background: #e2e8f0; color: #334155; font-size: 11px; font-weight: 600; padding: 6px 12px; border-radius: 6px; text-decoration: none;">
+                    Direct Store Page
+                  </a>
+                </div>
+              </td>
+            </tr>
+
+            <!-- Clean & Clean -->
+            <tr>
+              <td style="background: #f8fafc; border: 1px solid #e2e8f0; border-radius: 10px; padding: 14px;">
+                <div style="font-weight: bold; color: #0f172a; font-size: 14px;">4. Clean and Clean (Cleaning Services Booking)</div>
+                <div style="font-size: 12px; color: #64748b; margin: 4px 0 10px 0;">Real-time booking, vetted cleaners, and instant appointment scheduling.</div>
+                <div>
+                  <a href="https://play.google.com/apps/testing/za.co.cleanandclean.app" target="_blank" style="display: inline-block; background: #0284c7; color: #ffffff; font-size: 11px; font-weight: bold; padding: 6px 12px; border-radius: 6px; text-decoration: none; margin-right: 8px;">
+                    Opt-In on Play Store →
+                  </a>
+                  <a href="https://play.google.com/store/apps/details?id=za.co.cleanandclean.app" target="_blank" style="display: inline-block; background: #e2e8f0; color: #334155; font-size: 11px; font-weight: 600; padding: 6px 12px; border-radius: 6px; text-decoration: none;">
+                    Direct Store Page
+                  </a>
+                </div>
+              </td>
+            </tr>
+          </table>
+
+          <!-- 14-Day Instructions -->
+          <div style="background: #f1f5f9; padding: 16px; border-radius: 10px; margin: 24px 0 16px 0;">
+            <h4 style="color: #0f172a; margin: 0 0 8px 0; font-size: 13px;">How to Claim Your Lifetime Promo Codes:</h4>
+            <ol style="margin: 0; padding-left: 20px; font-size: 12px; color: #475569; line-height: 1.6;">
+              <li>Install test builds via Google Play and keep them installed for 14 continuous days.</li>
+              <li>Log in to your Member Portal at <a href="https://seitz.co.za/account" style="color: #0284c7;">seitz.co.za/account</a> to view your active retention and badges.</li>
+              <li>Your 23-character Google Play promo codes unlock in your account upon milestone completion!</li>
+            </ol>
+          </div>
+
+          <p style="font-size: 12px; color: #94a3b8; margin-top: 24px; border-top: 1px solid #e2e8f0; padding-top: 16px;">
             Warm regards,<br>
             <strong>Muhammed Faiz Seitz</strong><br>
-            Developer at <a href="https://seitz.co.za" style="color: #38bdf8;">Seitz.co.za</a> | Creator of "I Tell You Stuff"
+            Developer at <a href="https://seitz.co.za" style="color: #0284c7;">Seitz.co.za</a> | Founder, Seitz Testing Lab
           </p>
         </div>
       `,
