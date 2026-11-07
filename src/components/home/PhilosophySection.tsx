@@ -1,3 +1,5 @@
+'use client';
+
 import React from 'react';
 import { Terminal, ShieldCheck, Cpu, CheckCircle2 } from 'lucide-react';
 
@@ -15,9 +17,9 @@ export function PhilosophySection() {
         'Relational modeling with sub-millisecond query indexing',
         'Zero vendor lock-in with clean service boundaries',
       ],
-      accentColor: 'from-sky-500/15 to-transparent',
-      borderColor: 'border-sky-500/25',
-      iconColor: 'text-sky-400',
+      accentColor: 'from-sky-50/60 to-white',
+      borderColor: 'border-sky-200/90',
+      iconColor: 'text-sky-600',
     },
     {
       index: '02 // COMPLIANCE',
@@ -31,9 +33,9 @@ export function PhilosophySection() {
         '14-day retention tracking with verified tester check-ins',
         'Audit-ready questionnaire preparation for production access',
       ],
-      accentColor: 'from-emerald-500/15 to-transparent',
-      borderColor: 'border-emerald-500/25',
-      iconColor: 'text-emerald-400',
+      accentColor: 'from-emerald-50/60 to-white',
+      borderColor: 'border-emerald-200/90',
+      iconColor: 'text-emerald-600',
     },
     {
       index: '03 // AUTOMATION',
@@ -47,22 +49,22 @@ export function PhilosophySection() {
         'Dynamic DOM parsing & headless browser cluster orchestration',
         'Automated PostgreSQL and webhook synchronization pipelines',
       ],
-      accentColor: 'from-violet-500/15 to-transparent',
-      borderColor: 'border-violet-500/25',
-      iconColor: 'text-violet-400',
+      accentColor: 'from-violet-50/60 to-white',
+      borderColor: 'border-violet-200/90',
+      iconColor: 'text-violet-600',
     },
   ];
 
   return (
     <section id="solutions" className="py-20 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto">
       <div className="text-center max-w-3xl mx-auto mb-16">
-        <div className="inline-flex items-center gap-2 px-3.5 py-1 rounded-full border border-sky-500/25 bg-sky-500/10 text-sky-300 text-xs font-mono uppercase tracking-wider mb-4">
+        <div className="inline-flex items-center gap-2 px-3.5 py-1 rounded-full border border-sky-200 bg-sky-50 text-sky-800 text-xs font-mono uppercase tracking-wider mb-4 font-semibold">
           <span>System Standards</span>
         </div>
-        <h2 className="font-display text-3xl sm:text-4xl lg:text-5xl font-bold text-white tracking-tight mb-4">
+        <h2 className="font-display text-3xl sm:text-4xl lg:text-5xl font-bold text-slate-950 tracking-tight mb-4">
           Engineering Without Technical Debt
         </h2>
-        <p className="text-base sm:text-lg text-slate-300/85 leading-relaxed">
+        <p className="text-base sm:text-lg text-slate-600 leading-relaxed">
           Modern digital products require more than generic templates. Every system is engineered for sub-second latency, strict data security, and near-zero ongoing maintenance overhead.
         </p>
       </div>
@@ -71,28 +73,28 @@ export function PhilosophySection() {
         {pillars.map((p) => (
           <div
             key={p.title}
-            className={`studio-card rounded-2xl p-7 sm:p-8 border ${p.borderColor} bg-gradient-to-b ${p.accentColor} flex flex-col justify-between`}
+            className={`studio-card rounded-2xl p-7 sm:p-8 border ${p.borderColor} bg-gradient-to-b ${p.accentColor} flex flex-col justify-between shadow-xs`}
           >
             <div>
               <div className="flex items-center justify-between mb-6">
-                <div className="w-11 h-11 rounded-xl bg-white/[0.04] border border-white/10 flex items-center justify-center">
+                <div className="w-11 h-11 rounded-xl bg-white border border-slate-200 flex items-center justify-center shadow-2xs">
                   <p.icon className={`w-5 h-5 ${p.iconColor}`} />
                 </div>
-                <span className="text-[11px] font-mono font-semibold text-slate-400 tracking-wider">
+                <span className="text-[11px] font-mono font-semibold text-slate-500 tracking-wider">
                   {p.index}
                 </span>
               </div>
 
-              <h3 className="font-display text-xl font-bold text-white mb-2">{p.title}</h3>
-              <div className="inline-block text-[11px] font-mono text-slate-300 px-2.5 py-0.5 rounded bg-black/40 border border-white/[0.07] mb-4">
+              <h3 className="font-display text-xl font-bold text-slate-950 mb-2">{p.title}</h3>
+              <div className="inline-block text-[11px] font-mono text-slate-700 px-2.5 py-0.5 rounded bg-slate-100 border border-slate-200 mb-4">
                 {p.specTag}
               </div>
-              <p className="text-sm text-slate-300/80 leading-relaxed mb-6">{p.description}</p>
+              <p className="text-sm text-slate-600 leading-relaxed mb-6">{p.description}</p>
             </div>
 
-            <div className="pt-5 border-t border-white/[0.07] space-y-2.5">
+            <div className="pt-5 border-t border-slate-200 space-y-2.5">
               {p.points.map((pt) => (
-                <div key={pt} className="flex items-start gap-2.5 text-xs text-slate-200">
+                <div key={pt} className="flex items-start gap-2.5 text-xs text-slate-700">
                   <CheckCircle2 className={`w-4 h-4 ${p.iconColor} shrink-0 mt-0.5`} />
                   <span>{pt}</span>
                 </div>

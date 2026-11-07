@@ -61,7 +61,7 @@ export function TesterApplicationForm() {
         particleCount: 80,
         spread: 70,
         origin: { y: 0.6 },
-        colors: ['#10b981', '#38bdf8', '#8b5cf6', '#f59e0b'],
+        colors: ['#059669', '#0284c7', '#7c3aed', '#d97706'],
       });
 
       setFormData({
@@ -77,20 +77,20 @@ export function TesterApplicationForm() {
 
   return (
     <section id="apply" className="py-20 px-4 sm:px-6 lg:px-8 max-w-4xl mx-auto scroll-mt-20">
-      <div className="studio-panel rounded-3xl p-6 sm:p-12 border border-emerald-500/35 shadow-2xl relative overflow-hidden">
+      <div className="studio-panel rounded-3xl p-6 sm:p-12 border border-emerald-300 bg-white shadow-xs relative overflow-hidden">
         {/* Glow ambient background */}
-        <div className="absolute top-0 right-1/4 w-80 h-80 bg-emerald-500/10 rounded-full blur-[100px] pointer-events-none" />
+        <div className="absolute top-0 right-1/4 w-80 h-80 bg-emerald-500/5 rounded-full blur-[100px] pointer-events-none" />
 
         <div className="text-center max-w-2xl mx-auto mb-10 relative z-10">
-          <div className="inline-flex items-center gap-2 px-3.5 py-1 rounded-full border border-emerald-500/30 bg-emerald-500/10 text-emerald-300 text-xs font-mono uppercase tracking-wider mb-4">
-            <Sparkles className="w-3.5 h-3.5 text-emerald-400" />
-            <span>Device Registration & Cohort Enrollment</span>
+          <div className="inline-flex items-center gap-2 px-3.5 py-1 rounded-full border border-emerald-200 bg-emerald-50 text-emerald-800 text-xs font-mono uppercase tracking-wider mb-4 font-semibold">
+            <Sparkles className="w-3.5 h-3.5 text-emerald-600" />
+            <span>Device Registration &amp; Cohort Enrollment</span>
           </div>
 
-          <h2 className="font-display text-3xl sm:text-4xl font-bold text-white tracking-tight mb-3">
+          <h2 className="font-display text-3xl sm:text-4xl font-bold text-slate-950 tracking-tight mb-3">
             Apply for the Next Testing Cohort
           </h2>
-          <p className="text-sm sm:text-base text-slate-300/85 leading-relaxed">
+          <p className="text-sm sm:text-base text-slate-600 leading-relaxed">
             Enter your Android device specifications below. Your Google email is required to authorize your account on our Google Play Console closed testing tracks.
           </p>
         </div>
@@ -100,17 +100,17 @@ export function TesterApplicationForm() {
             <div
               className={`p-4 rounded-xl text-xs sm:text-sm flex items-start gap-3 ${
                 status.success
-                  ? 'bg-emerald-500/10 border border-emerald-500/30 text-emerald-300'
-                  : 'bg-rose-500/10 border border-rose-500/30 text-rose-300'
+                  ? 'bg-emerald-50 border border-emerald-200 text-emerald-900'
+                  : 'bg-rose-50 border border-rose-200 text-rose-900'
               }`}
             >
               {status.success ? (
-                <CheckCircle2 className="w-5 h-5 shrink-0 mt-0.5 text-emerald-400" />
+                <CheckCircle2 className="w-5 h-5 shrink-0 mt-0.5 text-emerald-600" />
               ) : (
-                <AlertCircle className="w-5 h-5 shrink-0 mt-0.5 text-rose-400" />
+                <AlertCircle className="w-5 h-5 shrink-0 mt-0.5 text-rose-600" />
               )}
               <div className="space-y-1">
-                <span className="font-display font-bold block text-white">
+                <span className="font-display font-bold block text-slate-900">
                   {status.success ? 'Device Registered Successfully!' : 'Application Notice'}
                 </span>
                 <span className="leading-relaxed block">{status.message}</span>
@@ -121,8 +121,8 @@ export function TesterApplicationForm() {
           <div className="grid grid-cols-1 sm:grid-cols-2 gap-5">
             {/* Full Name */}
             <div className="space-y-1.5">
-              <label className="text-xs font-mono text-slate-300 block">
-                Full Name / Preferred Alias <span className="text-emerald-400">*</span>
+              <label className="text-xs font-mono text-slate-700 font-semibold block">
+                Full Name / Preferred Alias <span className="text-emerald-600">*</span>
               </label>
               <input
                 type="text"
@@ -130,14 +130,14 @@ export function TesterApplicationForm() {
                 placeholder="e.g. Alex Johnson"
                 value={formData.fullName}
                 onChange={(e) => setFormData({ ...formData, fullName: e.target.value })}
-                className="w-full px-4 py-3 rounded-xl bg-black/50 border border-white/10 text-white placeholder-slate-500 text-xs sm:text-sm focus:outline-none focus:border-emerald-400 transition"
+                className="w-full px-4 py-3 rounded-xl bg-slate-50 border border-slate-200 text-slate-900 placeholder-slate-400 text-xs sm:text-sm focus:bg-white focus:outline-none focus:border-emerald-600 transition shadow-2xs"
               />
             </div>
 
             {/* Google Play Email */}
             <div className="space-y-1.5">
-              <label className="text-xs font-mono text-slate-300 block">
-                Google Play Account Email <span className="text-emerald-400">*</span>
+              <label className="text-xs font-mono text-slate-700 font-semibold block">
+                Google Play Account Email <span className="text-emerald-600">*</span>
               </label>
               <input
                 type="email"
@@ -145,9 +145,9 @@ export function TesterApplicationForm() {
                 placeholder="your-email@gmail.com"
                 value={formData.googleEmail}
                 onChange={(e) => setFormData({ ...formData, googleEmail: e.target.value })}
-                className="w-full px-4 py-3 rounded-xl bg-black/50 border border-white/10 text-white placeholder-slate-500 text-xs sm:text-sm focus:outline-none focus:border-emerald-400 transition"
+                className="w-full px-4 py-3 rounded-xl bg-slate-50 border border-slate-200 text-slate-900 placeholder-slate-400 text-xs sm:text-sm focus:bg-white focus:outline-none focus:border-emerald-600 transition shadow-2xs"
               />
-              <span className="text-[11px] text-slate-400 block leading-tight">
+              <span className="text-[11px] text-slate-500 block leading-tight font-mono">
                 Must match the account logged into Google Play on your Android phone.
               </span>
             </div>
@@ -156,8 +156,8 @@ export function TesterApplicationForm() {
           <div className="grid grid-cols-1 sm:grid-cols-2 gap-5">
             {/* Primary Android Device Model */}
             <div className="space-y-1.5">
-              <label className="text-xs font-mono text-slate-300 block">
-                Primary Android Device Model <span className="text-emerald-400">*</span>
+              <label className="text-xs font-mono text-slate-700 font-semibold block">
+                Primary Android Device Model <span className="text-emerald-600">*</span>
               </label>
               <input
                 type="text"
@@ -165,36 +165,36 @@ export function TesterApplicationForm() {
                 placeholder="e.g. Samsung Galaxy S23, Xiaomi Redmi 12, Pixel 7"
                 value={formData.deviceModel}
                 onChange={(e) => setFormData({ ...formData, deviceModel: e.target.value })}
-                className="w-full px-4 py-3 rounded-xl bg-black/50 border border-white/10 text-white placeholder-slate-500 text-xs sm:text-sm focus:outline-none focus:border-emerald-400 transition"
+                className="w-full px-4 py-3 rounded-xl bg-slate-50 border border-slate-200 text-slate-900 placeholder-slate-400 text-xs sm:text-sm focus:bg-white focus:outline-none focus:border-emerald-600 transition shadow-2xs"
               />
-              <span className="text-[11px] text-slate-400 block leading-tight">
+              <span className="text-[11px] text-slate-500 block leading-tight font-mono">
                 Helps us balance screen sizes and hardware specs across the 15-tester cohort.
               </span>
             </div>
 
             {/* Android OS Version */}
             <div className="space-y-1.5">
-              <label className="text-xs font-mono text-slate-300 block">
-                Android OS Version <span className="text-emerald-400">*</span>
+              <label className="text-xs font-mono text-slate-700 font-semibold block">
+                Android OS Version <span className="text-emerald-600">*</span>
               </label>
               <select
                 value={formData.androidVersion}
                 onChange={(e) => setFormData({ ...formData, androidVersion: e.target.value })}
-                className="w-full px-4 py-3 rounded-xl bg-black/50 border border-white/10 text-white text-xs sm:text-sm focus:outline-none focus:border-emerald-400 transition"
+                className="w-full px-4 py-3 rounded-xl bg-slate-50 border border-slate-200 text-slate-900 text-xs sm:text-sm focus:bg-white focus:outline-none focus:border-emerald-600 transition shadow-2xs"
               >
-                <option value="Android 15" className="bg-[#05070b]">
+                <option value="Android 15" className="bg-white text-slate-900">
                   Android 15 (Latest)
                 </option>
-                <option value="Android 14" className="bg-[#05070b]">
+                <option value="Android 14" className="bg-white text-slate-900">
                   Android 14
                 </option>
-                <option value="Android 13" className="bg-[#05070b]">
+                <option value="Android 13" className="bg-white text-slate-900">
                   Android 13
                 </option>
-                <option value="Android 12 or earlier" className="bg-[#05070b]">
+                <option value="Android 12 or earlier" className="bg-white text-slate-900">
                   Android 12 or earlier
                 </option>
-                <option value="Not sure" className="bg-[#05070b]">
+                <option value="Not sure" className="bg-white text-slate-900">
                   Not sure (Standard Android)
                 </option>
               </select>
@@ -204,13 +204,13 @@ export function TesterApplicationForm() {
           {/* Interested Categories */}
           <div className="space-y-2 pt-2">
             <div className="flex items-center justify-between">
-              <label className="text-xs font-mono text-slate-300 block">
+              <label className="text-xs font-mono text-slate-700 font-semibold block">
                 App Categories You Are Most Interested In Testing:
               </label>
               <button
                 type="button"
                 onClick={handleSelectAllCategories}
-                className="text-[11px] font-mono text-emerald-400 hover:text-emerald-300 underline cursor-pointer"
+                className="text-[11px] font-mono text-emerald-700 hover:text-emerald-900 underline cursor-pointer font-medium"
               >
                 {formData.interestedCategories.length === availableCategories.length
                   ? 'Deselect All'
@@ -219,28 +219,26 @@ export function TesterApplicationForm() {
             </div>
 
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-2.5">
-              {availableCategories.map((cat) => {
-                const checked = formData.interestedCategories.includes(cat);
+              {availableCategories.map((category) => {
+                const isSelected = formData.interestedCategories.includes(category);
                 return (
                   <button
-                    key={cat}
+                    key={category}
                     type="button"
-                    onClick={() => handleCategoryToggle(cat)}
-                    className={`px-3.5 py-2.5 rounded-xl border text-left text-xs transition flex items-center justify-between cursor-pointer ${
-                      checked
-                        ? 'border-emerald-500/45 bg-emerald-500/15 text-white font-medium'
-                        : 'border-white/10 bg-black/40 text-slate-400 hover:text-white'
+                    onClick={() => handleCategoryToggle(category)}
+                    className={`p-3 rounded-xl text-xs font-mono text-left flex items-center justify-between transition border cursor-pointer ${
+                      isSelected
+                        ? 'bg-emerald-50 border-emerald-300 text-emerald-900 font-semibold shadow-2xs'
+                        : 'bg-slate-50 border-slate-200 text-slate-600 hover:bg-white'
                     }`}
                   >
-                    <span>{cat}</span>
+                    <span>{category}</span>
                     <span
-                      className={`w-4 h-4 rounded flex items-center justify-center text-[10px] border ${
-                        checked
-                          ? 'bg-emerald-400 border-emerald-300 text-slate-950 font-bold'
-                          : 'border-white/20'
+                      className={`w-4 h-4 rounded flex items-center justify-center text-[10px] ${
+                        isSelected ? 'bg-emerald-600 text-white' : 'border border-slate-300'
                       }`}
                     >
-                      {checked && '✓'}
+                      {isSelected ? '✓' : ''}
                     </span>
                   </button>
                 );
@@ -248,22 +246,17 @@ export function TesterApplicationForm() {
             </div>
           </div>
 
-          {/* Commitment Agreement */}
+          {/* Commitment Checkbox */}
           <div className="pt-2">
-            <label className="flex items-start gap-3 p-4 rounded-xl border border-white/10 bg-black/40 hover:bg-white/[0.03] transition cursor-pointer">
+            <label className="flex items-start gap-3 p-4 rounded-xl bg-slate-50 border border-slate-200 cursor-pointer hover:bg-slate-100/70 transition">
               <input
                 type="checkbox"
                 required
                 checked={formData.commitmentAccepted}
-                onChange={(e) =>
-                  setFormData({ ...formData, commitmentAccepted: e.target.checked })
-                }
-                className="mt-1 w-4 h-4 rounded border-white/20 bg-black/60 text-emerald-400 focus:ring-emerald-400 focus:ring-offset-0"
+                onChange={(e) => setFormData({ ...formData, commitmentAccepted: e.target.checked })}
+                className="mt-1 w-4 h-4 rounded text-emerald-600 focus:ring-emerald-500 border-slate-300 bg-white"
               />
-              <span className="text-xs text-slate-300 leading-relaxed">
-                <strong className="font-display text-white block mb-0.5">
-                  14-Day Continuous Retention Commitment:
-                </strong>
+              <span className="text-xs text-slate-600 leading-relaxed">
                 I agree to keep assigned test apps installed on my device for at least 14 continuous days and open them periodically to test core features. I understand this qualifies me for permanent lifetime promo codes upon public launch.
               </span>
             </label>
@@ -273,15 +266,15 @@ export function TesterApplicationForm() {
           <button
             type="submit"
             disabled={loading}
-            className="w-full py-4 rounded-xl bg-gradient-to-r from-emerald-400 via-sky-400 to-emerald-400 text-slate-950 font-display font-bold text-xs uppercase tracking-wider transition shadow-xl shadow-emerald-500/25 hover:scale-[1.01] disabled:opacity-50 flex items-center justify-center gap-2 cursor-pointer"
+            className="w-full py-4 rounded-xl bg-gradient-to-r from-emerald-500 via-sky-600 to-emerald-500 hover:from-emerald-400 hover:to-sky-500 text-white font-display font-bold text-xs uppercase tracking-wider transition shadow-md shadow-emerald-500/20 hover:scale-[1.01] disabled:opacity-50 flex items-center justify-center gap-2 cursor-pointer"
           >
             {loading ? (
-              <span>Enrolling Device in Testing Lab...</span>
+              <span>Registering Device Specs...</span>
             ) : (
               <>
                 <Smartphone className="w-4 h-4" />
-                <span>Submit Tester Application & Reserve Slot</span>
-                <Send className="w-4 h-4" />
+                <span>Submit 14-Day Tester Enrollment</span>
+                <Send className="w-3.5 h-3.5" />
               </>
             )}
           </button>

@@ -77,7 +77,7 @@ export function ComplianceReport() {
       <div className="mb-6 flex items-center justify-between">
         <Link
           href="/testers"
-          className="inline-flex items-center gap-2 text-xs font-mono text-white/50 hover:text-white transition"
+          className="inline-flex items-center gap-2 text-xs font-mono text-slate-500 hover:text-slate-900 transition"
         >
           <ArrowLeft className="w-3.5 h-3.5" />
           <span>Back to Testing Lab</span>
@@ -87,7 +87,7 @@ export function ComplianceReport() {
           href="https://play.google.com/console"
           target="_blank"
           rel="noopener noreferrer"
-          className="inline-flex items-center gap-1.5 text-xs font-mono text-emerald-400 hover:text-emerald-300"
+          className="inline-flex items-center gap-1.5 text-xs font-mono text-emerald-700 hover:text-emerald-800 font-semibold"
         >
           <span>Open Google Play Console</span>
           <ExternalLink className="w-3.5 h-3.5" />
@@ -95,31 +95,31 @@ export function ComplianceReport() {
       </div>
 
       {/* Guide Header */}
-      <div className="glass-panel rounded-3xl p-6 sm:p-10 border border-emerald-500/30 shadow-2xl relative overflow-hidden mb-10">
-        <div className="inline-flex items-center gap-2 px-3.5 py-1 rounded-full border border-emerald-500/30 bg-emerald-500/10 text-emerald-400 text-xs font-mono mb-4">
-          <ShieldCheck className="w-3.5 h-3.5" />
+      <div className="bg-white rounded-3xl p-6 sm:p-10 border border-slate-200 shadow-md relative overflow-hidden mb-10">
+        <div className="inline-flex items-center gap-2 px-3.5 py-1 rounded-full border border-emerald-300 bg-emerald-50 text-emerald-800 text-xs font-mono mb-4 font-semibold">
+          <ShieldCheck className="w-3.5 h-3.5 text-emerald-600" />
           <span>Google Play Compliance Audit Kit</span>
         </div>
 
-        <h1 className="text-2xl sm:text-3xl font-extrabold text-white tracking-tight mb-3">
+        <h1 className="text-2xl sm:text-3xl font-extrabold text-slate-950 tracking-tight mb-3">
           Production Access Application Guide
         </h1>
-        <p className="text-xs sm:text-sm text-white/70 leading-relaxed max-w-2xl">
+        <p className="text-xs sm:text-sm text-slate-600 leading-relaxed max-w-2xl">
           When your 14-day closed test concludes with 12+ continuous testers, Google Play requires you to click <strong>Apply for production</strong> and answer 3 questionnaire sections. Use these copyable answers derived from your Seitz Testing Lab cohort.
         </p>
 
         {/* 14-day checklist ribbon */}
-        <div className="grid grid-cols-1 sm:grid-cols-3 gap-3 mt-6 pt-6 border-t border-white/5 text-xs">
-          <div className="flex items-center gap-2 text-emerald-400">
-            <CheckCircle2 className="w-4 h-4 shrink-0" />
+        <div className="grid grid-cols-1 sm:grid-cols-3 gap-3 mt-6 pt-6 border-t border-slate-100 text-xs">
+          <div className="flex items-center gap-2 text-emerald-800 font-medium">
+            <CheckCircle2 className="w-4 h-4 shrink-0 text-emerald-600" />
             <span>12+ Testers Opted In (15 with buffer)</span>
           </div>
-          <div className="flex items-center gap-2 text-sky-400">
-            <CheckCircle2 className="w-4 h-4 shrink-0" />
+          <div className="flex items-center gap-2 text-sky-800 font-medium">
+            <CheckCircle2 className="w-4 h-4 shrink-0 text-sky-600" />
             <span>14 Consecutive Days Completed</span>
           </div>
-          <div className="flex items-center gap-2 text-violet-400">
-            <CheckCircle2 className="w-4 h-4 shrink-0" />
+          <div className="flex items-center gap-2 text-violet-800 font-medium">
+            <CheckCircle2 className="w-4 h-4 shrink-0 text-violet-600" />
             <span>Qualitative Feedback Recorded</span>
           </div>
         </div>
@@ -130,11 +130,11 @@ export function ComplianceReport() {
         {sections.map((sec) => (
           <div
             key={sec.id}
-            className="glass-card rounded-2xl p-6 sm:p-8 border border-white/10 space-y-6"
+            className="bg-white rounded-2xl p-6 sm:p-8 border border-slate-200 shadow-xs space-y-6"
           >
             <div>
-              <h2 className="text-lg sm:text-xl font-bold text-white mb-1">{sec.title}</h2>
-              <p className="text-xs text-white/50 font-mono">{sec.description}</p>
+              <h2 className="text-lg sm:text-xl font-bold text-slate-950 mb-1">{sec.title}</h2>
+              <p className="text-xs text-slate-500 font-mono">{sec.description}</p>
             </div>
 
             <div className="space-y-6 pt-2">
@@ -145,32 +145,32 @@ export function ComplianceReport() {
                 return (
                   <div
                     key={item.q}
-                    className="p-5 rounded-xl bg-black/40 border border-white/5 space-y-3"
+                    className="p-5 rounded-xl bg-slate-50 border border-slate-200 space-y-3"
                   >
                     <div className="flex items-start justify-between gap-4">
-                      <span className="text-xs sm:text-sm font-semibold text-white/90">
+                      <span className="text-xs sm:text-sm font-semibold text-slate-900">
                         {item.q}
                       </span>
                       <button
                         type="button"
                         onClick={() => handleCopy(uniqueKey, item.a)}
-                        className="px-3 py-1.5 rounded-lg bg-white/5 hover:bg-white/10 border border-white/10 text-xs text-white/70 hover:text-white transition flex items-center gap-1.5 shrink-0"
+                        className="px-3 py-1.5 rounded-lg bg-white hover:bg-slate-100 border border-slate-200 text-xs text-slate-700 transition flex items-center gap-1.5 shrink-0 shadow-xs cursor-pointer"
                       >
                         {isCopied ? (
                           <>
-                            <Check className="w-3.5 h-3.5 text-emerald-400" />
-                            <span className="text-emerald-400 font-mono">Copied</span>
+                            <Check className="w-3.5 h-3.5 text-emerald-600" />
+                            <span className="text-emerald-700 font-mono font-semibold">Copied</span>
                           </>
                         ) : (
                           <>
-                            <Copy className="w-3.5 h-3.5" />
+                            <Copy className="w-3.5 h-3.5 text-slate-500" />
                             <span className="font-mono">Copy Answer</span>
                           </>
                         )}
                       </button>
                     </div>
 
-                    <p className="text-xs sm:text-sm text-white/70 leading-relaxed font-sans bg-white/[0.02] p-3 rounded-lg border border-white/5">
+                    <p className="text-xs sm:text-sm text-slate-700 leading-relaxed font-sans bg-white p-3 rounded-lg border border-slate-200">
                       {item.a}
                     </p>
                   </div>

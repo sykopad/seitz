@@ -7,26 +7,26 @@
 }
 
 :root {
-  --background: #05070b;
-  --background-elevated: #0b0f17;
-  --background-surface: rgba(13, 19, 31, 0.75);
-  --foreground: #f8fafc;
-  --foreground-muted: #94a3b8;
-  --card-bg: rgba(12, 18, 30, 0.68);
-  --card-border: rgba(255, 255, 255, 0.08);
-  --card-border-specular: rgba(255, 255, 255, 0.14);
-  --card-hover-border: rgba(56, 189, 248, 0.45);
-  --accent-cyan: #38bdf8;
-  --accent-emerald: #10b981;
-  --accent-violet: #8b5cf6;
-  --accent-gold: #f59e0b;
+  --background: #f8fafc;
+  --background-elevated: #ffffff;
+  --background-surface: rgba(255, 255, 255, 0.92);
+  --foreground: #090d16;
+  --foreground-muted: #475569;
+  --card-bg: #ffffff;
+  --card-border: rgba(15, 23, 42, 0.08);
+  --card-border-specular: rgba(15, 23, 42, 0.12);
+  --card-hover-border: rgba(2, 132, 199, 0.4);
+  --accent-cyan: #0284c7;
+  --accent-emerald: #059669;
+  --accent-violet: #7c3aed;
+  --accent-gold: #d97706;
 }
 
 body {
   background-color: var(--background);
   background-image: 
-    radial-gradient(ellipse 80% 50% at 50% -15%, rgba(56, 189, 248, 0.09), transparent 70%),
-    radial-gradient(ellipse 60% 40% at 85% 20%, rgba(16, 185, 129, 0.05), transparent 60%);
+    radial-gradient(ellipse 80% 50% at 50% -12%, rgba(2, 132, 199, 0.06), transparent 70%),
+    radial-gradient(ellipse 60% 40% at 85% 18%, rgba(5, 150, 105, 0.04), transparent 60%);
   color: var(--foreground);
   font-family: var(--font-sans), system-ui, sans-serif;
   min-height: 100vh;
@@ -47,56 +47,57 @@ code, pre, .font-mono {
   font-variant-numeric: tabular-nums;
 }
 
-/* Studio & Lab Surface Architecture (Replacing Legacy Resume Glassmorphism) */
+/* Studio & Lab Surface Architecture */
 .glass-panel,
 .studio-panel {
-  background: linear-gradient(165deg, rgba(17, 25, 40, 0.82) 0%, rgba(9, 13, 22, 0.9) 100%);
+  background: rgba(255, 255, 255, 0.92);
   backdrop-filter: blur(20px);
   -webkit-backdrop-filter: blur(20px);
-  border: 1px solid rgba(255, 255, 255, 0.09);
+  border: 1px solid rgba(15, 23, 42, 0.09);
   box-shadow: 
-    0 24px 60px -15px rgba(0, 0, 0, 0.7),
-    inset 0 1px 0 0 rgba(255, 255, 255, 0.12);
+    0 20px 45px -15px rgba(15, 23, 42, 0.06),
+    0 1px 3px 0 rgba(15, 23, 42, 0.04),
+    inset 0 1px 0 0 rgba(255, 255, 255, 0.8);
 }
 
 .glass-card,
 .studio-card {
-  background: linear-gradient(180deg, rgba(16, 23, 38, 0.68) 0%, rgba(10, 14, 24, 0.78) 100%);
+  background: #ffffff;
   backdrop-filter: blur(16px);
   -webkit-backdrop-filter: blur(16px);
-  border: 1px solid rgba(255, 255, 255, 0.075);
+  border: 1px solid rgba(15, 23, 42, 0.08);
   box-shadow: 
-    0 10px 30px -10px rgba(0, 0, 0, 0.5),
-    inset 0 1px 0 0 rgba(255, 255, 255, 0.08);
+    0 4px 16px -2px rgba(15, 23, 42, 0.04),
+    0 1px 2px 0 rgba(15, 23, 42, 0.02);
   transition: all 0.28s cubic-bezier(0.16, 1, 0.3, 1);
 }
 
 .glass-card:hover,
 .studio-card:hover {
-  border-color: rgba(56, 189, 248, 0.38);
+  border-color: rgba(2, 132, 199, 0.38);
   transform: translateY(-2px);
   box-shadow: 
-    0 20px 40px -15px rgba(2, 132, 199, 0.18),
-    inset 0 1px 0 0 rgba(56, 189, 248, 0.25);
+    0 16px 36px -12px rgba(2, 132, 199, 0.12),
+    0 1px 2px 0 rgba(15, 23, 42, 0.04);
 }
 
 .lab-card {
-  background: linear-gradient(180deg, rgba(13, 25, 32, 0.68) 0%, rgba(9, 15, 23, 0.82) 100%);
+  background: #ffffff;
   backdrop-filter: blur(16px);
   -webkit-backdrop-filter: blur(16px);
-  border: 1px solid rgba(16, 185, 129, 0.14);
+  border: 1px solid rgba(5, 150, 105, 0.2);
   box-shadow: 
-    0 10px 30px -10px rgba(0, 0, 0, 0.5),
-    inset 0 1px 0 0 rgba(16, 185, 129, 0.12);
+    0 4px 16px -2px rgba(15, 23, 42, 0.04),
+    0 1px 2px 0 rgba(5, 150, 105, 0.05);
   transition: all 0.28s cubic-bezier(0.16, 1, 0.3, 1);
 }
 
 .lab-card:hover {
-  border-color: rgba(16, 185, 129, 0.45);
+  border-color: rgba(5, 150, 105, 0.45);
   transform: translateY(-2px);
   box-shadow: 
-    0 20px 40px -15px rgba(16, 185, 129, 0.2),
-    inset 0 1px 0 0 rgba(16, 185, 129, 0.28);
+    0 16px 36px -12px rgba(5, 150, 105, 0.15),
+    0 1px 2px 0 rgba(5, 150, 105, 0.08);
 }
 
 /* Telemetry & Technical Badges */
@@ -107,43 +108,44 @@ code, pre, .font-mono {
   text-transform: uppercase;
   padding: 0.25rem 0.65rem;
   border-radius: 9999px;
-  background: rgba(255, 255, 255, 0.04);
-  border: 1px solid rgba(255, 255, 255, 0.1);
+  background: rgba(15, 23, 42, 0.04);
+  border: 1px solid rgba(15, 23, 42, 0.08);
+  color: #334155;
 }
 
-/* Neon & Atmospheric Glow Accents */
+/* Atmospheric Glow Accents */
 .glow-cyan {
-  box-shadow: 0 0 32px -6px rgba(56, 189, 248, 0.45);
+  box-shadow: 0 0 32px -6px rgba(2, 132, 199, 0.25);
 }
 
 .glow-emerald {
-  box-shadow: 0 0 32px -6px rgba(16, 185, 129, 0.45);
+  box-shadow: 0 0 32px -6px rgba(5, 150, 105, 0.25);
 }
 
 .glow-violet {
-  box-shadow: 0 0 32px -6px rgba(139, 92, 246, 0.45);
+  box-shadow: 0 0 32px -6px rgba(124, 58, 237, 0.25);
 }
 
 /* Precision Architectural Blueprint Grid Pattern */
 .bg-grid-pattern {
   background-size: 48px 48px;
   background-image: 
-    linear-gradient(to right, rgba(148, 163, 184, 0.045) 1px, transparent 1px),
-    linear-gradient(to bottom, rgba(148, 163, 184, 0.045) 1px, transparent 1px);
-  mask-image: radial-gradient(ellipse 90% 75% at 50% 15%, #000 45%, transparent 100%);
-  -webkit-mask-image: radial-gradient(ellipse 90% 75% at 50% 15%, #000 45%, transparent 100%);
+    linear-gradient(to right, rgba(15, 23, 42, 0.04) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(15, 23, 42, 0.04) 1px, transparent 1px);
+  mask-image: radial-gradient(ellipse 90% 75% at 50% 15%, #000 55%, transparent 100%);
+  -webkit-mask-image: radial-gradient(ellipse 90% 75% at 50% 15%, #000 55%, transparent 100%);
 }
 
 /* Dot Matrix Sub-surface Pattern for Telemetry Modules */
 .bg-dot-matrix {
-  background-image: radial-gradient(rgba(148, 163, 184, 0.14) 1px, transparent 1px);
+  background-image: radial-gradient(rgba(15, 23, 42, 0.08) 1px, transparent 1px);
   background-size: 20px 20px;
 }
 
 /* Section Divider Hairline */
 .section-divider {
   height: 1px;
-  background: linear-gradient(90deg, transparent 0%, rgba(255, 255, 255, 0.09) 50%, transparent 100%);
+  background: linear-gradient(90deg, transparent 0%, rgba(15, 23, 42, 0.08) 50%, transparent 100%);
 }
 
 /* Custom Scrollbar */
@@ -151,13 +153,13 @@ code, pre, .font-mono {
   width: 8px;
 }
 ::-webkit-scrollbar-track {
-  background: #05070b;
+  background: #f1f5f9;
 }
 ::-webkit-scrollbar-thumb {
-  background: #1e293b;
+  background: #cbd5e1;
   border-radius: 4px;
-  border: 2px solid #05070b;
+  border: 2px solid #f1f5f9;
 }
 ::-webkit-scrollbar-thumb:hover {
-  background: #334155;
+  background: #94a3b8;
 }

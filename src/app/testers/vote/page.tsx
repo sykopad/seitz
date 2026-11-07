@@ -13,9 +13,9 @@ export const metadata: Metadata = {
 
 export default function VotePage() {
   return (
-    <div className="min-h-screen bg-[#05070b] text-[#f8fafc] relative selection:bg-emerald-400 selection:text-black">
+    <div className="min-h-screen bg-[#f8fafc] text-slate-900 relative selection:bg-emerald-500/20 selection:text-emerald-950">
       {/* Background Grid Pattern */}
-      <div className="fixed inset-0 bg-grid-pattern pointer-events-none opacity-75 z-0" />
+      <div className="fixed inset-0 bg-grid-pattern pointer-events-none opacity-40 z-0" />
 
       {/* Primary Container */}
       <div className="relative z-10 flex flex-col min-h-screen">
@@ -25,7 +25,7 @@ export default function VotePage() {
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 mb-6">
             <Link
               href="/testers"
-              className="inline-flex items-center gap-2 text-xs font-mono text-white/60 hover:text-emerald-400 transition"
+              className="inline-flex items-center gap-2 text-xs font-mono text-slate-500 hover:text-slate-900 transition"
             >
               <ArrowLeft className="w-4 h-4" />
               <span>Back to Testing Lab Overview</span>

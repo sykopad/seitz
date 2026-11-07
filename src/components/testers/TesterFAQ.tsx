@@ -40,14 +40,14 @@ export function TesterFAQ() {
   return (
     <section id="faq" className="py-20 px-4 sm:px-6 lg:px-8 max-w-4xl mx-auto">
       <div className="text-center max-w-2xl mx-auto mb-16">
-        <div className="inline-flex items-center gap-2 px-3.5 py-1 rounded-full border border-emerald-500/25 bg-emerald-500/10 text-emerald-300 text-xs font-mono uppercase tracking-wider mb-4">
-          <HelpCircle className="w-3.5 h-3.5 text-emerald-400" />
+        <div className="inline-flex items-center gap-2 px-3.5 py-1 rounded-full border border-emerald-300 bg-emerald-50 text-emerald-800 text-xs font-mono uppercase tracking-wider mb-4">
+          <HelpCircle className="w-3.5 h-3.5 text-emerald-600" />
           <span>Compliance & Tester FAQ</span>
         </div>
-        <h2 className="font-display text-3xl sm:text-4xl font-bold text-white tracking-tight mb-4">
+        <h2 className="font-display text-3xl sm:text-4xl font-bold text-slate-950 tracking-tight mb-4">
           Frequently Asked Questions
         </h2>
-        <p className="text-sm sm:text-base text-slate-300/85 leading-relaxed">
+        <p className="text-sm sm:text-base text-slate-600 leading-relaxed">
           Everything you need to know about joining the Seitz Testing Lab, Google Play closed tracks, and claiming your permanent rewards.
         </p>
       </div>
@@ -58,25 +58,25 @@ export function TesterFAQ() {
           return (
             <div
               key={faq.q}
-              className="studio-card rounded-2xl border border-white/10 overflow-hidden transition-all"
+              className="studio-card rounded-2xl border border-slate-200 bg-white shadow-xs overflow-hidden transition-all"
             >
               <button
                 type="button"
                 onClick={() => setOpenIndex(isOpen ? null : idx)}
-                className="w-full p-5 sm:p-6 text-left flex items-center justify-between gap-4 hover:bg-white/[0.03] transition cursor-pointer"
+                className="w-full p-5 sm:p-6 text-left flex items-center justify-between gap-4 hover:bg-slate-50/80 transition cursor-pointer"
               >
-                <span className="font-display font-bold text-sm sm:text-base text-white">
+                <span className="font-display font-bold text-sm sm:text-base text-slate-900">
                   {faq.q}
                 </span>
                 <ChevronDown
-                  className={`w-4 h-4 text-emerald-400 shrink-0 transition-transform duration-300 ${
+                  className={`w-4 h-4 text-emerald-600 shrink-0 transition-transform duration-300 ${
                     isOpen ? 'rotate-180' : ''
                   }`}
                 />
               </button>
 
               {isOpen && (
-                <div className="px-5 pb-6 sm:px-6 text-xs sm:text-sm text-slate-300/85 leading-relaxed border-t border-white/[0.07] pt-4">
+                <div className="px-5 pb-6 sm:px-6 text-xs sm:text-sm text-slate-600 leading-relaxed border-t border-slate-100 bg-slate-50/40 pt-4">
                   {faq.a}
                 </div>
               )}

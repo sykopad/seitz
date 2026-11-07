@@ -55,19 +55,19 @@ export function AppVoteButton({
     return (
       <div className="flex flex-col gap-2 w-full">
         <div className="flex items-center justify-between text-xs">
-          <span className="text-white/60 flex items-center gap-1.5">
-            <Sparkles className="w-3.5 h-3.5 text-amber-400" />
+          <span className="text-slate-600 flex items-center gap-1.5 font-medium">
+            <Sparkles className="w-3.5 h-3.5 text-amber-500" />
             Community Demand:
           </span>
-          <span className="font-mono font-bold text-amber-400">
+          <span className="font-mono font-bold text-amber-700">
             {votes} / {voteThreshold} votes
           </span>
         </div>
 
         {/* Progress Bar */}
-        <div className="w-full h-2 bg-white/10 rounded-full overflow-hidden">
+        <div className="w-full h-2 bg-slate-200 rounded-full overflow-hidden">
           <div
-            className="h-full bg-gradient-to-r from-amber-500 to-emerald-400 rounded-full transition-all duration-500"
+            className="h-full bg-gradient-to-r from-amber-500 to-emerald-500 rounded-full transition-all duration-500"
             style={{ width: `${progressPercent}%` }}
           />
         </div>
@@ -75,10 +75,10 @@ export function AppVoteButton({
         <button
           onClick={handleVote}
           disabled={hasVoted || loading}
-          className={`w-full py-2.5 px-4 rounded-xl font-bold text-xs uppercase tracking-wider flex items-center justify-center gap-2 transition-all shadow-md ${
+          className={`w-full py-2.5 px-4 rounded-xl font-bold text-xs uppercase tracking-wider flex items-center justify-center gap-2 transition-all shadow-sm cursor-pointer ${
             hasVoted
-              ? 'bg-emerald-500/20 text-emerald-400 border border-emerald-500/30 cursor-default'
-              : 'bg-gradient-to-r from-amber-500 to-amber-600 hover:from-amber-400 hover:to-amber-500 text-black shadow-amber-500/20 active:scale-[0.98]'
+              ? 'bg-emerald-50 text-emerald-800 border border-emerald-300 cursor-default'
+              : 'bg-amber-500 hover:bg-amber-400 text-slate-950 shadow-amber-500/10 active:scale-[0.98]'
           }`}
         >
           {loading ? (
@@ -97,7 +97,7 @@ export function AppVoteButton({
         </button>
 
         {feedback && (
-          <p className="text-[11px] text-emerald-400 text-center font-mono mt-1 animate-fadeIn">
+          <p className="text-[11px] text-emerald-700 text-center font-mono mt-1 font-semibold animate-fadeIn">
             {feedback}
           </p>
         )}
@@ -106,32 +106,32 @@ export function AppVoteButton({
   }
 
   return (
-    <div className="glass-card p-6 rounded-2xl border border-amber-500/30 bg-amber-500/5 flex flex-col gap-4">
+    <div className="bg-white p-6 rounded-2xl border border-amber-200 shadow-sm flex flex-col gap-4">
       <div className="flex items-center justify-between">
         <div className="flex items-center gap-2">
-          <div className="w-8 h-8 rounded-lg bg-amber-500/20 border border-amber-500/30 flex items-center justify-center text-amber-400">
+          <div className="w-8 h-8 rounded-lg bg-amber-50 border border-amber-200 flex items-center justify-center text-amber-600">
             <Sparkles className="w-4 h-4" />
           </div>
           <div>
-            <h4 className="text-sm font-bold text-white">Community Prioritization Vote</h4>
-            <p className="text-xs text-white/60">Back this project to launch it into Closed Testing next</p>
+            <h4 className="text-sm font-bold text-slate-950">Community Prioritization Vote</h4>
+            <p className="text-xs text-slate-600">Back this project to launch it into Closed Testing next</p>
           </div>
         </div>
         <div className="text-right">
-          <span className="text-xl font-extrabold font-mono text-amber-400">{votes}</span>
-          <span className="text-xs text-white/50 block">/ {voteThreshold} target votes</span>
+          <span className="text-xl font-extrabold font-mono text-amber-700">{votes}</span>
+          <span className="text-xs text-slate-500 block">/ {voteThreshold} target votes</span>
         </div>
       </div>
 
       {/* Progress Bar */}
       <div className="space-y-1.5">
-        <div className="w-full h-3 bg-white/10 rounded-full overflow-hidden p-0.5">
+        <div className="w-full h-3 bg-slate-100 rounded-full overflow-hidden p-0.5 border border-slate-200">
           <div
-            className="h-full bg-gradient-to-r from-amber-500 via-emerald-400 to-sky-400 rounded-full transition-all duration-700"
+            className="h-full bg-gradient-to-r from-amber-500 via-emerald-500 to-sky-500 rounded-full transition-all duration-700"
             style={{ width: `${progressPercent}%` }}
           />
         </div>
-        <div className="flex justify-between text-[11px] font-mono text-white/50">
+        <div className="flex justify-between text-[11px] font-mono text-slate-500">
           <span>{progressPercent}% towards closed beta track</span>
           <span>{Math.max(0, voteThreshold - votes)} votes needed</span>
         </div>
@@ -140,17 +140,17 @@ export function AppVoteButton({
       <button
         onClick={handleVote}
         disabled={hasVoted || loading}
-        className={`w-full py-3.5 px-6 rounded-xl font-bold text-sm uppercase tracking-wider flex items-center justify-center gap-2 transition-all shadow-lg ${
+        className={`w-full py-3.5 px-6 rounded-xl font-bold text-sm uppercase tracking-wider flex items-center justify-center gap-2 transition-all shadow-md cursor-pointer ${
           hasVoted
-            ? 'bg-emerald-500/20 text-emerald-300 border border-emerald-500/40 cursor-default'
-            : 'bg-gradient-to-r from-amber-500 via-amber-400 to-emerald-400 hover:from-amber-400 hover:to-emerald-300 text-black shadow-amber-500/25 active:scale-[0.99]'
+            ? 'bg-emerald-50 text-emerald-800 border border-emerald-300 cursor-default'
+            : 'bg-amber-500 hover:bg-amber-400 text-slate-950 shadow-amber-500/20 active:scale-[0.99]'
         }`}
       >
         {loading ? (
           <Loader2 className="w-4 h-4 animate-spin" />
         ) : hasVoted ? (
           <>
-            <Check className="w-4 h-4" />
+            <Check className="w-4 h-4 text-emerald-600" />
             <span>Vote Recorded! Backed by Community ({votes})</span>
           </>
         ) : (
@@ -162,7 +162,7 @@ export function AppVoteButton({
       </button>
 
       {feedback && (
-        <p className="text-xs text-emerald-400 text-center font-mono mt-1">
+        <p className="text-xs text-emerald-700 text-center font-mono mt-1 font-semibold">
           {feedback}
         </p>
       )}

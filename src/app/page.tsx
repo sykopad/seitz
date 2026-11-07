@@ -11,7 +11,7 @@ import { Footer } from '@/components/shared/Footer';
 
 export default function Home() {
   return (
-    <div className="min-h-screen bg-[#05070b] text-[#f8fafc] relative selection:bg-sky-400 selection:text-black">
+    <div className="min-h-screen bg-[#f8fafc] text-slate-900 relative selection:bg-sky-500 selection:text-white">
       {/* Global Background Grid Pattern */}
       <div className="fixed inset-0 bg-grid-pattern pointer-events-none opacity-75 z-0" />
 

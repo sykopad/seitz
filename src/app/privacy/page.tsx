@@ -96,26 +96,26 @@ export default function PrivacyPolicyPage() {
   ];
 
   return (
-    <div className="min-h-screen bg-[#05070b] text-[#f8fafc] relative selection:bg-emerald-400 selection:text-black">
+    <div className="min-h-screen bg-[#f8fafc] text-slate-900 relative selection:bg-emerald-500/20 selection:text-emerald-950">
       {/* Background Grid Pattern */}
-      <div className="fixed inset-0 bg-grid-pattern pointer-events-none opacity-75 z-0" />
+      <div className="fixed inset-0 bg-grid-pattern pointer-events-none opacity-40 z-0" />
 
       {/* Main Container */}
       <div className="relative z-10 flex flex-col min-h-screen">
-        <header className="border-b border-white/[0.08] bg-[#05070b]/85 backdrop-blur-2xl sticky top-0 z-40">
+        <header className="border-b border-slate-200/80 bg-white/90 backdrop-blur-2xl sticky top-0 z-40 shadow-xs">
           <div className="max-w-5xl mx-auto px-4 sm:px-6 h-16 flex items-center justify-between">
             <Link
               href="/"
-              className="inline-flex items-center gap-2 text-xs font-mono text-slate-300 hover:text-emerald-400 transition"
+              className="inline-flex items-center gap-2 text-xs font-mono text-slate-600 hover:text-slate-950 transition"
             >
               <ArrowLeft className="w-4 h-4" />
               <span>Back to Portfolio</span>
             </Link>
             <div className="flex items-center gap-3">
-              <span className="text-xs font-mono text-emerald-400 bg-emerald-500/10 border border-emerald-500/25 px-2.5 py-0.5 rounded-full">
+              <span className="text-xs font-mono text-emerald-800 bg-emerald-50 border border-emerald-300 px-2.5 py-0.5 rounded-full font-semibold">
                 Google Play Policy Compliant (2026)
               </span>
-              <span className="text-xs font-mono text-slate-400 hidden sm:inline">
+              <span className="text-xs font-mono text-slate-500 hidden sm:inline">
                 Effective: November 2026
               </span>
             </div>
@@ -125,88 +125,88 @@ export default function PrivacyPolicyPage() {
         <main className="flex-1 py-12 px-4 sm:px-6 lg:px-8 max-w-4xl mx-auto w-full space-y-10">
           {/* Top Title Banner */}
           <div className="space-y-4">
-            <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-emerald-500/10 border border-emerald-500/25 text-emerald-300 text-xs font-mono uppercase tracking-wider">
-              <ShieldCheck className="w-3.5 h-3.5 text-emerald-400" />
+            <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-emerald-50 border border-emerald-300 text-emerald-800 text-xs font-mono uppercase tracking-wider font-semibold">
+              <ShieldCheck className="w-3.5 h-3.5 text-emerald-600" />
               <span>Google Play Developer Data Safety & POPIA / GDPR Disclosure</span>
             </div>
-            <h1 className="font-display text-3xl sm:text-5xl font-bold text-white tracking-tight">
+            <h1 className="font-display text-3xl sm:text-5xl font-bold text-slate-950 tracking-tight">
               Privacy Policy & Data Safety
             </h1>
-            <p className="text-sm sm:text-base text-slate-300/90 leading-relaxed">
+            <p className="text-sm sm:text-base text-slate-700 leading-relaxed">
               This Privacy Policy establishes how <strong>Muhammed Faiz Seitz</strong> (operating as <strong>Seitz</strong>, <strong>seitz.co.za</strong>, and <strong>The Seitz Testing Lab</strong>) collects, processes, protects, and deletes personal information across our website, developer services, and Android applications distributed through the Google Play Store.
             </p>
           </div>
 
           {/* Quick Jump Index Navigation */}
-          <div className="studio-card rounded-2xl p-4 sm:p-5 border border-white/10 space-y-3">
-            <span className="text-[11px] font-mono uppercase tracking-wider text-slate-400 block font-semibold">
+          <div className="studio-card rounded-2xl p-4 sm:p-5 border border-slate-200 bg-white shadow-xs space-y-3">
+            <span className="text-[11px] font-mono uppercase tracking-wider text-slate-500 block font-semibold">
               Policy Sections & Google Play Disclosures:
             </span>
             <div className="flex flex-wrap gap-2 text-xs font-mono">
-              <a href="#covered-apps" className="px-2.5 py-1 rounded-lg bg-white/[0.04] hover:bg-white/[0.08] text-slate-300 hover:text-white transition">
+              <a href="#covered-apps" className="px-2.5 py-1 rounded-lg bg-slate-100 hover:bg-slate-200 text-slate-700 hover:text-slate-950 transition">
                 1. Covered Apps & Developer Info
               </a>
-              <a href="#data-collection" className="px-2.5 py-1 rounded-lg bg-white/[0.04] hover:bg-white/[0.08] text-slate-300 hover:text-white transition">
+              <a href="#data-collection" className="px-2.5 py-1 rounded-lg bg-slate-100 hover:bg-slate-200 text-slate-700 hover:text-slate-950 transition">
                 2. Data We Collect
               </a>
-              <a href="#permissions" className="px-2.5 py-1 rounded-lg bg-emerald-500/10 border border-emerald-500/25 text-emerald-300 hover:bg-emerald-500/20 transition">
+              <a href="#permissions" className="px-2.5 py-1 rounded-lg bg-emerald-50 border border-emerald-300 text-emerald-800 hover:bg-emerald-100 transition font-semibold">
                 3. Android Device Permissions
               </a>
-              <a href="#third-party-sdk" className="px-2.5 py-1 rounded-lg bg-white/[0.04] hover:bg-white/[0.08] text-slate-300 hover:text-white transition">
+              <a href="#third-party-sdk" className="px-2.5 py-1 rounded-lg bg-slate-100 hover:bg-slate-200 text-slate-700 hover:text-slate-950 transition">
                 4. Third-Party SDKs
               </a>
-              <a href="#deletion-request" className="px-2.5 py-1 rounded-lg bg-rose-500/10 border border-rose-500/25 text-rose-300 hover:bg-rose-500/20 transition">
+              <a href="#deletion-request" className="px-2.5 py-1 rounded-lg bg-rose-50 border border-rose-300 text-rose-800 hover:bg-rose-100 transition font-semibold">
                 5. Account & Data Deletion
               </a>
-              <a href="#children" className="px-2.5 py-1 rounded-lg bg-white/[0.04] hover:bg-white/[0.08] text-slate-300 hover:text-white transition">
+              <a href="#children" className="px-2.5 py-1 rounded-lg bg-slate-100 hover:bg-slate-200 text-slate-700 hover:text-slate-950 transition">
                 6. Children&apos;s Privacy
               </a>
-              <a href="#popia-gdpr" className="px-2.5 py-1 rounded-lg bg-white/[0.04] hover:bg-white/[0.08] text-slate-300 hover:text-white transition">
+              <a href="#popia-gdpr" className="px-2.5 py-1 rounded-lg bg-slate-100 hover:bg-slate-200 text-slate-700 hover:text-slate-950 transition">
                 7. POPIA & GDPR Rights
               </a>
-              <a href="#contact-officer" className="px-2.5 py-1 rounded-lg bg-white/[0.04] hover:bg-white/[0.08] text-slate-300 hover:text-white transition">
+              <a href="#contact-officer" className="px-2.5 py-1 rounded-lg bg-slate-100 hover:bg-slate-200 text-slate-700 hover:text-slate-950 transition">
                 8. Information Officer
               </a>
             </div>
           </div>
 
-          <div className="studio-card rounded-2xl p-6 sm:p-10 border border-white/10 space-y-10 text-xs sm:text-sm text-slate-300 leading-relaxed">
+          <div className="studio-card rounded-2xl p-6 sm:p-10 border border-slate-200 bg-white shadow-xs space-y-10 text-xs sm:text-sm text-slate-700 leading-relaxed">
             {/* 1. Developer Entity & Covered Applications */}
             <section id="covered-apps" className="space-y-4 scroll-mt-24">
-              <h2 className="font-display text-lg sm:text-xl font-bold text-white flex items-center gap-2.5">
-                <span className="w-6 h-6 rounded-lg bg-sky-500/20 text-sky-400 flex items-center justify-center font-mono text-xs">
+              <h2 className="font-display text-lg sm:text-xl font-bold text-slate-950 flex items-center gap-2.5">
+                <span className="w-6 h-6 rounded-lg bg-sky-100 text-sky-800 flex items-center justify-center font-mono text-xs font-bold">
                   1
                 </span>
                 Developer Entity & Covered Google Play Applications
               </h2>
               <p>
-                This policy is published and maintained by <strong>Muhammed Faiz Seitz</strong>, verified Google Play Developer (Developer Name: <strong>Seitz</strong>). It applies to our digital headquarters at <code className="text-sky-300 font-mono">seitz.co.za</code>, the closed testing infrastructure at <code className="text-emerald-300 font-mono">seitz.co.za/testers</code>, and all applications published under our Google Play Developer account, including but not limited to:
+                This policy is published and maintained by <strong>Muhammed Faiz Seitz</strong>, verified Google Play Developer (Developer Name: <strong>Seitz</strong>). It applies to our digital headquarters at <code className="text-sky-700 font-mono bg-sky-50 px-1.5 py-0.5 rounded border border-sky-200">seitz.co.za</code>, the closed testing infrastructure at <code className="text-emerald-700 font-mono bg-emerald-50 px-1.5 py-0.5 rounded border border-emerald-200">seitz.co.za/testers</code>, and all applications published under our Google Play Developer account, including but not limited to:
               </p>
 
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 pt-1">
                 {publishedApps.map((app) => (
-                  <div key={app.slug} className="p-3.5 rounded-xl bg-black/40 border border-white/[0.08] space-y-1">
+                  <div key={app.slug} className="p-3.5 rounded-xl bg-slate-50 border border-slate-200 space-y-1">
                     <div className="flex items-center justify-between">
-                      <span className="font-display font-bold text-white">{app.name}</span>
+                      <span className="font-display font-bold text-slate-900">{app.name}</span>
                       {app.playStoreUrl && (
                         <a
                           href={app.playStoreUrl}
                           target="_blank"
                           rel="noopener noreferrer"
-                          className="text-[10px] font-mono text-emerald-400 hover:underline"
+                          className="text-[10px] font-mono text-emerald-700 hover:underline font-semibold"
                         >
                           Play Store ↗
                         </a>
                       )}
                     </div>
-                    <span className="text-[11px] font-mono text-sky-400 block">{app.googlePlayPackage}</span>
-                    <span className="text-[11px] text-slate-400 block">{app.tagline}</span>
+                    <span className="text-[11px] font-mono text-sky-700 block">{app.googlePlayPackage}</span>
+                    <span className="text-[11px] text-slate-600 block">{app.tagline}</span>
                   </div>
                 ))}
-                <div className="p-3.5 rounded-xl bg-black/40 border border-white/[0.08] space-y-1">
-                  <span className="font-display font-bold text-white block">Pipeline Apps & Games</span>
-                  <span className="text-[11px] font-mono text-amber-400 block">za.co.seitz.*</span>
-                  <span className="text-[11px] text-slate-400 block">
+                <div className="p-3.5 rounded-xl bg-slate-50 border border-slate-200 space-y-1">
+                  <span className="font-display font-bold text-slate-900 block">Pipeline Apps & Games</span>
+                  <span className="text-[11px] font-mono text-amber-700 block">za.co.seitz.*</span>
+                  <span className="text-[11px] text-slate-600 block">
                     Decolonize: South Africa, Mira AI, Payday (Trust-Buster), Mzansi Syndicate, Toll Plaza, Debate League.
                   </span>
                 </div>
@@ -214,9 +214,9 @@ export default function PrivacyPolicyPage() {
             </section>
 
             {/* 2. Data Categories We Collect */}
-            <section id="data-collection" className="space-y-4 border-t border-white/[0.08] pt-8 scroll-mt-24">
-              <h2 className="font-display text-lg sm:text-xl font-bold text-white flex items-center gap-2.5">
-                <span className="w-6 h-6 rounded-lg bg-sky-500/20 text-sky-400 flex items-center justify-center font-mono text-xs">
+            <section id="data-collection" className="space-y-4 border-t border-slate-200 pt-8 scroll-mt-24">
+              <h2 className="font-display text-lg sm:text-xl font-bold text-slate-950 flex items-center gap-2.5">
+                <span className="w-6 h-6 rounded-lg bg-sky-100 text-sky-800 flex items-center justify-center font-mono text-xs font-bold">
                   2
                 </span>
                 Data Categories & Purposes of Processing
@@ -226,30 +226,30 @@ export default function PrivacyPolicyPage() {
               </p>
 
               <div className="space-y-3">
-                <div className="p-4 rounded-xl bg-white/[0.02] border border-white/[0.06] space-y-1">
-                  <strong className="text-white block font-display">A. Tester & Closed Beta Participation Data</strong>
-                  <p className="text-slate-300/90 text-xs">
+                <div className="p-4 rounded-xl bg-slate-50 border border-slate-200 space-y-1">
+                  <strong className="text-slate-900 block font-display">A. Tester & Closed Beta Participation Data</strong>
+                  <p className="text-slate-600 text-xs">
                     Full name or preferred alias, Google Play account email (required to grant closed-track access in Google Play Console), physical device hardware model (e.g. Samsung Galaxy S23, Pixel 7), Android OS version, and qualitative feedback check-ins. This data is used solely to coordinate the mandatory 14-day continuous closed test required by Google Play and deliver earned lifetime promo codes.
                   </p>
                 </div>
 
-                <div className="p-4 rounded-xl bg-white/[0.02] border border-white/[0.06] space-y-1">
-                  <strong className="text-white block font-display">B. App Diagnostics, Crash Telemetry & Performance</strong>
-                  <p className="text-slate-300/90 text-xs">
+                <div className="p-4 rounded-xl bg-slate-50 border border-slate-200 space-y-1">
+                  <strong className="text-slate-900 block font-display">B. App Diagnostics, Crash Telemetry & Performance</strong>
+                  <p className="text-slate-600 text-xs">
                     Non-identifiable crash logs, Application Not Responding (ANR) stacks, device screen DPI, and app launch timing gathered through Google Play Console Pre-Launch Reports and vitals monitoring to patch software glitches prior to public release.
                   </p>
                 </div>
 
-                <div className="p-4 rounded-xl bg-white/[0.02] border border-white/[0.06] space-y-1">
-                  <strong className="text-white block font-display">C. Commercial Client & Inquirer Data</strong>
-                  <p className="text-slate-300/90 text-xs">
+                <div className="p-4 rounded-xl bg-slate-50 border border-slate-200 space-y-1">
+                  <strong className="text-slate-900 block font-display">C. Commercial Client & Inquirer Data</strong>
+                  <p className="text-slate-600 text-xs">
                     Name, business email, organization, technical scope briefs, and payment escrow preferences submitted via our project intake forms. Used solely to respond to inquiries and execute bilateral software contracts.
                   </p>
                 </div>
 
-                <div className="p-4 rounded-xl bg-white/[0.02] border border-white/[0.06] space-y-1">
-                  <strong className="text-white block font-display">D. Local Device Game State & Preferences</strong>
-                  <p className="text-slate-300/90 text-xs">
+                <div className="p-4 rounded-xl bg-slate-50 border border-slate-200 space-y-1">
+                  <strong className="text-slate-900 block font-display">D. Local Device Game State & Preferences</strong>
+                  <p className="text-slate-600 text-xs">
                     In apps such as <em>Mzansi Midnight</em> and <em>OmniRemote</em>, user game saves, docket progression, and TV brand pairing tokens are stored strictly locally on the user&apos;s physical device using IndexedDB / localStorage. We do not transmit or inspect your local game decisions.
                   </p>
                 </div>
@@ -257,9 +257,9 @@ export default function PrivacyPolicyPage() {
             </section>
 
             {/* 3. Android Runtime Permissions Justification */}
-            <section id="permissions" className="space-y-4 border-t border-white/[0.08] pt-8 scroll-mt-24">
-              <h2 className="font-display text-lg sm:text-xl font-bold text-white flex items-center gap-2.5">
-                <span className="w-6 h-6 rounded-lg bg-emerald-500/20 text-emerald-400 flex items-center justify-center font-mono text-xs">
+            <section id="permissions" className="space-y-4 border-t border-slate-200 pt-8 scroll-mt-24">
+              <h2 className="font-display text-lg sm:text-xl font-bold text-slate-950 flex items-center gap-2.5">
+                <span className="w-6 h-6 rounded-lg bg-emerald-100 text-emerald-800 flex items-center justify-center font-mono text-xs font-bold">
                   3
                 </span>
                 Android Runtime Permissions & Technical Disclosures
@@ -270,26 +270,26 @@ export default function PrivacyPolicyPage() {
 
               <div className="space-y-3.5">
                 {permissionsList.map((perm) => (
-                  <div key={perm.permission} className="p-4 rounded-xl bg-black/40 border border-emerald-500/20 space-y-1.5">
+                  <div key={perm.permission} className="p-4 rounded-xl bg-slate-50 border border-slate-200 space-y-1.5">
                     <div className="flex flex-wrap items-center justify-between gap-2">
-                      <span className="font-display font-bold text-white text-xs sm:text-sm">
+                      <span className="font-display font-bold text-slate-900 text-xs sm:text-sm">
                         {perm.permission}
                       </span>
-                      <span className="text-[10px] font-mono text-emerald-400 bg-emerald-500/10 px-2 py-0.5 rounded border border-emerald-500/25">
+                      <span className="text-[10px] font-mono text-emerald-800 bg-emerald-100 px-2 py-0.5 rounded border border-emerald-300 font-semibold">
                         {perm.apps}
                       </span>
                     </div>
-                    <code className="text-[11px] font-mono text-slate-400 block">{perm.technicalName}</code>
-                    <p className="text-xs text-slate-300/90 leading-relaxed pt-1">{perm.purpose}</p>
+                    <code className="text-[11px] font-mono text-slate-500 block">{perm.technicalName}</code>
+                    <p className="text-xs text-slate-600 leading-relaxed pt-1">{perm.purpose}</p>
                   </div>
                 ))}
               </div>
             </section>
 
             {/* 4. Third-Party SDKs and Data Processors */}
-            <section id="third-party-sdk" className="space-y-4 border-t border-white/[0.08] pt-8 scroll-mt-24">
-              <h2 className="font-display text-lg sm:text-xl font-bold text-white flex items-center gap-2.5">
-                <span className="w-6 h-6 rounded-lg bg-sky-500/20 text-sky-400 flex items-center justify-center font-mono text-xs">
+            <section id="third-party-sdk" className="space-y-4 border-t border-slate-200 pt-8 scroll-mt-24">
+              <h2 className="font-display text-lg sm:text-xl font-bold text-slate-950 flex items-center gap-2.5">
+                <span className="w-6 h-6 rounded-lg bg-sky-100 text-sky-800 flex items-center justify-center font-mono text-xs font-bold">
                   4
                 </span>
                 Third-Party SDKs & Cloud Data Processors
@@ -300,19 +300,19 @@ export default function PrivacyPolicyPage() {
 
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-3.5 pt-1">
                 {thirdPartyServices.map((svc) => (
-                  <div key={svc.name} className="p-4 rounded-xl bg-black/40 border border-white/[0.08] flex flex-col justify-between space-y-3">
+                  <div key={svc.name} className="p-4 rounded-xl bg-slate-50 border border-slate-200 flex flex-col justify-between space-y-3">
                     <div>
                       <div className="flex items-center justify-between gap-2 mb-1">
-                        <span className="font-display font-bold text-white text-xs sm:text-sm">{svc.name}</span>
-                        <span className="text-[10px] font-mono text-slate-400">{svc.provider}</span>
+                        <span className="font-display font-bold text-slate-900 text-xs sm:text-sm">{svc.name}</span>
+                        <span className="text-[10px] font-mono text-slate-500">{svc.provider}</span>
                       </div>
-                      <p className="text-xs text-slate-300/80 leading-relaxed">{svc.purpose}</p>
+                      <p className="text-xs text-slate-600 leading-relaxed">{svc.purpose}</p>
                     </div>
                     <a
                       href={svc.privacyUrl}
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="inline-flex items-center gap-1 text-[11px] font-mono text-sky-400 hover:text-sky-300"
+                      className="inline-flex items-center gap-1 text-[11px] font-mono text-sky-700 hover:text-sky-800 font-semibold"
                     >
                       <span>Read Provider Privacy Policy</span>
                       <ExternalLink className="w-3 h-3" />
@@ -323,34 +323,34 @@ export default function PrivacyPolicyPage() {
             </section>
 
             {/* 5. Account & Data Deletion Mechanism (Crucial Google Play Requirement) */}
-            <section id="deletion-request" className="space-y-4 border-t border-white/[0.08] pt-8 scroll-mt-24">
-              <div className="p-6 rounded-2xl bg-rose-500/[0.05] border border-rose-500/30 space-y-4">
-                <div className="flex items-center gap-2 text-rose-400 font-mono text-xs uppercase tracking-wider font-bold">
-                  <Trash2 className="w-4 h-4" />
+            <section id="deletion-request" className="space-y-4 border-t border-slate-200 pt-8 scroll-mt-24">
+              <div className="p-6 rounded-2xl bg-rose-50/70 border border-rose-200 space-y-4">
+                <div className="flex items-center gap-2 text-rose-800 font-mono text-xs uppercase tracking-wider font-bold">
+                  <Trash2 className="w-4 h-4 text-rose-600" />
                   <span>Mandatory Google Play Policy: Account & Associated Data Deletion</span>
                 </div>
 
-                <h2 className="font-display text-xl font-bold text-white">
+                <h2 className="font-display text-xl font-bold text-slate-950">
                   How to Request Account & Associated Personal Data Deletion
                 </h2>
 
-                <p className="text-xs sm:text-sm text-slate-200 leading-relaxed">
+                <p className="text-xs sm:text-sm text-slate-700 leading-relaxed">
                   Per the <strong>Google Play Data Safety and User Data Policy</strong>, if an application allows user account creation (e.g. <em>Clean and Clean</em>, <em>The Seitz Testing Lab</em>, or client inquiry portals), users must be provided with a direct, friction-free pathway to delete their account and all associated records.
                 </p>
 
                 <div className="space-y-3 pt-2 text-xs">
-                  <div className="p-4 rounded-xl bg-black/50 border border-white/10 space-y-2">
-                    <strong className="text-white font-display text-sm block">Step-by-Step Deletion Instructions:</strong>
-                    <ol className="list-decimal pl-5 space-y-1.5 text-slate-300">
+                  <div className="p-4 rounded-xl bg-white border border-rose-200 space-y-2 shadow-xs">
+                    <strong className="text-slate-950 font-display text-sm block">Step-by-Step Deletion Instructions:</strong>
+                    <ol className="list-decimal pl-5 space-y-1.5 text-slate-700">
                       <li>
                         <strong>In-App Deletion:</strong> If logged into an application with account functionality, open <em>Settings &gt; Account Security</em> and tap <em>&ldquo;Delete My Account &amp; Data&rdquo;</em>.
                       </li>
                       <li>
                         <strong>Direct Web Deletion Request:</strong> Send an email from your registered account address to{' '}
-                        <a href="mailto:byseitz.agency@gmail.com?subject=[DATA%20DELETION%20REQUEST]" className="text-sky-300 underline font-mono">
+                        <a href="mailto:byseitz.agency@gmail.com?subject=[DATA%20DELETION%20REQUEST]" className="text-sky-700 underline font-mono font-semibold">
                           byseitz.agency@gmail.com
                         </a>{' '}
-                        with the subject line: <code className="text-rose-300 font-mono">[DATA DELETION REQUEST]</code>.
+                        with the subject line: <code className="text-rose-800 font-mono font-bold">[DATA DELETION REQUEST]</code>.
                       </li>
                       <li>
                         <strong>Specify Details:</strong> Include your registered Google email address and the specific app name (e.g. Clean and Clean, Seitz Testing Lab).
@@ -358,18 +358,18 @@ export default function PrivacyPolicyPage() {
                     </ol>
                   </div>
 
-                  <div className="p-4 rounded-xl bg-black/50 border border-white/10 space-y-2">
-                    <strong className="text-white font-display text-sm block">What Data Is Permanently Purged:</strong>
-                    <ul className="list-disc pl-5 space-y-1 text-slate-300">
+                  <div className="p-4 rounded-xl bg-white border border-rose-200 space-y-2 shadow-xs">
+                    <strong className="text-slate-950 font-display text-sm block">What Data Is Permanently Purged:</strong>
+                    <ul className="list-disc pl-5 space-y-1 text-slate-700">
                       <li>Your user profile, email address, password hash, and authentication tokens in Supabase Auth.</li>
                       <li>Any submitted community cleanup logs, uploaded cleanup photographs, and ward reward points.</li>
                       <li>Your closed beta testing enrollment records and device hardware associations.</li>
                     </ul>
                   </div>
 
-                  <div className="p-4 rounded-xl bg-black/50 border border-white/10 space-y-2">
-                    <strong className="text-white font-display text-sm block">Retention Timelines & Exceptions:</strong>
-                    <p className="text-slate-300 leading-relaxed">
+                  <div className="p-4 rounded-xl bg-white border border-rose-200 space-y-2 shadow-xs">
+                    <strong className="text-slate-950 font-display text-sm block">Retention Timelines & Exceptions:</strong>
+                    <p className="text-slate-700 leading-relaxed">
                       All deletion requests are verified and permanently purged across our databases within <strong>30 calendar days</strong>. We retain only minimal transaction logs where strictly mandated by statutory South African tax law (e.g. commercial invoice records) or fraud prevention.
                     </p>
                   </div>
@@ -378,7 +378,7 @@ export default function PrivacyPolicyPage() {
                 <div className="pt-2">
                   <a
                     href="mailto:byseitz.agency@gmail.com?subject=%5BDATA%20DELETION%20REQUEST%5D&body=Please%20delete%20my%20account%20and%20all%20associated%20data%20for%20the%20following%20application:%20%0A%0AEmail:%20%0AApp%20Name:%20"
-                    className="inline-flex items-center gap-2 px-5 py-2.5 rounded-xl bg-rose-500/20 hover:bg-rose-500/30 text-rose-300 border border-rose-500/40 text-xs font-mono font-semibold transition cursor-pointer"
+                    className="inline-flex items-center gap-2 px-5 py-2.5 rounded-xl bg-rose-600 hover:bg-rose-500 text-white border border-rose-600 text-xs font-mono font-semibold transition cursor-pointer shadow-md shadow-rose-600/20"
                   >
                     <Mail className="w-4 h-4" />
                     <span>Initiate Account & Data Deletion Request Email</span>
@@ -388,9 +388,9 @@ export default function PrivacyPolicyPage() {
             </section>
 
             {/* 6. Children's Privacy (COPPA & Google Play Families Policy) */}
-            <section id="children" className="space-y-4 border-t border-white/[0.08] pt-8 scroll-mt-24">
-              <h2 className="font-display text-lg sm:text-xl font-bold text-white flex items-center gap-2.5">
-                <span className="w-6 h-6 rounded-lg bg-sky-500/20 text-sky-400 flex items-center justify-center font-mono text-xs">
+            <section id="children" className="space-y-4 border-t border-slate-200 pt-8 scroll-mt-24">
+              <h2 className="font-display text-lg sm:text-xl font-bold text-slate-950 flex items-center gap-2.5">
+                <span className="w-6 h-6 rounded-lg bg-sky-100 text-sky-800 flex items-center justify-center font-mono text-xs font-bold">
                   6
                 </span>
                 Children&apos;s Privacy & Google Play Families Policy
@@ -401,20 +401,20 @@ export default function PrivacyPolicyPage() {
               <p>
                 For party or casual applications featuring a dedicated <strong>Kids Mode</strong> (such as <em>Would You Rather: Mzansi Edition</em>):
               </p>
-              <ul className="list-disc pl-5 space-y-1.5 text-slate-300">
+              <ul className="list-disc pl-5 space-y-1.5 text-slate-700">
                 <li>We do not collect personal identifiers, advertising IDs, or geolocation from children.</li>
                 <li>Zero behavioral targeting, third-party advertising SDKs, or in-app purchase prompts are displayed in child-designated modes.</li>
                 <li>All speech features utilize in-browser Web Speech API audio synthesis without transferring recordings to external cloud speech APIs.</li>
               </ul>
               <p>
-                If a parent or guardian discovers that their child has provided personal information without consent, contact us immediately at <a href="mailto:byseitz.agency@gmail.com" className="text-sky-300 underline font-mono">byseitz.agency@gmail.com</a> and we will delete the data immediately.
+                If a parent or guardian discovers that their child has provided personal information without consent, contact us immediately at <a href="mailto:byseitz.agency@gmail.com" className="text-sky-700 underline font-mono font-semibold">byseitz.agency@gmail.com</a> and we will delete the data immediately.
               </p>
             </section>
 
             {/* 7. POPIA & GDPR Legal Rights */}
-            <section id="popia-gdpr" className="space-y-4 border-t border-white/[0.08] pt-8 scroll-mt-24">
-              <h2 className="font-display text-lg sm:text-xl font-bold text-white flex items-center gap-2.5">
-                <span className="w-6 h-6 rounded-lg bg-emerald-500/20 text-emerald-400 flex items-center justify-center font-mono text-xs">
+            <section id="popia-gdpr" className="space-y-4 border-t border-slate-200 pt-8 scroll-mt-24">
+              <h2 className="font-display text-lg sm:text-xl font-bold text-slate-950 flex items-center gap-2.5">
+                <span className="w-6 h-6 rounded-lg bg-emerald-100 text-emerald-800 flex items-center justify-center font-mono text-xs font-bold">
                   7
                 </span>
                 POPIA, GDPR & International Data Subject Rights
@@ -424,29 +424,29 @@ export default function PrivacyPolicyPage() {
               </p>
 
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 text-xs">
-                <div className="p-3.5 rounded-xl bg-black/40 border border-white/[0.06]">
-                  <strong className="text-white block font-display mb-1">Right of Access:</strong>
-                  <span>Request a copy of the personal information we hold about you.</span>
+                <div className="p-3.5 rounded-xl bg-slate-50 border border-slate-200">
+                  <strong className="text-slate-950 block font-display mb-1">Right of Access:</strong>
+                  <span className="text-slate-600">Request a copy of the personal information we hold about you.</span>
                 </div>
-                <div className="p-3.5 rounded-xl bg-black/40 border border-white/[0.06]">
-                  <strong className="text-white block font-display mb-1">Right to Rectification:</strong>
-                  <span>Request correction of inaccurate or incomplete personal records.</span>
+                <div className="p-3.5 rounded-xl bg-slate-50 border border-slate-200">
+                  <strong className="text-slate-950 block font-display mb-1">Right to Rectification:</strong>
+                  <span className="text-slate-600">Request correction of inaccurate or incomplete personal records.</span>
                 </div>
-                <div className="p-3.5 rounded-xl bg-black/40 border border-white/[0.06]">
-                  <strong className="text-white block font-display mb-1">Right to Erasure (To Be Forgotten):</strong>
-                  <span>Request complete deletion of your data as detailed in Section 5.</span>
+                <div className="p-3.5 rounded-xl bg-slate-50 border border-slate-200">
+                  <strong className="text-slate-950 block font-display mb-1">Right to Erasure (To Be Forgotten):</strong>
+                  <span className="text-slate-600">Request complete deletion of your data as detailed in Section 5.</span>
                 </div>
-                <div className="p-3.5 rounded-xl bg-black/40 border border-white/[0.06]">
-                  <strong className="text-white block font-display mb-1">Right to Object:</strong>
-                  <span>Object to data processing based on legitimate interests or revoke beta testing consent.</span>
+                <div className="p-3.5 rounded-xl bg-slate-50 border border-slate-200">
+                  <strong className="text-slate-950 block font-display mb-1">Right to Object:</strong>
+                  <span className="text-slate-600">Object to data processing based on legitimate interests or revoke beta testing consent.</span>
                 </div>
               </div>
             </section>
 
             {/* 8. Information Security & Cross-Border Transfers */}
-            <section className="space-y-4 border-t border-white/[0.08] pt-8">
-              <h2 className="font-display text-lg sm:text-xl font-bold text-white flex items-center gap-2.5">
-                <span className="w-6 h-6 rounded-lg bg-sky-500/20 text-sky-400 flex items-center justify-center font-mono text-xs">
+            <section className="space-y-4 border-t border-slate-200 pt-8">
+              <h2 className="font-display text-lg sm:text-xl font-bold text-slate-950 flex items-center gap-2.5">
+                <span className="w-6 h-6 rounded-lg bg-sky-100 text-sky-800 flex items-center justify-center font-mono text-xs font-bold">
                   8
                 </span>
                 Data Security & International Transfers
@@ -460,9 +460,9 @@ export default function PrivacyPolicyPage() {
             </section>
 
             {/* 9. Contact Information & Information Officer */}
-            <section id="contact-officer" className="space-y-4 border-t border-white/[0.08] pt-8 scroll-mt-24">
-              <h2 className="font-display text-lg sm:text-xl font-bold text-white flex items-center gap-2.5">
-                <span className="w-6 h-6 rounded-lg bg-emerald-500/20 text-emerald-400 flex items-center justify-center font-mono text-xs">
+            <section id="contact-officer" className="space-y-4 border-t border-slate-200 pt-8 scroll-mt-24">
+              <h2 className="font-display text-lg sm:text-xl font-bold text-slate-950 flex items-center gap-2.5">
+                <span className="w-6 h-6 rounded-lg bg-emerald-100 text-emerald-800 flex items-center justify-center font-mono text-xs font-bold">
                   9
                 </span>
                 Information Officer Contact Details
@@ -471,25 +471,25 @@ export default function PrivacyPolicyPage() {
                 For privacy inquiries, regulatory notices, or assistance exercising data protection rights, contact our designated Information Officer:
               </p>
 
-              <div className="p-5 rounded-2xl bg-black/60 border border-emerald-500/30 font-mono text-xs space-y-2">
+              <div className="p-5 rounded-2xl bg-slate-50 border border-slate-200 font-mono text-xs space-y-2">
                 <div className="flex items-center gap-2">
-                  <span className="font-display font-bold text-base text-white">Muhammed Faiz Seitz</span>
-                  <span className="px-2 py-0.5 rounded bg-emerald-500/10 border border-emerald-500/25 text-emerald-400 text-[10px]">
+                  <span className="font-display font-bold text-base text-slate-950">Muhammed Faiz Seitz</span>
+                  <span className="px-2 py-0.5 rounded bg-emerald-100 border border-emerald-300 text-emerald-800 text-[10px] font-bold">
                     Information Officer & Developer
                   </span>
                 </div>
-                <div className="flex items-center gap-2 text-slate-300">
-                  <Mail className="w-3.5 h-3.5 text-sky-400" />
-                  <span>Email: <a href="mailto:byseitz.agency@gmail.com" className="text-sky-300 hover:underline">byseitz.agency@gmail.com</a></span>
+                <div className="flex items-center gap-2 text-slate-700">
+                  <Mail className="w-3.5 h-3.5 text-sky-600" />
+                  <span>Email: <a href="mailto:byseitz.agency@gmail.com" className="text-sky-700 hover:underline font-semibold">byseitz.agency@gmail.com</a></span>
                 </div>
-                <div className="flex items-center gap-2 text-slate-300">
-                  <MapPin className="w-3.5 h-3.5 text-emerald-400" />
+                <div className="flex items-center gap-2 text-slate-700">
+                  <MapPin className="w-3.5 h-3.5 text-emerald-600" />
                   <span>Locality: Durban, KwaZulu-Natal, Republic of South Africa 🇿🇦</span>
                 </div>
-                <div className="flex items-center gap-2 text-slate-400 pt-1 border-t border-white/10 text-[11px]">
-                  <span>Developer Domain: <a href="https://seitz.co.za" className="text-slate-200 hover:underline">https://seitz.co.za</a></span>
+                <div className="flex items-center gap-2 text-slate-500 pt-1 border-t border-slate-200 text-[11px]">
+                  <span>Developer Domain: <a href="https://seitz.co.za" className="text-slate-800 hover:underline">https://seitz.co.za</a></span>
                   <span>•</span>
-                  <span>Testing Lab: <a href="https://seitz.co.za/testers" className="text-emerald-300 hover:underline">https://seitz.co.za/testers</a></span>
+                  <span>Testing Lab: <a href="https://seitz.co.za/testers" className="text-emerald-700 hover:underline font-semibold">https://seitz.co.za/testers</a></span>
                 </div>
               </div>
             </section>

@@ -1,3 +1,5 @@
+'use client';
+
 import React from 'react';
 import { ArrowUpRight, ShieldCheck } from 'lucide-react';
 import { GooglePlayIcon } from '@/components/icons/GooglePlayIcon';
@@ -13,9 +15,9 @@ export function VerificationMatrix() {
       status: 'Active Android Developer',
       scope: 'Utility, productivity, civic technology, and community mobile apps.',
       icon: GooglePlayIcon,
-      accent: 'text-emerald-400',
-      badgeBorder: 'border-emerald-500/30',
-      badgeBg: 'bg-emerald-500/10',
+      accent: 'text-emerald-700',
+      badgeBorder: 'border-emerald-200',
+      badgeBg: 'bg-emerald-50',
       linkText: 'View Developer Profile',
       href: 'https://play.google.com/store/apps/dev?id=Seitz',
     },
@@ -25,9 +27,9 @@ export function VerificationMatrix() {
       status: 'Identity Verified | Escrow Protection',
       scope: 'Fixed-price milestone builds and long-term full-stack engineering contracts.',
       icon: UpworkIcon,
-      accent: 'text-sky-400',
-      badgeBorder: 'border-sky-500/30',
-      badgeBg: 'bg-sky-500/10',
+      accent: 'text-sky-700',
+      badgeBorder: 'border-sky-200',
+      badgeBg: 'bg-sky-50',
       linkText: 'Hire on Upwork',
       href: 'https://www.upwork.com/freelancers/~01faizseitz',
     },
@@ -37,9 +39,9 @@ export function VerificationMatrix() {
       status: 'Specialized Seller Profile',
       scope: 'Scrapers, Apify automation workflows, and defined mobile/web micro-deliverables.',
       icon: FiverrIcon,
-      accent: 'text-green-400',
-      badgeBorder: 'border-green-500/30',
-      badgeBg: 'bg-green-500/10',
+      accent: 'text-green-700',
+      badgeBorder: 'border-green-200',
+      badgeBg: 'bg-green-50',
       linkText: 'View Marketplace Gigs',
       href: 'https://www.fiverr.com/seitz_dev',
     },
@@ -49,9 +51,9 @@ export function VerificationMatrix() {
       status: '37 Production Actors',
       scope: 'Public and bespoke crawlers, automated web extractors, and live RAG monitors.',
       icon: ApifyIcon,
-      accent: 'text-amber-400',
-      badgeBorder: 'border-amber-500/30',
-      badgeBg: 'bg-amber-500/10',
+      accent: 'text-amber-700',
+      badgeBorder: 'border-amber-200',
+      badgeBg: 'bg-amber-50',
       linkText: 'Inspect Published Actors',
       href: 'https://apify.com',
     },
@@ -60,13 +62,13 @@ export function VerificationMatrix() {
   return (
     <section id="platforms" className="py-20 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto">
       <div className="text-center max-w-3xl mx-auto mb-16">
-        <div className="inline-flex items-center gap-2 px-3.5 py-1 rounded-full border border-sky-500/25 bg-sky-500/10 text-sky-300 text-xs font-mono uppercase tracking-wider mb-4">
+        <div className="inline-flex items-center gap-2 px-3.5 py-1 rounded-full border border-sky-200 bg-sky-50 text-sky-800 text-xs font-mono uppercase tracking-wider mb-4 font-semibold">
           Verification Matrix
         </div>
-        <h2 className="font-display text-3xl sm:text-4xl lg:text-5xl font-bold text-white tracking-tight mb-4">
+        <h2 className="font-display text-3xl sm:text-4xl lg:text-5xl font-bold text-slate-950 tracking-tight mb-4">
           Verified Track Record Across Global Platforms
         </h2>
-        <p className="text-base sm:text-lg text-slate-300/85 leading-relaxed">
+        <p className="text-base sm:text-lg text-slate-600 leading-relaxed">
           Engage directly for enterprise custom contracts or hire through established freelance escrow networks where my developer track record is identity-verified and contract-protected.
         </p>
       </div>
@@ -75,11 +77,11 @@ export function VerificationMatrix() {
         {platforms.map((p) => (
           <div
             key={p.name}
-            className="studio-card rounded-2xl p-6 border border-white/10 hover:border-white/25 flex flex-col justify-between transition-all group"
+            className="studio-card rounded-2xl p-6 bg-white border border-slate-200 hover:border-slate-300 flex flex-col justify-between transition-all group shadow-xs"
           >
             <div>
               <div className="flex items-center justify-between mb-4">
-                <div className="w-11 h-11 rounded-xl bg-white/[0.04] border border-white/10 flex items-center justify-center">
+                <div className="w-11 h-11 rounded-xl bg-slate-50 border border-slate-200 flex items-center justify-center shadow-2xs">
                   <p.icon className={`w-5 h-5 ${p.accent}`} />
                 </div>
                 <span
@@ -90,20 +92,20 @@ export function VerificationMatrix() {
                 </span>
               </div>
 
-              <h3 className="font-display text-base font-bold text-white mb-1">{p.name}</h3>
-              <div className="text-xs font-mono text-slate-400 mb-3">{p.brand}</div>
-              <p className="text-xs text-slate-300/80 leading-relaxed mb-6">{p.scope}</p>
+              <h3 className="font-display text-base font-bold text-slate-950 mb-1">{p.name}</h3>
+              <div className="text-xs font-mono text-slate-500 mb-3">{p.brand}</div>
+              <p className="text-xs text-slate-600 leading-relaxed mb-6">{p.scope}</p>
             </div>
 
-            <div className="pt-4 border-t border-white/[0.07]">
+            <div className="pt-4 border-t border-slate-200">
               <a
                 href={p.href}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="inline-flex items-center gap-1.5 text-xs font-display font-bold text-slate-200 group-hover:text-sky-400 transition"
+                className="inline-flex items-center gap-1.5 text-xs font-mono font-medium text-slate-700 hover:text-sky-700 transition"
               >
                 <span>{p.linkText}</span>
-                <ArrowUpRight className="w-3.5 h-3.5 transition-transform group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
+                <ArrowUpRight className="w-3.5 h-3.5 text-slate-400 group-hover:text-sky-600 group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition" />
               </a>
             </div>
           </div>

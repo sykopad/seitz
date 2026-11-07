@@ -42,7 +42,7 @@ export function AppMediaGallery({ media, appName }: AppMediaGalleryProps) {
     <div className="space-y-6">
       {/* Feature Graphic Banner */}
       {hasFeatureGraphic && (
-        <div className="relative w-full aspect-[16/9] sm:aspect-[21/9] rounded-2xl overflow-hidden border border-white/10 shadow-2xl bg-black/40 group">
+        <div className="relative w-full aspect-[16/9] sm:aspect-[21/9] rounded-2xl overflow-hidden border border-slate-200 shadow-md bg-slate-100 group">
           <Image
             src={media.featureGraphic!}
             alt={`${appName} Feature Graphic`}
@@ -50,9 +50,9 @@ export function AppMediaGallery({ media, appName }: AppMediaGalleryProps) {
             className="object-cover object-center group-hover:scale-[1.02] transition-transform duration-700"
             priority
           />
-          <div className="absolute inset-0 bg-gradient-to-t from-[#090a0f] via-transparent to-transparent opacity-80" />
+          <div className="absolute inset-0 bg-gradient-to-t from-slate-950/80 via-transparent to-transparent opacity-80" />
           <div className="absolute bottom-4 left-6 right-6 flex items-center justify-between pointer-events-none">
-            <span className="text-xs font-mono px-3 py-1 rounded-full bg-black/70 backdrop-blur-md border border-white/20 text-white/90">
+            <span className="text-xs font-mono px-3 py-1 rounded-full bg-slate-900/80 backdrop-blur-md border border-white/20 text-white font-medium">
               Official Production Asset
             </span>
           </div>
@@ -63,10 +63,10 @@ export function AppMediaGallery({ media, appName }: AppMediaGalleryProps) {
       {hasScreenshots && (
         <div className="space-y-3">
           <div className="flex items-center justify-between">
-            <h3 className="text-sm font-bold uppercase tracking-wider font-mono text-white/70">
+            <h3 className="text-sm font-bold uppercase tracking-wider font-mono text-slate-800">
               Device Previews & Screenshots ({media.screenshots.length})
             </h3>
-            <span className="text-xs text-white/40 font-mono">Click to expand preview</span>
+            <span className="text-xs text-slate-500 font-mono">Click to expand preview</span>
           </div>
 
           <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-5 gap-3 sm:gap-4">
@@ -74,7 +74,7 @@ export function AppMediaGallery({ media, appName }: AppMediaGalleryProps) {
               <button
                 key={idx}
                 onClick={() => openLightbox(idx)}
-                className="group relative aspect-[9/16] sm:aspect-[9/19] rounded-xl overflow-hidden border border-white/10 hover:border-emerald-500/50 transition-all bg-black/60 shadow-lg cursor-pointer focus:outline-none focus:ring-2 focus:ring-emerald-400"
+                className="group relative aspect-[9/16] sm:aspect-[9/19] rounded-xl overflow-hidden border border-slate-200 hover:border-emerald-500 transition-all bg-slate-50 shadow-sm cursor-pointer focus:outline-none focus:ring-2 focus:ring-emerald-500"
               >
                 <Image
                   src={src}
@@ -82,13 +82,13 @@ export function AppMediaGallery({ media, appName }: AppMediaGalleryProps) {
                   fill
                   className="object-cover object-center group-hover:scale-105 transition-transform duration-300"
                 />
-                <div className="absolute inset-0 bg-emerald-500/10 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center">
-                  <div className="w-8 h-8 rounded-full bg-black/80 backdrop-blur-md flex items-center justify-center text-white border border-white/20">
+                <div className="absolute inset-0 bg-emerald-600/10 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center">
+                  <div className="w-8 h-8 rounded-full bg-slate-900/80 backdrop-blur-md flex items-center justify-center text-white border border-white/20">
                     <Eye className="w-4 h-4 text-emerald-400" />
                   </div>
                 </div>
                 <div className="absolute bottom-1.5 left-1.5 right-1.5 text-center">
-                  <span className="text-[10px] font-mono px-2 py-0.5 rounded bg-black/70 text-white/80">
+                  <span className="text-[10px] font-mono px-2 py-0.5 rounded bg-slate-900/80 text-white font-medium">
                     Frame #{idx + 1}
                   </span>
                 </div>

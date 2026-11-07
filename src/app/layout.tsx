@@ -26,8 +26,8 @@ const jetbrainsMono = JetBrains_Mono({
 const siteUrl = process.env.NEXT_PUBLIC_SITE_URL || 'https://seitz.co.za';
 
 export const viewport: Viewport = {
-  themeColor: '#05070b',
-  colorScheme: 'dark',
+  themeColor: '#f8fafc',
+  colorScheme: 'light',
   width: 'device-width',
   initialScale: 1,
   maximumScale: 5,
@@ -129,7 +129,7 @@ export default function RootLayout({
   return (
     <html
       lang="en"
-      className={`dark scroll-smooth ${spaceGrotesk.variable} ${plusJakartaSans.variable} ${jetbrainsMono.variable}`}
+      className={`scroll-smooth ${spaceGrotesk.variable} ${plusJakartaSans.variable} ${jetbrainsMono.variable}`}
     >
       <head>
         <script
@@ -137,7 +137,7 @@ export default function RootLayout({
           dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
         />
       </head>
-      <body className="antialiased bg-[#05070b] text-[#f8fafc] font-sans min-h-screen selection:bg-sky-400 selection:text-black">
+      <body className="antialiased bg-[#f8fafc] text-slate-900 font-sans min-h-screen selection:bg-sky-500 selection:text-white">
         {children}
       </body>
     </html>

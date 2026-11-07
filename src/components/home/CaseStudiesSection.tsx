@@ -1,3 +1,5 @@
+'use client';
+
 import React from 'react';
 import Image from 'next/image';
 import Link from 'next/link';
@@ -18,7 +20,7 @@ export function CaseStudiesSection() {
       impact:
         'Sub-second initial page loads, streamlined community verification, and near-zero infrastructure overhead.',
       tags: ['Next.js 16', 'Mapbox GL', 'Supabase', 'PostGIS', 'Supercluster'],
-      liveUrl: '/apps/clean-and-clean',
+      liveUrl: '/apps/cleanandclean',
       externalUrl: 'https://cleanandclean.co.za',
     },
     {
@@ -62,7 +64,7 @@ export function CaseStudiesSection() {
       category: 'Noir RPG Anthology',
       status: 'Closed Beta (11/15)',
       icon: '/images/projects/mzansi-midnight/icon.png',
-      accent: 'text-emerald-400 bg-emerald-500/10 border-emerald-500/25',
+      accent: 'text-emerald-700 bg-emerald-50 border-emerald-200',
     },
     {
       slug: 'cleanandclean',
@@ -70,7 +72,7 @@ export function CaseStudiesSection() {
       category: 'Civic GIS Platform',
       status: 'Closed Beta (9/15)',
       icon: '/images/projects/cleanandclean-icon.png',
-      accent: 'text-emerald-400 bg-emerald-500/10 border-emerald-500/25',
+      accent: 'text-emerald-700 bg-emerald-50 border-emerald-200',
     },
     {
       slug: 'omniremote',
@@ -78,7 +80,7 @@ export function CaseStudiesSection() {
       category: 'Universal Smart TV Remote',
       status: 'Closed Beta (10/15)',
       icon: '/images/projects/omniremote/icon.png',
-      accent: 'text-emerald-400 bg-emerald-500/10 border-emerald-500/25',
+      accent: 'text-emerald-700 bg-emerald-50 border-emerald-200',
     },
     {
       slug: 'would-you-rather',
@@ -86,7 +88,7 @@ export function CaseStudiesSection() {
       category: 'Party Game & Dilemmas',
       status: 'Closed Beta (8/15)',
       icon: '/images/projects/would-you-rather/icon.png',
-      accent: 'text-emerald-400 bg-emerald-500/10 border-emerald-500/25',
+      accent: 'text-emerald-700 bg-emerald-50 border-emerald-200',
     },
     {
       slug: 'decolonize',
@@ -94,20 +96,20 @@ export function CaseStudiesSection() {
       category: 'Strategy & Economic Sim',
       status: 'Community Voting',
       icon: '/images/projects/decolonize-icon.svg',
-      accent: 'text-amber-400 bg-amber-500/10 border-amber-500/25',
+      accent: 'text-amber-700 bg-amber-50 border-amber-200',
     },
   ];
 
   return (
     <section id="case-studies" className="py-20 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto">
       <div className="text-center max-w-3xl mx-auto mb-16">
-        <div className="inline-flex items-center gap-2 px-3.5 py-1 rounded-full border border-sky-500/25 bg-sky-500/10 text-sky-300 text-xs font-mono uppercase tracking-wider mb-4">
+        <div className="inline-flex items-center gap-2 px-3.5 py-1 rounded-full border border-sky-200 bg-sky-50 text-sky-800 text-xs font-mono uppercase tracking-wider mb-4 font-semibold">
           Proof of Engineering
         </div>
-        <h2 className="font-display text-3xl sm:text-4xl lg:text-5xl font-bold text-white tracking-tight mb-4">
-          Selected Solutions & Architectural Dossiers
+        <h2 className="font-display text-3xl sm:text-4xl lg:text-5xl font-bold text-slate-950 tracking-tight mb-4">
+          Selected Solutions &amp; Architectural Dossiers
         </h2>
-        <p className="text-base sm:text-lg text-slate-300/85 leading-relaxed">
+        <p className="text-base sm:text-lg text-slate-600 leading-relaxed">
           Demonstrated production capability across civic GIS mapping, headless web automation clusters, and Google Play Android launches.
         </p>
       </div>
@@ -116,43 +118,43 @@ export function CaseStudiesSection() {
         {caseStudies.map((cs) => (
           <div
             key={cs.id}
-            className="studio-card rounded-2xl p-6 sm:p-9 border border-white/10 transition-all overflow-hidden"
+            className="studio-card rounded-2xl p-6 sm:p-9 bg-white border border-slate-200 hover:border-slate-300 transition-all overflow-hidden shadow-xs"
           >
             <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-start">
               <div className="lg:col-span-8 space-y-4">
                 <div className="flex flex-wrap items-center gap-3">
-                  <span className="text-xs font-mono text-sky-300 font-semibold px-3 py-0.5 rounded-full bg-sky-500/10 border border-sky-500/25">
+                  <span className="text-xs font-mono text-sky-700 font-semibold px-3 py-0.5 rounded-full bg-sky-50 border border-sky-200">
                     {cs.category}
                   </span>
                   <span className="text-xs font-mono text-slate-400">{cs.code}</span>
                 </div>
 
-                <h3 className="font-display text-xl sm:text-2xl font-bold text-white tracking-tight leading-snug">
+                <h3 className="font-display text-xl sm:text-2xl font-bold text-slate-950 tracking-tight leading-snug">
                   {cs.title}
                 </h3>
-                <p className="text-xs sm:text-sm text-emerald-400 font-mono">{cs.tagline}</p>
+                <p className="text-xs sm:text-sm text-emerald-700 font-mono font-medium">{cs.tagline}</p>
 
                 <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 pt-2">
-                  <div className="p-4 rounded-xl bg-black/40 border border-white/[0.06] space-y-1.5">
-                    <span className="text-[11px] font-mono text-amber-400 uppercase tracking-wider font-semibold block">
+                  <div className="p-4 rounded-xl bg-slate-50 border border-slate-200 space-y-1.5">
+                    <span className="text-[11px] font-mono text-amber-700 uppercase tracking-wider font-bold block">
                       01 // The Challenge
                     </span>
-                    <p className="text-xs text-slate-300/85 leading-relaxed">{cs.challenge}</p>
+                    <p className="text-xs text-slate-600 leading-relaxed">{cs.challenge}</p>
                   </div>
 
-                  <div className="p-4 rounded-xl bg-black/40 border border-white/[0.06] space-y-1.5">
-                    <span className="text-[11px] font-mono text-sky-400 uppercase tracking-wider font-semibold block">
+                  <div className="p-4 rounded-xl bg-slate-50 border border-slate-200 space-y-1.5">
+                    <span className="text-[11px] font-mono text-sky-700 uppercase tracking-wider font-bold block">
                       02 // Architectural Solution
                     </span>
-                    <p className="text-xs text-slate-300/85 leading-relaxed">{cs.solution}</p>
+                    <p className="text-xs text-slate-600 leading-relaxed">{cs.solution}</p>
                   </div>
                 </div>
 
                 <div className="pt-2">
-                  <div className="p-3.5 rounded-xl bg-emerald-500/[0.06] border border-emerald-500/20 flex items-start sm:items-center gap-2.5 text-xs text-slate-200">
-                    <CheckCircle2 className="w-4 h-4 text-emerald-400 shrink-0 mt-0.5 sm:mt-0" />
+                  <div className="p-3.5 rounded-xl bg-emerald-50 border border-emerald-200 flex items-start sm:items-center gap-2.5 text-xs text-emerald-950">
+                    <CheckCircle2 className="w-4 h-4 text-emerald-600 shrink-0 mt-0.5 sm:mt-0" />
                     <span>
-                      <strong className="text-emerald-300 font-mono uppercase tracking-wider mr-1.5">
+                      <strong className="text-emerald-800 font-mono uppercase tracking-wider mr-1.5 font-bold">
                         Measured Telemetry:
                       </strong>
                       {cs.impact}
@@ -165,7 +167,7 @@ export function CaseStudiesSection() {
                   {cs.tags.map((tag) => (
                     <span
                       key={tag}
-                      className="text-[11px] font-mono px-2.5 py-1 rounded-md bg-white/[0.04] text-slate-300 border border-white/[0.07]"
+                      className="text-[11px] font-mono px-2.5 py-1 rounded-md bg-slate-100 text-slate-700 border border-slate-200"
                     >
                       {tag}
                     </span>
@@ -174,14 +176,14 @@ export function CaseStudiesSection() {
               </div>
 
               {/* Action column */}
-              <div className="lg:col-span-4 flex flex-col justify-between h-full pt-4 lg:pt-0 border-t lg:border-t-0 lg:border-l border-white/[0.08] lg:pl-8 space-y-6">
+              <div className="lg:col-span-4 flex flex-col justify-between h-full pt-4 lg:pt-0 border-t lg:border-t-0 lg:border-l border-slate-200 lg:pl-8 space-y-6">
                 <div className="space-y-2">
-                  <span className="text-[11px] font-mono text-slate-400 uppercase tracking-wider">
+                  <span className="text-[11px] font-mono text-slate-500 uppercase tracking-wider font-semibold">
                     Deployment Status
                   </span>
                   <div className="flex items-center gap-2">
-                    <span className="w-2 h-2 rounded-full bg-emerald-400 animate-pulse" />
-                    <span className="text-sm font-display font-bold text-white">
+                    <span className="w-2 h-2 rounded-full bg-emerald-500 animate-pulse" />
+                    <span className="text-sm font-display font-bold text-slate-900">
                       Verified Production System
                     </span>
                   </div>
@@ -190,7 +192,7 @@ export function CaseStudiesSection() {
                 <div className="space-y-2.5">
                   <Link
                     href={cs.liveUrl}
-                    className="w-full py-3 rounded-xl bg-sky-500/15 hover:bg-sky-500/25 border border-sky-500/30 text-sky-300 font-display font-bold text-xs text-center flex items-center justify-center gap-2 transition group"
+                    className="w-full py-3 rounded-xl bg-sky-50 hover:bg-sky-100 border border-sky-200 text-sky-800 font-display font-bold text-xs text-center flex items-center justify-center gap-2 transition group"
                   >
                     <span>Inspect Architecture Specs</span>
                     <ArrowUpRight className="w-3.5 h-3.5 transition-transform group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
@@ -201,7 +203,7 @@ export function CaseStudiesSection() {
                       href={cs.externalUrl}
                       target={cs.externalUrl.startsWith('http') ? '_blank' : '_self'}
                       rel="noopener noreferrer"
-                      className="w-full py-2.5 rounded-xl bg-white/[0.04] hover:bg-white/[0.08] border border-white/10 text-slate-300 hover:text-white font-mono text-xs text-center flex items-center justify-center gap-1.5 transition"
+                      className="w-full py-2.5 rounded-xl bg-slate-100 hover:bg-slate-200 border border-slate-200 text-slate-700 hover:text-slate-900 font-mono text-xs text-center flex items-center justify-center gap-1.5 transition"
                     >
                       <span>Open Live Portal</span>
                       <ArrowUpRight className="w-3 h-3" />
@@ -215,45 +217,45 @@ export function CaseStudiesSection() {
       </div>
 
       {/* Interactive App Ecosystem Strip Linking to /apps/[slug] */}
-      <div className="mt-12 studio-panel rounded-2xl p-6 sm:p-8 border border-white/10">
+      <div className="mt-12 studio-panel rounded-2xl p-6 sm:p-8 border border-slate-200 bg-white shadow-xs">
         <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4 mb-6">
           <div>
-            <span className="text-[11px] font-mono uppercase tracking-wider text-emerald-400 block mb-1">
+            <span className="text-[11px] font-mono uppercase tracking-wider text-emerald-700 font-bold block mb-1">
               Live Product Roster • 10 In-House Builds
             </span>
-            <h3 className="font-display text-xl font-bold text-white">
-              Explore Dedicated App & Game Architecture Pages
+            <h3 className="font-display text-xl font-bold text-slate-950">
+              Explore Dedicated App &amp; Game Architecture Pages
             </h3>
           </div>
           <Link
             href="/testers"
-            className="inline-flex items-center gap-2 text-xs font-mono text-emerald-400 hover:text-emerald-300 bg-emerald-500/10 px-3.5 py-2 rounded-xl border border-emerald-500/25 transition shrink-0"
+            className="inline-flex items-center gap-2 text-xs font-mono text-emerald-800 hover:text-emerald-950 bg-emerald-50 px-3.5 py-2 rounded-xl border border-emerald-200 transition shrink-0 font-semibold"
           >
-            <Smartphone className="w-3.5 h-3.5" />
+            <Smartphone className="w-3.5 h-3.5 text-emerald-600" />
             <span>View Full 10-App Roster (/testers) →</span>
           </Link>
         </div>
 
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-4">
           {featuredShowcaseApps.map((app) => (
             <Link
               key={app.slug}
               href={`/apps/${app.slug}`}
-              className="p-4 rounded-xl bg-black/40 hover:bg-white/[0.05] border border-white/[0.08] hover:border-sky-500/35 transition group flex items-center gap-3.5"
+              className="p-4 rounded-xl bg-slate-50 hover:bg-white border border-slate-200 hover:border-sky-300 transition group flex items-center gap-3.5 shadow-2xs"
             >
-              <div className="relative w-12 h-12 rounded-xl overflow-hidden border border-white/15 bg-black shrink-0">
+              <div className="relative w-12 h-12 rounded-xl overflow-hidden border border-slate-200 bg-white shrink-0">
                 <Image src={app.icon} alt={app.name} fill className="object-cover" />
               </div>
               <div className="min-w-0 flex-1">
                 <div className="flex items-center justify-between gap-1">
-                  <h4 className="font-display font-bold text-sm text-white group-hover:text-sky-300 transition truncate">
+                  <h4 className="font-display font-bold text-sm text-slate-900 group-hover:text-sky-700 transition truncate">
                     {app.name}
                   </h4>
-                  <ArrowUpRight className="w-3.5 h-3.5 text-slate-500 group-hover:text-white shrink-0" />
+                  <ArrowUpRight className="w-3.5 h-3.5 text-slate-400 group-hover:text-slate-900 shrink-0" />
                 </div>
-                <p className="text-[11px] text-slate-400 truncate">{app.category}</p>
+                <p className="text-[11px] text-slate-500 truncate">{app.category}</p>
                 <span
-                  className={`inline-block mt-1 text-[10px] font-mono px-2 py-0.2 rounded border ${app.accent}`}
+                  className={`inline-block mt-1 text-[10px] font-mono px-2 py-0.2 rounded border font-medium ${app.accent}`}
                 >
                   {app.status}
                 </span>

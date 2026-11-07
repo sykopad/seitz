@@ -1,3 +1,5 @@
+'use client';
+
 import React from 'react';
 import { UserCheck, DownloadCloud, Smartphone, Gift } from 'lucide-react';
 
@@ -40,13 +42,13 @@ export function HowItWorks() {
   return (
     <section id="how-it-works" className="py-20 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto">
       <div className="text-center max-w-3xl mx-auto mb-16">
-        <div className="inline-flex items-center gap-2 px-3.5 py-1 rounded-full border border-emerald-500/25 bg-emerald-500/10 text-emerald-300 text-xs font-mono uppercase tracking-wider mb-4">
+        <div className="inline-flex items-center gap-2 px-3.5 py-1 rounded-full border border-emerald-200 bg-emerald-50 text-emerald-800 text-xs font-mono uppercase tracking-wider mb-4 font-semibold">
           The Testing Lifecycle
         </div>
-        <h2 className="font-display text-3xl sm:text-4xl lg:text-5xl font-bold text-white tracking-tight mb-4">
+        <h2 className="font-display text-3xl sm:text-4xl lg:text-5xl font-bold text-slate-950 tracking-tight mb-4">
           How the Testing Program Works
         </h2>
-        <p className="text-base sm:text-lg text-slate-300/85 leading-relaxed">
+        <p className="text-base sm:text-lg text-slate-600 leading-relaxed">
           Google Play requires personal developer accounts to run closed tests with at least 12 opted-in testers for 14 continuous days. We turn that compliance requirement into a direct value exchange: you test high-quality software, and we unlock full access forever.
         </p>
       </div>
@@ -55,27 +57,27 @@ export function HowItWorks() {
         {phases.map((p) => (
           <div
             key={p.phase}
-            className="lab-card rounded-2xl p-6 sm:p-8 flex flex-col justify-between relative group"
+            className="lab-card rounded-2xl p-6 sm:p-8 bg-white border border-emerald-200/90 shadow-xs flex flex-col justify-between relative group"
           >
             <div>
               <div className="flex items-center justify-between mb-6">
-                <div className="w-11 h-11 rounded-xl bg-emerald-500/10 border border-emerald-500/25 flex items-center justify-center group-hover:scale-105 transition-transform">
-                  <p.icon className="w-5 h-5 text-emerald-400" />
+                <div className="w-11 h-11 rounded-xl bg-emerald-50 border border-emerald-200 flex items-center justify-center group-hover:scale-105 transition-transform shadow-2xs">
+                  <p.icon className="w-5 h-5 text-emerald-600" />
                 </div>
-                <span className="text-[11px] font-mono font-semibold text-slate-400 uppercase tracking-wider">
+                <span className="text-[11px] font-mono font-semibold text-slate-500 uppercase tracking-wider">
                   {p.phase}
                 </span>
               </div>
 
-              <h3 className="font-display text-base font-bold text-white mb-2.5 leading-snug">
+              <h3 className="font-display text-base font-bold text-slate-950 mb-2.5 leading-snug">
                 {p.title}
               </h3>
-              <p className="text-xs text-slate-300/80 leading-relaxed mb-6">{p.description}</p>
+              <p className="text-xs text-slate-600 leading-relaxed mb-6">{p.description}</p>
             </div>
 
-            <div className="pt-4 border-t border-white/[0.08] flex items-center gap-2">
-              <span className="w-1.5 h-1.5 rounded-full bg-emerald-400" />
-              <span className="text-[10px] font-mono text-emerald-300 uppercase tracking-wider">
+            <div className="pt-4 border-t border-slate-200 flex items-center gap-2">
+              <span className="w-1.5 h-1.5 rounded-full bg-emerald-500" />
+              <span className="text-[10px] font-mono text-emerald-700 font-bold uppercase tracking-wider">
                 {p.tag}
               </span>
             </div>

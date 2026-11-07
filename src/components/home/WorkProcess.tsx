@@ -1,3 +1,5 @@
+'use client';
+
 import React from 'react';
 import { Compass, Hammer, CheckCheck, Rocket } from 'lucide-react';
 
@@ -36,13 +38,13 @@ export function WorkProcess() {
   return (
     <section className="py-20 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto">
       <div className="text-center max-w-3xl mx-auto mb-16">
-        <div className="inline-flex items-center gap-2 px-3.5 py-1 rounded-full border border-sky-500/25 bg-sky-500/10 text-sky-300 text-xs font-mono uppercase tracking-wider mb-4">
+        <div className="inline-flex items-center gap-2 px-3.5 py-1 rounded-full border border-sky-200 bg-sky-50 text-sky-800 text-xs font-mono uppercase tracking-wider mb-4 font-semibold">
           Engagement Framework
         </div>
-        <h2 className="font-display text-3xl sm:text-4xl lg:text-5xl font-bold text-white tracking-tight mb-4">
+        <h2 className="font-display text-3xl sm:text-4xl lg:text-5xl font-bold text-slate-950 tracking-tight mb-4">
           How We Work Together
         </h2>
-        <p className="text-base sm:text-lg text-slate-300/85 leading-relaxed">
+        <p className="text-base sm:text-lg text-slate-600 leading-relaxed">
           Predictable delivery with zero technical ambiguity. Every contract is structured around transparent milestones and verifiable code deliverables.
         </p>
       </div>
@@ -51,27 +53,27 @@ export function WorkProcess() {
         {steps.map((s) => (
           <div
             key={s.step}
-            className="studio-card rounded-2xl p-6 sm:p-8 border border-white/10 hover:border-sky-500/35 transition-all flex flex-col justify-between relative group"
+            className="studio-card rounded-2xl p-6 sm:p-8 bg-white border border-slate-200 hover:border-slate-300 transition-all flex flex-col justify-between relative group shadow-xs"
           >
             <div>
               <div className="flex items-center justify-between mb-6">
-                <div className="w-11 h-11 rounded-xl bg-sky-500/10 border border-sky-500/20 flex items-center justify-center group-hover:scale-105 transition-transform">
-                  <s.icon className="w-5 h-5 text-sky-400" />
+                <div className="w-11 h-11 rounded-xl bg-sky-50 border border-sky-100 flex items-center justify-center group-hover:scale-105 transition-transform shadow-2xs">
+                  <s.icon className="w-5 h-5 text-sky-600" />
                 </div>
-                <span className="font-display text-2xl font-bold font-mono text-slate-600 group-hover:text-sky-400/60 transition">
+                <span className="font-display text-2xl font-bold font-mono text-slate-300 group-hover:text-sky-600/40 transition">
                   // {s.step}
                 </span>
               </div>
 
-              <h3 className="font-display text-base font-bold text-white mb-3 leading-snug">
+              <h3 className="font-display text-base font-bold text-slate-950 mb-3 leading-snug">
                 {s.title}
               </h3>
-              <p className="text-xs text-slate-300/80 leading-relaxed">{s.description}</p>
+              <p className="text-xs text-slate-600 leading-relaxed">{s.description}</p>
             </div>
 
-            <div className="mt-6 pt-4 border-t border-white/[0.07] flex items-center gap-2">
-              <span className="w-1.5 h-1.5 rounded-full bg-emerald-400" />
-              <span className="text-[10px] font-mono text-slate-400 uppercase tracking-wider">
+            <div className="mt-6 pt-4 border-t border-slate-200 flex items-center gap-2">
+              <span className="w-1.5 h-1.5 rounded-full bg-emerald-500" />
+              <span className="text-[10px] font-mono text-slate-500 uppercase tracking-wider font-semibold">
                 Milestone Verified
               </span>
             </div>

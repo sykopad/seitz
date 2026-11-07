@@ -1,3 +1,5 @@
+'use client';
+
 import React from 'react';
 import { Gift, Sliders, ShieldCheck, Check } from 'lucide-react';
 
@@ -15,10 +17,10 @@ export function TesterPerks() {
         'Full access to all future premium feature updates',
         'Zero subscription fees or in-app upgrade costs',
       ],
-      border: 'border-emerald-500/30',
-      glow: 'from-emerald-500/12 to-transparent',
-      badgeColor: 'text-emerald-300 bg-emerald-500/15 border-emerald-500/30',
-      iconColor: 'text-emerald-400',
+      border: 'border-emerald-200/90',
+      glow: 'from-emerald-50/60 to-white',
+      badgeColor: 'text-emerald-800 bg-emerald-50 border-emerald-200 font-semibold',
+      iconColor: 'text-emerald-600',
     },
     {
       index: 'PERK // 02',
@@ -32,10 +34,10 @@ export function TesterPerks() {
         'Vote on upcoming feature priority queues',
         'Fast turnaround on device-specific performance fixes',
       ],
-      border: 'border-sky-500/30',
-      glow: 'from-sky-500/12 to-transparent',
-      badgeColor: 'text-sky-300 bg-sky-500/15 border-sky-500/30',
-      iconColor: 'text-sky-400',
+      border: 'border-sky-200/90',
+      glow: 'from-sky-50/60 to-white',
+      badgeColor: 'text-sky-800 bg-sky-50 border-sky-200 font-semibold',
+      iconColor: 'text-sky-600',
     },
     {
       index: 'PERK // 03',
@@ -49,23 +51,23 @@ export function TesterPerks() {
         'Special supporter recognition badges inside civic apps',
         'Priority enrollment in high-reward testing cohorts',
       ],
-      border: 'border-violet-500/30',
-      glow: 'from-violet-500/12 to-transparent',
-      badgeColor: 'text-violet-300 bg-violet-500/15 border-violet-500/30',
-      iconColor: 'text-violet-400',
+      border: 'border-violet-200/90',
+      glow: 'from-violet-50/60 to-white',
+      badgeColor: 'text-violet-800 bg-violet-50 border-violet-200 font-semibold',
+      iconColor: 'text-violet-600',
     },
   ];
 
   return (
     <section id="perks" className="py-20 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto">
       <div className="text-center max-w-3xl mx-auto mb-16">
-        <div className="inline-flex items-center gap-2 px-3.5 py-1 rounded-full border border-emerald-500/25 bg-emerald-500/10 text-emerald-300 text-xs font-mono uppercase tracking-wider mb-4">
-          Tester Benefits & Rewards
+        <div className="inline-flex items-center gap-2 px-3.5 py-1 rounded-full border border-emerald-200 bg-emerald-50 text-emerald-800 text-xs font-mono uppercase tracking-wider mb-4 font-semibold">
+          Tester Benefits &amp; Rewards
         </div>
-        <h2 className="font-display text-3xl sm:text-4xl lg:text-5xl font-bold text-white tracking-tight mb-4">
+        <h2 className="font-display text-3xl sm:text-4xl lg:text-5xl font-bold text-slate-950 tracking-tight mb-4">
           What You Receive as a Verified Tester
         </h2>
-        <p className="text-base sm:text-lg text-slate-300/85 leading-relaxed">
+        <p className="text-base sm:text-lg text-slate-600 leading-relaxed">
           We deeply respect our testers&apos; time and device storage. In exchange for your 14-day participation, we grant permanent software value.
         </p>
       </div>
@@ -74,14 +76,14 @@ export function TesterPerks() {
         {perks.map((p) => (
           <div
             key={p.title}
-            className={`studio-card rounded-2xl p-7 sm:p-8 border ${p.border} bg-gradient-to-b ${p.glow} flex flex-col justify-between`}
+            className={`studio-card rounded-2xl p-7 sm:p-8 border ${p.border} bg-gradient-to-b ${p.glow} flex flex-col justify-between shadow-xs`}
           >
             <div>
               <div className="flex items-center justify-between mb-6">
-                <div className="w-11 h-11 rounded-xl bg-white/[0.04] border border-white/10 flex items-center justify-center">
+                <div className="w-11 h-11 rounded-xl bg-white border border-slate-200 flex items-center justify-center shadow-2xs">
                   <p.icon className={`w-5 h-5 ${p.iconColor}`} />
                 </div>
-                <span className="text-[11px] font-mono text-slate-400 font-semibold">
+                <span className="text-[11px] font-mono text-slate-500 font-semibold">
                   {p.index}
                 </span>
               </div>
@@ -92,16 +94,16 @@ export function TesterPerks() {
                 {p.subtitle}
               </div>
 
-              <h3 className="font-display text-xl font-bold text-white mb-3">{p.title}</h3>
-              <p className="text-xs sm:text-sm text-slate-300/80 leading-relaxed mb-6">
-                {p.description}
-              </p>
+              <h3 className="font-display text-xl font-bold text-slate-950 mb-3 leading-snug">
+                {p.title}
+              </h3>
+              <p className="text-xs text-slate-600 leading-relaxed mb-6">{p.description}</p>
             </div>
 
-            <div className="pt-5 border-t border-white/[0.08] space-y-2.5">
+            <div className="pt-5 border-t border-slate-200 space-y-2.5">
               {p.highlights.map((h) => (
-                <div key={h} className="flex items-start gap-2.5 text-xs text-slate-200">
-                  <Check className="w-4 h-4 text-emerald-400 shrink-0 mt-0.5" />
+                <div key={h} className="flex items-start gap-2.5 text-xs text-slate-700">
+                  <Check className={`w-4 h-4 ${p.iconColor} shrink-0 mt-0.5`} />
                   <span>{h}</span>
                 </div>
               ))}

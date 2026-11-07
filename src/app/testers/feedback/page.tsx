@@ -15,9 +15,9 @@ export const metadata: Metadata = {
 
 export default function FeedbackPage() {
   return (
-    <div className="min-h-screen bg-[#05070b] text-[#f8fafc] relative selection:bg-emerald-400 selection:text-black">
+    <div className="min-h-screen bg-[#f8fafc] text-slate-900 relative selection:bg-emerald-500/20 selection:text-emerald-950">
       {/* Background Grid Pattern */}
-      <div className="fixed inset-0 bg-grid-pattern pointer-events-none opacity-75 z-0" />
+      <div className="fixed inset-0 bg-grid-pattern pointer-events-none opacity-40 z-0" />
 
       <div className="relative z-10 flex flex-col min-h-screen">
         <TesterNavbar />
