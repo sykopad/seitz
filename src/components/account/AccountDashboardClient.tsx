@@ -9,6 +9,7 @@ import { BadgesGrid } from '@/components/account/BadgesGrid';
 import { UnlockedAppsList } from '@/components/account/UnlockedAppsList';
 import { PromoVault } from '@/components/account/PromoVault';
 import { GoogleGroupAccessCard } from '@/components/account/GoogleGroupAccessCard';
+import { TesterBountiesCard } from '@/components/account/TesterBountiesCard';
 import { UserAccountSummary } from '@/app/actions/account';
 
 interface AccountDashboardClientProps {
@@ -50,11 +51,16 @@ export function AccountDashboardClient({ summary }: AccountDashboardClientProps)
       {/* Tab Panels */}
       {activeTab === 'overview' && (
         <div className="space-y-10">
+          <TesterBountiesCard userEmail={summary.user.email} />
           <GoogleGroupAccessCard userEmail={summary.user.email} />
           <PromoVault promoCodes={summary.promoCodes} />
           <UnlockedAppsList unlockedApps={summary.unlockedApps} />
           <BadgesGrid badges={summary.badges} />
         </div>
+      )}
+
+      {activeTab === 'bounties' && (
+        <TesterBountiesCard userEmail={summary.user.email} />
       )}
 
       {activeTab === 'apps' && (

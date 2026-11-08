@@ -239,103 +239,172 @@ export default function GooglePlayTestingServicePage() {
               </p>
             </div>
 
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-4xl mx-auto">
-              {/* Standard Tier */}
-              <div className="bg-white rounded-3xl p-8 border border-emerald-200 shadow-md flex flex-col justify-between relative overflow-hidden">
-                <div className="space-y-6">
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-6 max-w-6xl mx-auto">
+              {/* Starter Tier (12 Testers) */}
+              <div className="bg-white rounded-3xl p-7 border border-slate-200 shadow-xs flex flex-col justify-between relative overflow-hidden">
+                <div className="space-y-5">
                   <div className="flex items-center justify-between">
-                    <span className="px-3 py-1 rounded-full bg-emerald-50 border border-emerald-300 text-emerald-800 text-xs font-mono font-bold">
-                      Most Popular for Indie Devs
+                    <span className="px-3 py-1 rounded-full bg-slate-100 text-slate-800 text-xs font-mono font-bold">
+                      12 Testers
                     </span>
-                    <span className="text-xs font-mono text-slate-500">16–18 Days</span>
+                    <span className="text-xs font-mono text-slate-500">14–16 Days</span>
                   </div>
 
                   <div>
-                    <h3 className="text-2xl font-extrabold text-slate-950">Standard Production Cohort</h3>
+                    <h3 className="text-xl font-extrabold text-slate-950">Starter Cohort</h3>
                     <p className="text-xs text-slate-600 mt-1">
-                      Designed to pass Google Play’s 12-tester requirement on your first submission.
+                      Direct baseline fulfillment of Google Play&apos;s 12-tester requirement.
                     </p>
                   </div>
 
                   <div className="flex items-baseline gap-2">
-                    <span className="text-4xl font-black text-slate-950 font-mono">$299</span>
-                    <span className="text-xs text-slate-500">USD / ~R5,500 ZAR</span>
+                    <span className="text-3xl font-black text-slate-950 font-mono">$199</span>
+                    <span className="text-xs text-slate-500">USD via PayPal</span>
                   </div>
 
-                  <div className="space-y-3 pt-4 border-t border-slate-100 text-xs text-slate-700">
+                  <div className="p-3 rounded-xl bg-emerald-50/80 border border-emerald-200 text-[11px] font-mono text-emerald-900 space-y-0.5">
+                    <div className="font-bold uppercase tracking-wider text-[10px] text-emerald-800">Direct Tester Incentive Pool:</div>
+                    <div>• $120.00 to 12 Testers ($10.00 each)</div>
+                    <div className="text-slate-600">• $79.00 Seitz Compliance &amp; Support</div>
+                  </div>
+
+                  <div className="space-y-2.5 pt-3 border-t border-slate-100 text-xs text-slate-700">
                     {[
-                      '15 Verified human Android testers (3-device safety buffer)',
-                      '14 Continuous days of guaranteed installation retention',
-                      '1-Click master Google Group sync (seitz@googlegroups.com)',
-                      'Private bug reports and device crash telemetry',
-                      'Complete copy-paste answers for Play Console Parts 1, 2 & 3',
-                      'Direct WhatsApp / Telegram support channel',
+                      '12 Verified human Android testers on real devices',
+                      '14 Continuous days of guaranteed retention',
+                      '1-Click sync via seitz@googlegroups.com',
+                      'Private crash and stability feedback telemetry',
+                      'Play Console Parts 1, 2 & 3 answers kit',
                     ].map((item, idx) => (
-                      <div key={idx} className="flex items-start gap-2.5">
-                        <CheckCircle2 className="w-4 h-4 text-emerald-600 shrink-0 mt-0.5" />
+                      <div key={idx} className="flex items-start gap-2">
+                        <CheckCircle2 className="w-3.5 h-3.5 text-emerald-600 shrink-0 mt-0.5" />
                         <span>{item}</span>
                       </div>
                     ))}
                   </div>
                 </div>
 
-                <div className="mt-8 pt-4">
+                <div className="mt-6 pt-3">
                   <a
                     href="#order"
-                    className="w-full py-3.5 rounded-xl bg-gradient-to-r from-emerald-600 to-teal-600 hover:from-emerald-500 hover:to-teal-500 text-white font-bold text-xs uppercase tracking-wider text-center flex items-center justify-center gap-2 transition shadow-md shadow-emerald-600/20"
+                    className="w-full py-3 rounded-xl bg-slate-900 hover:bg-slate-800 text-white font-bold text-xs uppercase tracking-wider text-center flex items-center justify-center gap-1.5 transition shadow-sm"
                   >
-                    <span>Reserve Standard Cohort ($299)</span>
-                    <ArrowRight className="w-4 h-4" />
+                    <span>Choose Starter ($199)</span>
+                    <ArrowRight className="w-3.5 h-3.5" />
                   </a>
                 </div>
               </div>
 
-              {/* Pro Tier */}
-              <div className="bg-white rounded-3xl p-8 border border-sky-200 shadow-md flex flex-col justify-between relative overflow-hidden">
-                <div className="space-y-6">
+              {/* Standard Tier (20 Testers) - Popular */}
+              <div className="bg-white rounded-3xl p-7 border-2 border-emerald-500 shadow-md flex flex-col justify-between relative overflow-hidden">
+                <span className="absolute top-0 right-0 px-3 py-1 rounded-bl-xl bg-emerald-500 text-white text-[10px] font-mono font-bold uppercase tracking-wider">
+                  Most Popular
+                </span>
+                <div className="space-y-5">
                   <div className="flex items-center justify-between">
-                    <span className="px-3 py-1 rounded-full bg-sky-50 border border-sky-300 text-sky-800 text-xs font-mono font-bold">
-                      For Game Studios & Agencies
+                    <span className="px-3 py-1 rounded-full bg-emerald-50 border border-emerald-300 text-emerald-800 text-xs font-mono font-bold">
+                      20 Testers (+8 Buffer)
                     </span>
-                    <span className="text-xs font-mono text-slate-500">16–18 Days</span>
+                    <span className="text-xs font-mono text-slate-500">14–16 Days</span>
                   </div>
 
                   <div>
-                    <h3 className="text-2xl font-extrabold text-slate-950">Pro Audit Cohort</h3>
+                    <h3 className="text-xl font-extrabold text-slate-950">Standard Fast-Track</h3>
                     <p className="text-xs text-slate-600 mt-1">
-                      Expanded device coverage with comprehensive QA video recordings.
+                      Generous safety buffer ensuring zero compliance drops or retention stalls.
                     </p>
                   </div>
 
                   <div className="flex items-baseline gap-2">
-                    <span className="text-4xl font-black text-slate-950 font-mono">$499</span>
-                    <span className="text-xs text-slate-500">USD / ~R8,900 ZAR</span>
+                    <span className="text-3xl font-black text-slate-950 font-mono">$299</span>
+                    <span className="text-xs text-slate-500">USD via PayPal</span>
                   </div>
 
-                  <div className="space-y-3 pt-4 border-t border-slate-100 text-xs text-slate-700">
+                  <div className="p-3 rounded-xl bg-emerald-50/80 border border-emerald-200 text-[11px] font-mono text-emerald-900 space-y-0.5">
+                    <div className="font-bold uppercase tracking-wider text-[10px] text-emerald-800">Direct Tester Incentive Pool:</div>
+                    <div>• $200.00 to 20 Testers ($10.00 each)</div>
+                    <div className="text-slate-600">• $99.00 Seitz Compliance &amp; Support</div>
+                  </div>
+
+                  <div className="space-y-2.5 pt-3 border-t border-slate-100 text-xs text-slate-700">
                     {[
-                      '25 Verified human Android testers across Android 12, 13, 14, 15',
-                      '14 Continuous days of guaranteed installation retention',
-                      'Detailed UX heuristic evaluation and screen video bug recordings',
-                      'Deep QA breakdown covering network latency and low-memory devices',
-                      'Priority Play Console questionnaire review and 1-on-1 prep',
-                      'Custom escrow via Upwork Direct Contract or Fiverr Pro',
+                      '20 Verified human testers (8-device safety margin)',
+                      '14 Continuous days of guaranteed retention',
+                      '1-Click sync via seitz@googlegroups.com',
+                      'Comprehensive private bug reports & telemetry',
+                      'Complete copy-paste answers for Play Console',
+                      'Direct WhatsApp / Telegram support channel',
                     ].map((item, idx) => (
-                      <div key={idx} className="flex items-start gap-2.5">
-                        <CheckCircle2 className="w-4 h-4 text-sky-600 shrink-0 mt-0.5" />
+                      <div key={idx} className="flex items-start gap-2">
+                        <CheckCircle2 className="w-3.5 h-3.5 text-emerald-600 shrink-0 mt-0.5" />
                         <span>{item}</span>
                       </div>
                     ))}
                   </div>
                 </div>
 
-                <div className="mt-8 pt-4">
+                <div className="mt-6 pt-3">
                   <a
                     href="#order"
-                    className="w-full py-3.5 rounded-xl bg-gradient-to-r from-sky-600 to-emerald-600 hover:from-sky-500 hover:to-emerald-500 text-white font-bold text-xs uppercase tracking-wider text-center flex items-center justify-center gap-2 transition shadow-md shadow-sky-600/20"
+                    className="w-full py-3 rounded-xl bg-gradient-to-r from-emerald-600 to-teal-600 hover:from-emerald-500 hover:to-teal-500 text-white font-bold text-xs uppercase tracking-wider text-center flex items-center justify-center gap-1.5 transition shadow-md shadow-emerald-600/20"
                   >
-                    <span>Reserve Pro Cohort ($499)</span>
-                    <ArrowRight className="w-4 h-4" />
+                    <span>Choose Standard ($299)</span>
+                    <ArrowRight className="w-3.5 h-3.5" />
+                  </a>
+                </div>
+              </div>
+
+              {/* Enterprise Tier (30 Testers) */}
+              <div className="bg-white rounded-3xl p-7 border border-sky-200 shadow-xs flex flex-col justify-between relative overflow-hidden">
+                <div className="space-y-5">
+                  <div className="flex items-center justify-between">
+                    <span className="px-3 py-1 rounded-full bg-sky-50 border border-sky-300 text-sky-800 text-xs font-mono font-bold">
+                      30 Testers (Multi-OEM)
+                    </span>
+                    <span className="text-xs font-mono text-slate-500">14–18 Days</span>
+                  </div>
+
+                  <div>
+                    <h3 className="text-xl font-extrabold text-slate-950">Enterprise Audit Cohort</h3>
+                    <p className="text-xs text-slate-600 mt-1">
+                      Maximized device diversity across Samsung, Xiaomi, Pixel, and Android 12–15.
+                    </p>
+                  </div>
+
+                  <div className="flex items-baseline gap-2">
+                    <span className="text-3xl font-black text-slate-950 font-mono">$399</span>
+                    <span className="text-xs text-slate-500">USD via PayPal</span>
+                  </div>
+
+                  <div className="p-3 rounded-xl bg-sky-50/80 border border-sky-200 text-[11px] font-mono text-sky-900 space-y-0.5">
+                    <div className="font-bold uppercase tracking-wider text-[10px] text-sky-800">Direct Tester Incentive Pool:</div>
+                    <div>• $270.00 to 30 Testers ($9.00 each)</div>
+                    <div className="text-slate-600">• $129.00 Seitz Compliance &amp; Support</div>
+                  </div>
+
+                  <div className="space-y-2.5 pt-3 border-t border-slate-100 text-xs text-slate-700">
+                    {[
+                      '30 Verified testers across Android 12, 13, 14 & 15',
+                      'Detailed UX heuristic evaluation & screen recordings',
+                      'Network latency & low-RAM device stress tests',
+                      'Priority Play Console questionnaire preparation',
+                      'Instant PayPal or Upwork escrow protection',
+                    ].map((item, idx) => (
+                      <div key={idx} className="flex items-start gap-2">
+                        <CheckCircle2 className="w-3.5 h-3.5 text-sky-600 shrink-0 mt-0.5" />
+                        <span>{item}</span>
+                      </div>
+                    ))}
+                  </div>
+                </div>
+
+                <div className="mt-6 pt-3">
+                  <a
+                    href="#order"
+                    className="w-full py-3 rounded-xl bg-gradient-to-r from-sky-600 to-emerald-600 hover:from-sky-500 hover:to-emerald-500 text-white font-bold text-xs uppercase tracking-wider text-center flex items-center justify-center gap-1.5 transition shadow-md shadow-sky-600/20"
+                  >
+                    <span>Choose Enterprise ($399)</span>
+                    <ArrowRight className="w-3.5 h-3.5" />
                   </a>
                 </div>
               </div>

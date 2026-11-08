@@ -1,7 +1,7 @@
 'use client';
 
-import React, { useState } from 'react';
-import { User, Smartphone, Gift, Trophy } from 'lucide-react';
+import React from 'react';
+import { User, Smartphone, Gift, Trophy, DollarSign } from 'lucide-react';
 
 interface AccountTabsProps {
   activeTab: string;
@@ -41,6 +41,12 @@ export function AccountTabs({
       name: 'Badges & Trophies',
       icon: <Trophy className="w-4 h-4" />,
       badge: badgesCount,
+    },
+    {
+      id: 'bounties',
+      name: 'Cash Rewards ($)',
+      icon: <DollarSign className="w-4 h-4 text-emerald-500" />,
+      badge: 'PayPal',
     },
   ];
 
