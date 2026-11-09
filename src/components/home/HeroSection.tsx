@@ -19,7 +19,10 @@ import {
 } from 'lucide-react';
 import { GooglePlayIcon } from '@/components/icons/GooglePlayIcon';
 import { UpworkIcon } from '@/components/icons/UpworkIcon';
+import { FiverrIcon } from '@/components/icons/FiverrIcon';
+import { LinkedinIcon } from '@/components/icons/LinkedinIcon';
 import { ApifyIcon } from '@/components/icons/ApifyIcon';
+import { PROFESSIONAL_LINKS } from '@/data/social-links';
 
 export function HeroSection() {
   const [copied, setCopied] = useState(false);
@@ -192,9 +195,40 @@ export function HeroSection() {
                         Verified Architect
                       </span>
                     </div>
-                    <p className="text-xs text-slate-500 font-mono mt-0.5">
-                      Senior Application Architect • Upwork & Fiverr Pro Verified
-                    </p>
+                    <div className="flex flex-wrap items-center gap-2 mt-1">
+                      <a
+                        href={PROFESSIONAL_LINKS.linkedin}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="inline-flex items-center gap-1 text-[11px] font-mono text-slate-600 hover:text-sky-600 transition"
+                        title="LinkedIn Profile"
+                      >
+                        <LinkedinIcon className="w-3 h-3 text-sky-600" />
+                        <span>LinkedIn</span>
+                      </a>
+                      <span className="text-slate-300">•</span>
+                      <a
+                        href={PROFESSIONAL_LINKS.upwork}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="inline-flex items-center gap-1 text-[11px] font-mono text-slate-600 hover:text-emerald-700 transition"
+                        title="Upwork Profile"
+                      >
+                        <UpworkIcon className="w-3 h-3 text-emerald-600" />
+                        <span>Upwork</span>
+                      </a>
+                      <span className="text-slate-300">•</span>
+                      <a
+                        href={PROFESSIONAL_LINKS.fiverr}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="inline-flex items-center gap-1 text-[11px] font-mono text-slate-600 hover:text-green-700 transition"
+                        title="Fiverr Profile"
+                      >
+                        <FiverrIcon className="w-3 h-3 text-green-600" />
+                        <span>Fiverr</span>
+                      </a>
+                    </div>
                   </div>
                 </div>
 
@@ -202,17 +236,17 @@ export function HeroSection() {
                 <button
                   type="button"
                   onClick={handleCopyEmail}
-                  className="inline-flex items-center justify-center gap-2 px-3.5 py-2 rounded-xl bg-white/[0.04] hover:bg-white/[0.09] border border-white/10 text-xs text-slate-300 hover:text-white transition group cursor-pointer shrink-0"
+                  className="inline-flex items-center justify-center gap-2 px-3.5 py-2 rounded-xl bg-white hover:bg-slate-100 border border-slate-200 text-xs text-slate-700 hover:text-slate-950 transition group cursor-pointer shrink-0 shadow-2xs"
                 >
-                  <Mail className="w-3.5 h-3.5 text-sky-400" />
+                  <Mail className="w-3.5 h-3.5 text-sky-600" />
                   <span className="font-mono">{email}</span>
                   {copied ? (
-                    <span className="inline-flex items-center gap-1 text-emerald-400 font-mono text-[11px]">
+                    <span className="inline-flex items-center gap-1 text-emerald-600 font-mono text-[11px]">
                       <Check className="w-3.5 h-3.5" />
                       Copied
                     </span>
                   ) : (
-                    <Copy className="w-3.5 h-3.5 text-slate-500 group-hover:text-white transition" />
+                    <Copy className="w-3.5 h-3.5 text-slate-400 group-hover:text-slate-700 transition" />
                   )}
                 </button>
               </div>

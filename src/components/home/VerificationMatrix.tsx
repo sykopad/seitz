@@ -6,6 +6,7 @@ import { GooglePlayIcon } from '@/components/icons/GooglePlayIcon';
 import { UpworkIcon } from '@/components/icons/UpworkIcon';
 import { FiverrIcon } from '@/components/icons/FiverrIcon';
 import { ApifyIcon } from '@/components/icons/ApifyIcon';
+import { PROFESSIONAL_LINKS } from '@/data/social-links';
 
 export function VerificationMatrix() {
   const platforms = [
@@ -31,7 +32,7 @@ export function VerificationMatrix() {
       badgeBorder: 'border-sky-200',
       badgeBg: 'bg-sky-50',
       linkText: 'Hire on Upwork',
-      href: 'https://www.upwork.com/freelancers/~01faizseitz',
+      href: PROFESSIONAL_LINKS.upwork,
     },
     {
       name: 'Fiverr Pro / Marketplace',
@@ -43,7 +44,7 @@ export function VerificationMatrix() {
       badgeBorder: 'border-green-200',
       badgeBg: 'bg-green-50',
       linkText: 'View Marketplace Gigs',
-      href: 'https://www.fiverr.com/seitz_dev',
+      href: PROFESSIONAL_LINKS.fiverr,
     },
     {
       name: 'Apify Marketplace',

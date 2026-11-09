@@ -6,6 +6,9 @@ import Image from 'next/image';
 import { Mail, MapPin, ShieldCheck, Copy, Check, Smartphone, Layers } from 'lucide-react';
 import { GithubIcon } from '@/components/icons/GithubIcon';
 import { LinkedinIcon } from '@/components/icons/LinkedinIcon';
+import { UpworkIcon } from '@/components/icons/UpworkIcon';
+import { FiverrIcon } from '@/components/icons/FiverrIcon';
+import { PROFESSIONAL_LINKS } from '@/data/social-links';
 
 export function Footer() {
   const [copied, setCopied] = useState(false);
@@ -145,36 +148,50 @@ export function Footer() {
               </div>
             </div>
 
-            {/* Social channels */}
+            {/* Social & Professional Marketplace Channels */}
             <div className="flex flex-wrap items-center gap-2 pt-1">
               <a
-                href="https://www.linkedin.com/in/muhammed-faiz-seitz/"
+                href={PROFESSIONAL_LINKS.linkedin}
                 target="_blank"
                 rel="noopener noreferrer"
                 className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-xl bg-white hover:bg-slate-100 border border-slate-200 text-slate-700 hover:text-slate-950 text-xs font-mono transition shadow-2xs"
+                title="Connect on LinkedIn"
               >
                 <LinkedinIcon className="w-3.5 h-3.5 text-sky-600" />
                 <span>LinkedIn</span>
               </a>
 
               <a
-                href="https://github.com/seitzmf"
+                href={PROFESSIONAL_LINKS.upwork}
                 target="_blank"
                 rel="noopener noreferrer"
                 className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-xl bg-white hover:bg-slate-100 border border-slate-200 text-slate-700 hover:text-slate-950 text-xs font-mono transition shadow-2xs"
+                title="Hire on Upwork"
               >
-                <GithubIcon className="w-3.5 h-3.5 text-slate-700" />
-                <span>GitHub</span>
+                <UpworkIcon className="w-3.5 h-3.5 text-emerald-600" />
+                <span>Upwork</span>
               </a>
 
               <a
-                href="https://www.tiktok.com"
+                href={PROFESSIONAL_LINKS.fiverr}
                 target="_blank"
                 rel="noopener noreferrer"
                 className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-xl bg-white hover:bg-slate-100 border border-slate-200 text-slate-700 hover:text-slate-950 text-xs font-mono transition shadow-2xs"
+                title="View Gigs on Fiverr"
               >
-                <span className="text-xs">📱</span>
-                <span>TikTok &quot;I Tell You Stuff&quot;</span>
+                <FiverrIcon className="w-3.5 h-3.5 text-green-600" />
+                <span>Fiverr</span>
+              </a>
+
+              <a
+                href={PROFESSIONAL_LINKS.github}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-xl bg-white hover:bg-slate-100 border border-slate-200 text-slate-700 hover:text-slate-950 text-xs font-mono transition shadow-2xs"
+                title="GitHub Profile"
+              >
+                <GithubIcon className="w-3.5 h-3.5 text-slate-700" />
+                <span>GitHub</span>
               </a>
             </div>
           </div>

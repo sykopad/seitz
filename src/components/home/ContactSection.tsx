@@ -10,8 +10,13 @@ import {
   MapPin,
   Clock,
   Terminal,
+  ExternalLink,
 } from 'lucide-react';
 import { submitInquiry, InquiryFormData } from '@/app/actions/inquiry';
+import { UpworkIcon } from '@/components/icons/UpworkIcon';
+import { FiverrIcon } from '@/components/icons/FiverrIcon';
+import { LinkedinIcon } from '@/components/icons/LinkedinIcon';
+import { PROFESSIONAL_LINKS } from '@/data/social-links';
 
 export function ContactSection() {
   const [formData, setFormData] = useState<InquiryFormData>({
@@ -114,7 +119,7 @@ export function ContactSection() {
               </div>
             </div>
 
-            <div className="p-4 rounded-2xl bg-slate-50 border border-slate-200 space-y-2 mt-6">
+            <div className="p-4 rounded-2xl bg-slate-50 border border-slate-200 space-y-3 mt-6">
               <div className="flex items-center justify-between">
                 <span className="text-xs font-display font-bold text-slate-900 flex items-center gap-2">
                   <span className="w-2 h-2 rounded-full bg-emerald-500 animate-pulse" />
@@ -128,6 +133,38 @@ export function ContactSection() {
               <p className="text-xs text-slate-600 leading-relaxed">
                 Prefer milestone escrow? Contracts can be executed directly via Upwork or Fiverr Pro, or billed via direct invoice (ZAR EFT / USD Wire).
               </p>
+              <div className="pt-2 border-t border-slate-200/80 flex flex-wrap gap-2">
+                <a
+                  href={PROFESSIONAL_LINKS.upwork}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-lg text-[11px] font-semibold text-[#14a800] bg-emerald-50 hover:bg-emerald-100 border border-emerald-200 transition-colors"
+                >
+                  <UpworkIcon className="w-3.5 h-3.5" />
+                  <span>Hire on Upwork</span>
+                  <ExternalLink className="w-3 h-3 opacity-60" />
+                </a>
+                <a
+                  href={PROFESSIONAL_LINKS.fiverr}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-lg text-[11px] font-semibold text-[#1dbf73] bg-teal-50 hover:bg-teal-100 border border-teal-200 transition-colors"
+                >
+                  <FiverrIcon className="w-3.5 h-3.5" />
+                  <span>Order on Fiverr</span>
+                  <ExternalLink className="w-3 h-3 opacity-60" />
+                </a>
+                <a
+                  href={PROFESSIONAL_LINKS.linkedin}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-lg text-[11px] font-semibold text-[#0a66c2] bg-blue-50 hover:bg-blue-100 border border-blue-200 transition-colors"
+                >
+                  <LinkedinIcon className="w-3.5 h-3.5" />
+                  <span>LinkedIn Profile</span>
+                  <ExternalLink className="w-3 h-3 opacity-60" />
+                </a>
+              </div>
             </div>
           </div>
 

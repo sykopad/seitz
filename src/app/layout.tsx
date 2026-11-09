@@ -106,6 +106,8 @@ export default function RootLayout({
         sameAs: [
           'https://github.com/seitzmf',
           'https://www.linkedin.com/in/muhammed-faiz-seitz/',
+          'https://www.upwork.com/freelancers/~01f68781188f201830',
+          'https://www.fiverr.com/byseitz',
         ],
       },
       {

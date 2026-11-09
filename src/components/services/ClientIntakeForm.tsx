@@ -12,10 +12,14 @@ import {
   Users,
   Clock,
   Sparkles,
+  ExternalLink,
 } from 'lucide-react';
 import { submitClientTestingOrder, ClientTestingOrderData } from '@/app/actions/client-service';
 import { PayPalCheckoutButton } from '@/components/payments/PayPalCheckoutButton';
 import { TestingTierId, TESTING_TIERS } from '@/lib/paypal/client';
+import { UpworkIcon } from '@/components/icons/UpworkIcon';
+import { FiverrIcon } from '@/components/icons/FiverrIcon';
+import { PROFESSIONAL_LINKS } from '@/data/social-links';
 
 export function ClientIntakeForm() {
   const [selectedTier, setSelectedTier] = useState<TestingTierId>('tier_20');
@@ -318,25 +322,53 @@ export function ClientIntakeForm() {
           onError={(err) => setErrorMsg(err)}
         />
       ) : (
-        <form onSubmit={handleInvoiceSubmit}>
-          <button
-            type="submit"
-            disabled={loading || !formData.termsAccepted}
-            className="w-full py-4 rounded-2xl bg-slate-900 hover:bg-slate-800 text-white font-extrabold text-sm uppercase tracking-wider flex items-center justify-center gap-2 transition disabled:opacity-50 cursor-pointer shadow-md"
-          >
-            {loading ? (
-              <>
-                <Loader2 className="w-4 h-4 animate-spin" />
-                <span>Submitting Cohort Reservation...</span>
-              </>
-            ) : (
-              <>
-                <Send className="w-4 h-4" />
-                <span>Request Manual Invoice for {tier.name} (${tier.priceUsd})</span>
-              </>
-            )}
-          </button>
-        </form>
+        <div className="space-y-3">
+          <form onSubmit={handleInvoiceSubmit}>
+            <button
+              type="submit"
+              disabled={loading || !formData.termsAccepted}
+              className="w-full py-4 rounded-2xl bg-slate-900 hover:bg-slate-800 text-white font-extrabold text-sm uppercase tracking-wider flex items-center justify-center gap-2 transition disabled:opacity-50 cursor-pointer shadow-md"
+            >
+              {loading ? (
+                <>
+                  <Loader2 className="w-4 h-4 animate-spin" />
+                  <span>Submitting Cohort Reservation...</span>
+                </>
+              ) : (
+                <>
+                  <Send className="w-4 h-4" />
+                  <span>Request Manual Invoice for {tier.name} (${tier.priceUsd})</span>
+                </>
+              )}
+            </button>
+          </form>
+
+          <div className="p-3.5 rounded-xl bg-slate-50 border border-slate-200 text-xs text-slate-600 flex flex-col sm:flex-row sm:items-center sm:justify-between gap-2.5">
+            <span className="font-medium text-slate-700">Or fund milestone escrow directly on verified platforms:</span>
+            <div className="flex items-center gap-2">
+              <a
+                href={PROFESSIONAL_LINKS.upwork}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-lg text-[11px] font-semibold text-[#14a800] bg-emerald-50 hover:bg-emerald-100 border border-emerald-200 transition-colors"
+              >
+                <UpworkIcon className="w-3.5 h-3.5" />
+                <span>Upwork Contract</span>
+                <ExternalLink className="w-3 h-3 opacity-60" />
+              </a>
+              <a
+                href={PROFESSIONAL_LINKS.fiverr}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-lg text-[11px] font-semibold text-[#1dbf73] bg-teal-50 hover:bg-teal-100 border border-teal-200 transition-colors"
+              >
+                <FiverrIcon className="w-3.5 h-3.5" />
+                <span>Fiverr Order</span>
+                <ExternalLink className="w-3 h-3 opacity-60" />
+              </a>
+            </div>
+          </div>
+        </div>
       )}
     </div>
   );
