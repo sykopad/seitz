@@ -12,9 +12,9 @@ export function VerificationMatrix() {
   const platforms = [
     {
       name: 'Google Play Console',
-      brand: 'Seitz Developer Profile',
-      status: 'Active Android Developer',
-      scope: 'Utility, productivity, civic technology, and community mobile apps.',
+      brand: 'Seitz Organization Developer',
+      status: 'Verified Organization Account',
+      scope: 'Production Android ecosystem, real-device QA lab, and community mobile apps.',
       icon: GooglePlayIcon,
       accent: 'text-emerald-700',
       badgeBorder: 'border-emerald-200',

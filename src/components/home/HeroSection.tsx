@@ -47,10 +47,10 @@ export function HeroSection() {
       icon: Layers,
     },
     {
-      code: 'SYS-02 // ANDROID & PLAY CONSOLE',
-      title: 'Android Engineering & 15-Tester Lab',
-      stack: '10 Apps Built • 73+ Verified Tester Pool • 14-Day SLA',
-      metric: '100% Store Pass Rate',
+      code: 'SYS-02 // ANDROID QA & VIABILITY LAB',
+      title: 'Real-Device Android QA & Viability Testing',
+      stack: '10 Apps Tested • 73+ Real Device Pool • Stress Telemetry',
+      metric: 'Production Viability',
       href: '/testers',
       accent: 'text-emerald-400',
       border: 'border-emerald-500/25',
@@ -130,7 +130,7 @@ export function HeroSection() {
           <div className="lg:col-span-7 space-y-6">
             <div className="inline-flex items-center gap-2 px-3 py-1 rounded-md border border-sky-200 bg-sky-50 text-sky-800 text-xs font-mono uppercase tracking-wider font-semibold">
               <Terminal className="w-3.5 h-3.5 text-sky-600" />
-              <span>Principal Systems Architecture &amp; Google Play Verification Lab</span>
+              <span>Principal Systems Architecture &amp; Android Market Viability Lab</span>
             </div>
 
             <h1 className="font-display text-3xl sm:text-5xl lg:text-[3.5rem] font-bold tracking-tight text-slate-950 leading-[1.07]">
@@ -299,21 +299,21 @@ export function HeroSection() {
                 ))}
               </div>
 
-              {/* B2B Fast-Track Highlight Strip inside Console */}
+              {/* Market Viability & QA Lab Highlight Strip inside Console */}
               <div className="mt-4 pt-4 border-t border-white/[0.08] flex items-center justify-between gap-3">
                 <div className="text-xs">
-                  <span className="text-[10px] font-mono uppercase tracking-wider text-amber-400 block">
-                    Indie Dev B2B Service
+                  <span className="text-[10px] font-mono uppercase tracking-wider text-emerald-400 block">
+                    Enterprise &amp; Indie QA Lab
                   </span>
                   <span className="text-slate-200 font-medium">
-                    Need 12 Google Play testers for 14 days?
+                    Pre-launch QA, hardware stress testing &amp; compliance
                   </span>
                 </div>
                 <Link
                   href="/services/google-play-testing"
-                  className="px-3 py-1.5 rounded-lg bg-amber-500/15 hover:bg-amber-500/25 border border-amber-500/30 text-amber-300 font-mono text-xs font-semibold shrink-0 transition"
+                  className="px-3 py-1.5 rounded-lg bg-emerald-500/15 hover:bg-emerald-500/25 border border-emerald-500/30 text-emerald-300 font-mono text-xs font-semibold shrink-0 transition"
                 >
-                  Fast-Track ($299) →
+                  Explore Cohorts ($299) →
                 </Link>
               </div>
             </div>

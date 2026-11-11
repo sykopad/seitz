@@ -20,10 +20,13 @@ import { TestingTierId, TESTING_TIERS } from '@/lib/paypal/client';
 import { UpworkIcon } from '@/components/icons/UpworkIcon';
 import { FiverrIcon } from '@/components/icons/FiverrIcon';
 import { PROFESSIONAL_LINKS } from '@/data/social-links';
+import { AppCategory, CATEGORY_RUBRICS } from '@/data/testing-metrics';
 
 export function ClientIntakeForm() {
   const [selectedTier, setSelectedTier] = useState<TestingTierId>('tier_20');
   const [paymentMethod, setPaymentMethod] = useState<'paypal' | 'invoice'>('paypal');
+  const [testingObjective, setTestingObjective] = useState<'viability' | 'compliance' | 'hybrid'>('viability');
+  const [selectedCategory, setSelectedCategory] = useState<AppCategory>('productivity');
 
   const [formData, setFormData] = useState<ClientTestingOrderData>({
     clientName: '',
@@ -128,10 +131,67 @@ export function ClientIntakeForm() {
 
   return (
     <div className="bg-white rounded-3xl p-6 sm:p-10 border border-slate-200 shadow-xl max-w-3xl mx-auto space-y-8">
-      {/* 1. Select Cohort Tier */}
+      {/* 1. Testing Objective Selector */}
+      <div className="space-y-3">
+        <label className="text-xs font-mono uppercase tracking-wider text-slate-700 font-bold flex items-center justify-between">
+          <span>1. Primary Testing Objective</span>
+          <span className="text-sky-700 text-[11px] font-semibold">
+            Tailored Cohort Focus
+          </span>
+        </label>
+
+        <div className="grid grid-cols-1 sm:grid-cols-3 gap-3">
+          <button
+            type="button"
+            onClick={() => setTestingObjective('viability')}
+            className={`p-3.5 rounded-2xl border text-left transition cursor-pointer ${
+              testingObjective === 'viability'
+                ? 'border-sky-500 bg-sky-50/70 ring-2 ring-sky-500/20 text-slate-900'
+                : 'border-slate-200 bg-slate-50 text-slate-600 hover:bg-slate-100'
+            }`}
+          >
+            <span className="text-xs font-bold block text-sky-950">Market Viability &amp; QA</span>
+            <span className="text-[10px] text-slate-600 leading-snug block mt-1">
+              UX heuristics, frame rates, crash telemetry, and commercial readiness before launch.
+            </span>
+          </button>
+
+          <button
+            type="button"
+            onClick={() => setTestingObjective('compliance')}
+            className={`p-3.5 rounded-2xl border text-left transition cursor-pointer ${
+              testingObjective === 'compliance'
+                ? 'border-emerald-500 bg-emerald-50/70 ring-2 ring-emerald-500/20 text-slate-900'
+                : 'border-slate-200 bg-slate-50 text-slate-600 hover:bg-slate-100'
+            }`}
+          >
+            <span className="text-xs font-bold block text-emerald-950">14-Day Play Compliance</span>
+            <span className="text-[10px] text-slate-600 leading-snug block mt-1">
+              For personal developer accounts: 14-day continuous retention &amp; questionnaire dossier.
+            </span>
+          </button>
+
+          <button
+            type="button"
+            onClick={() => setTestingObjective('hybrid')}
+            className={`p-3.5 rounded-2xl border text-left transition cursor-pointer ${
+              testingObjective === 'hybrid'
+                ? 'border-violet-500 bg-violet-50/70 ring-2 ring-violet-500/20 text-slate-900'
+                : 'border-slate-200 bg-slate-50 text-slate-600 hover:bg-slate-100'
+            }`}
+          >
+            <span className="text-xs font-bold block text-violet-950">Full Hybrid Turnkey</span>
+            <span className="text-[10px] text-slate-600 leading-snug block mt-1">
+              Complete pre-launch QA stress test plus guaranteed 14-day compliance sign-off.
+            </span>
+          </button>
+        </div>
+      </div>
+
+      {/* 2. Select Cohort Tier */}
       <div className="space-y-4">
         <label className="text-xs font-mono uppercase tracking-wider text-slate-700 font-bold flex items-center justify-between">
-          <span>1. Select Testing Cohort Tier</span>
+          <span>2. Select Testing Cohort Tier</span>
           <span className="text-emerald-700 text-[11px] font-semibold">
             60-68% directly funds tester cash bounties
           </span>
@@ -178,10 +238,10 @@ export function ClientIntakeForm() {
         </div>
       </div>
 
-      {/* 2. App & Developer Details */}
+      {/* 3. App & Developer Details */}
       <div className="space-y-4">
         <label className="text-xs font-mono uppercase tracking-wider text-slate-700 font-bold block">
-          2. App &amp; Contact Information
+          3. App &amp; Evaluation Parameters
         </label>
 
         <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
@@ -236,7 +296,54 @@ export function ClientIntakeForm() {
           </div>
         </div>
 
-        <div className="space-y-1.5">
+        {/* Category Rubric Selector */}
+        <div className="space-y-2 pt-2">
+          <span className="text-xs text-slate-700 font-medium block">
+            Target App Category (Sets Evaluation Rubric for Testers) *
+          </span>
+          <div className="grid grid-cols-2 sm:grid-cols-3 gap-2">
+            {(Object.keys(CATEGORY_RUBRICS) as AppCategory[]).map((catKey) => {
+              const r = CATEGORY_RUBRICS[catKey];
+              return (
+                <button
+                  key={catKey}
+                  type="button"
+                  onClick={() => {
+                    setSelectedCategory(catKey);
+                    setFormData({ ...formData, appCategory: r.displayName });
+                  }}
+                  className={`p-2.5 rounded-xl border text-left transition cursor-pointer text-xs ${
+                    selectedCategory === catKey
+                      ? 'border-sky-500 bg-sky-50 text-sky-950 font-bold ring-1 ring-sky-500'
+                      : 'border-slate-200 bg-slate-50 text-slate-700 hover:bg-slate-100'
+                  }`}
+                >
+                  <span className="block font-bold">{r.badge}</span>
+                  <span className="text-[10px] text-slate-500 block truncate">{r.displayName}</span>
+                </button>
+              );
+            })}
+          </div>
+
+          {/* Dynamic Category Audit Metrics Card */}
+          <div className="p-3.5 rounded-2xl bg-slate-50 border border-slate-200 space-y-2 mt-2">
+            <span className="text-[11px] font-mono text-slate-600 font-bold uppercase tracking-wider block">
+              // Audited Heuristics for {CATEGORY_RUBRICS[selectedCategory].displayName}:
+            </span>
+            <div className="grid grid-cols-1 sm:grid-cols-2 gap-2 text-xs">
+              {CATEGORY_RUBRICS[selectedCategory].coreMetrics.map((m) => (
+                <div key={m.id} className="p-2 rounded-lg bg-white border border-slate-200/80 space-y-0.5">
+                  <span className="font-semibold text-slate-900 block">{m.name}</span>
+                  <span className="text-[10px] font-mono text-emerald-700 block">
+                    Benchmark: {m.benchmarkTarget}
+                  </span>
+                </div>
+              ))}
+            </div>
+          </div>
+        </div>
+
+        <div className="space-y-1.5 pt-2">
           <span className="text-xs text-slate-700 font-medium">Closed Track Opt-In Link (Optional now, can send later)</span>
           <input
             type="url"
@@ -248,10 +355,10 @@ export function ClientIntakeForm() {
         </div>
       </div>
 
-      {/* 3. Payment Method Switcher */}
+      {/* 4. Payment Method Switcher */}
       <div className="space-y-3">
         <label className="text-xs font-mono uppercase tracking-wider text-slate-700 font-bold block">
-          3. Payment Channel
+          4. Payment Channel
         </label>
         <div className="grid grid-cols-2 gap-3">
           <button

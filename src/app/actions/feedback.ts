@@ -2,6 +2,7 @@
 
 import { createClient } from '@/lib/supabase/server';
 import { sendFeedbackConfirmationEmail } from '@/lib/email';
+import { AppCategory, calculateMarketViabilityScore } from '@/data/testing-metrics';
 
 export interface FeedbackFormData {
   campaignId?: string;
@@ -16,10 +17,117 @@ export interface FeedbackFormData {
   isCurrentlyInstalled: boolean;
 }
 
+export interface CategoryEvaluationData {
+  appName: string;
+  packageName?: string;
+  category: AppCategory;
+  googleEmail: string;
+  deviceModel: string;
+  androidVersion: string;
+  ramGigs?: string;
+  coreRatings: Record<string, number>;
+  quantitativeMetrics: Record<string, string>;
+  qualitativeAnswers: Record<string, string>;
+  crashesObserved: number;
+  anrObserved: number;
+  wouldRecommend: boolean;
+  wouldPayOrKeep: boolean;
+  overallNotes?: string;
+}
+
 export interface FeedbackResponse {
   success: boolean;
   message: string;
   error?: string;
+  viabilityScore?: number;
+  viabilityTier?: string;
+}
+
+export async function submitCategoryEvaluation(data: CategoryEvaluationData): Promise<FeedbackResponse> {
+  try {
+    if (!data.googleEmail || !data.deviceModel || !data.appName) {
+      return {
+        success: false,
+        message: 'Please complete all required fields (App Name, Email, and Hardware Model).',
+        error: 'Missing required fields',
+      };
+    }
+
+    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    if (!emailRegex.test(data.googleEmail)) {
+      return {
+        success: false,
+        message: 'Please provide a valid Google Play email address.',
+        error: 'Invalid email address',
+      };
+    }
+
+    // Compute verified Market Viability Index
+    const viability = calculateMarketViabilityScore({
+      coreRatings: data.coreRatings || {},
+      crashesObserved: data.crashesObserved || 0,
+      anrObserved: data.anrObserved || 0,
+      wouldRecommend: data.wouldRecommend,
+      wouldPayOrKeep: data.wouldPayOrKeep,
+    });
+
+    const supabaseUrl = process.env.NEXT_PUBLIC_SUPABASE_URL;
+
+    // Database insertion if Supabase is active
+    if (supabaseUrl && !supabaseUrl.includes('placeholder-project')) {
+      const supabase = await createClient();
+      const { error } = await (supabase.from('category_evaluations') as any).insert({
+        app_name: data.appName,
+        package_name: data.packageName || null,
+        category: data.category,
+        google_email: data.googleEmail.trim().toLowerCase(),
+        device_model: data.deviceModel.trim(),
+        android_version: data.androidVersion,
+        ram_gigs: data.ramGigs || null,
+        core_ratings: data.coreRatings,
+        quantitative_metrics: data.quantitativeMetrics,
+        qualitative_answers: data.qualitativeAnswers,
+        crashes_observed: data.crashesObserved,
+        anr_observed: data.anrObserved,
+        would_recommend: data.wouldRecommend,
+        would_pay_or_keep: data.wouldPayOrKeep,
+        overall_notes: data.overallNotes?.trim() || null,
+        market_viability_score: viability.score,
+        market_viability_tier: viability.tier,
+      });
+
+      if (error) {
+        console.error('Supabase category evaluation insert error:', error);
+      }
+    } else {
+      console.log('[Dev Mock Category Evaluation Recorded]:', {
+        ...data,
+        viabilityScore: viability.score,
+        viabilityTier: viability.tier,
+      });
+    }
+
+    // Trigger confirmation notification email
+    await sendFeedbackConfirmationEmail({
+      googleEmail: data.googleEmail.trim().toLowerCase(),
+      deviceModel: data.deviceModel.trim(),
+      stabilityRating: `${viability.score}/100 (${viability.tier})`,
+    });
+
+    return {
+      success: true,
+      message: `Evaluation submitted! Calculated Market Viability Index: ${viability.score}/100 (${viability.tier}). Your tester bounty credit and lifetime software unlock have been recorded.`,
+      viabilityScore: viability.score,
+      viabilityTier: viability.tier,
+    };
+  } catch (err: unknown) {
+    console.error('Unexpected category evaluation error:', err);
+    return {
+      success: false,
+      message: 'An error occurred while saving your evaluation. Please reach out to byseitz.agency@gmail.com.',
+      error: err instanceof Error ? err.message : 'Unknown error',
+    };
+  }
 }
 
 export async function submitFeedback(data: FeedbackFormData): Promise<FeedbackResponse> {

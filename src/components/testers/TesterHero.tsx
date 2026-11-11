@@ -59,18 +59,18 @@ export function TesterHero() {
         <div className="text-center max-w-4xl mx-auto">
           <div className="inline-flex items-center gap-2 px-4 py-1 rounded-full bg-emerald-50 border border-emerald-200 text-emerald-800 text-xs font-mono uppercase tracking-wider mb-6 font-semibold">
             <Sparkles className="w-3.5 h-3.5 text-emerald-600" />
-            <span>Google Play 12-Tester / 14-Day Compliance Engine</span>
+            <span>Real-Device Android QA &amp; Market Viability Testing Lab</span>
           </div>
 
           <h1 className="font-display text-3xl sm:text-5xl lg:text-6xl font-bold tracking-tight text-slate-950 leading-[1.08] mb-6">
-            Test Unreleased Android Apps.{' '}
+            Test In-Development Android Apps.{' '}
             <span className="text-transparent bg-clip-text bg-gradient-to-r from-emerald-600 via-sky-600 to-emerald-700">
-              Unlock Lifetime Premium Access for Free.
+              Earn Cash Bounties &amp; Lifetime Software Keys.
             </span>
           </h1>
 
           <p className="text-base sm:text-lg text-slate-600 max-w-3xl mx-auto leading-relaxed mb-10">
-            Join the private testing community for Seitz.co.za. Get early access to upcoming mobile utilities, civic tools, and indie games before they hit Google Play. Help eliminate bugs and receive complimentary lifetime licenses and VIP perks instead of paying retail store prices.
+            Join the Seitz QA testing community. Stress-test upcoming mobile utilities, civic tools, and indie games on real physical Android devices. Submit category-specific evaluations to catch UX bugs and earn direct cash bounties ($9–$10 USD per app) funded by our client orders, plus permanent lifetime promo unlocks.
           </p>
 
           {/* Dual Actions */}

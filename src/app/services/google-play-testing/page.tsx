@@ -19,13 +19,13 @@ import { ClientIntakeForm } from '@/components/services/ClientIntakeForm';
 import { Footer } from '@/components/shared/Footer';
 
 export const metadata: Metadata = {
-  title: 'Google Play 12-Tester Fast-Track Service | Pass Production Access | Seitz',
+  title: 'Android Market Viability & Real-Device QA Lab | Seitz',
   description:
-    'Pass Google Play’s strict 12-tester, 14-day continuous closed testing requirement with 15 verified human Android testers. Fast 16-18 day turnaround with questionnaire preparation.',
+    'Stress-test real Android hardware, evaluate category-specific UX heuristics, and discover crashes across 12–30 verified human testers. Includes turnkey Google Play compliance clearance.',
   openGraph: {
-    title: 'Google Play 12-Tester Closed Testing Fast-Track Service | Seitz',
+    title: 'Android Market Viability & Real-Device QA Testing Lab | Seitz',
     description:
-      'Guaranteed 14-day continuous retention across real Android devices. Fulfill Google Play requirement with zero churn.',
+      'Multi-OEM hardware stress testing, UX ergonomics, and crash telemetry across verified human Android testers with turnkey Google Play compliance.',
     url: 'https://seitz.co.za/services/google-play-testing',
   },
 };
@@ -122,35 +122,35 @@ export default function GooglePlayTestingServicePage() {
         <main className="flex-1 py-12 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto w-full space-y-16">
           {/* Hero Section */}
           <section className="text-center max-w-4xl mx-auto space-y-6 pt-6">
-            <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full border border-emerald-300 bg-emerald-50 text-emerald-800 text-xs font-mono uppercase tracking-wider font-semibold">
-              <ShieldCheck className="w-4 h-4 text-emerald-600" />
-              <span>100% Google Play Policy Compliant</span>
+            <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full border border-sky-300 bg-sky-50 text-sky-900 text-xs font-mono uppercase tracking-wider font-semibold">
+              <ShieldCheck className="w-4 h-4 text-sky-600" />
+              <span>Real-Device Android QA &amp; Market Viability Lab</span>
             </div>
 
             <h1 className="text-3xl sm:text-5xl lg:text-6xl font-black text-slate-950 tracking-tight leading-tight">
-              Pass Google Play’s{' '}
-              <span className="text-transparent bg-clip-text bg-gradient-to-r from-emerald-600 via-teal-600 to-sky-600">
-                12-Tester, 14-Day Requirement
+              Validate Real-World Android QA &amp;{' '}
+              <span className="text-transparent bg-clip-text bg-gradient-to-r from-sky-600 via-emerald-600 to-teal-600">
+                Market Viability
               </span>{' '}
-              Safely with Real Android Devices
+              with Physical Hardware Testers
             </h1>
 
             <p className="text-base sm:text-xl text-slate-600 leading-relaxed max-w-3xl mx-auto">
-              Google now blocks new personal developer accounts from launching apps on the Play Store until 12 testers maintain 14 days of continuous installation. We deploy a verified cohort of 15 real human Android users with 1-click Google Group integration and comprehensive questionnaire preparation.
+              Before committing budget to paid marketing or launching to production, stress-test your Android build with our vetted network of human testers across diverse OEMs. We evaluate category-specific UX heuristics, frame rates, and crash telemetry, while seamlessly fulfilling Google Play closed testing requirements for personal developer accounts.
             </p>
 
             <div className="flex flex-wrap items-center justify-center gap-4 pt-2 text-xs font-mono text-slate-700">
               <div className="flex items-center gap-1.5 px-3 py-1.5 rounded-lg bg-white border border-slate-200 shadow-xs">
                 <Users className="w-3.5 h-3.5 text-sky-600" />
-                <span>15 Devices (Buffer Included)</span>
+                <span>12–30 Physical Android Devices</span>
               </div>
               <div className="flex items-center gap-1.5 px-3 py-1.5 rounded-lg bg-white border border-slate-200 shadow-xs">
                 <Clock className="w-3.5 h-3.5 text-amber-600" />
-                <span>16–18 Days Turnaround</span>
+                <span>Category-Specific Rubric Audits</span>
               </div>
               <div className="flex items-center gap-1.5 px-3 py-1.5 rounded-lg bg-white border border-slate-200 shadow-xs">
                 <Lock className="w-3.5 h-3.5 text-emerald-600" />
-                <span>Upwork / Fiverr Escrow Option</span>
+                <span>Play Console Compliance Included</span>
               </div>
             </div>
           </section>
@@ -161,9 +161,9 @@ export default function GooglePlayTestingServicePage() {
               <div className="w-10 h-10 rounded-xl bg-emerald-50 border border-emerald-200 flex items-center justify-center text-emerald-600">
                 <Users className="w-5 h-5" />
               </div>
-              <h3 className="text-lg font-bold text-slate-950">15 Real Human Testers</h3>
+              <h3 className="text-lg font-bold text-slate-950">Multi-OEM Device Diversity</h3>
               <p className="text-xs text-slate-600 leading-relaxed">
-                We assign 15 verified human testers (providing a +3 device safety buffer over Google’s 12-tester minimum). Authentic device models spanning Samsung, Pixel, Xiaomi, and Motorola on Android 12 through 15.
+                Test your build across authentic physical hardware spanning Samsung Galaxy, Google Pixel, Xiaomi, and Motorola on Android 12 through 15. Catch screen cutout issues, memory constraints, and manufacturer-specific quirks.
               </p>
             </div>
 
@@ -171,9 +171,9 @@ export default function GooglePlayTestingServicePage() {
               <div className="w-10 h-10 rounded-xl bg-sky-50 border border-sky-200 flex items-center justify-center text-sky-600">
                 <Clock className="w-5 h-5" />
               </div>
-              <h3 className="text-lg font-bold text-slate-950">14 Continuous Retention Days</h3>
+              <h3 className="text-lg font-bold text-slate-950">Category-Specific Heuristics</h3>
               <p className="text-xs text-slate-600 leading-relaxed">
-                Zero churn guarantee. Testers keep your app installed for the full 14 consecutive days and open it periodically to register authentic usage telemetry in your Google Play Console dashboard.
+                Whether you build Games, Productivity tools, Fintech, Social, Health, or AI assistants, our testers evaluate the exact heuristics that matter: frame rate drops, time-to-first-task, checkout trust, or token latency.
               </p>
             </div>
 
@@ -181,9 +181,9 @@ export default function GooglePlayTestingServicePage() {
               <div className="w-10 h-10 rounded-xl bg-violet-50 border border-violet-200 flex items-center justify-center text-violet-600">
                 <FileText className="w-5 h-5" />
               </div>
-              <h3 className="text-lg font-bold text-slate-950">Production Questionnaire Copy</h3>
+              <h3 className="text-lg font-bold text-slate-950">Play Console Compliance Clearance</h3>
               <p className="text-xs text-slate-600 leading-relaxed">
-                When the 14 days end, Google asks 3 detailed multi-part questionnaires about your feedback loops and fixes. We provide tailored, audit-tested answers ready to copy-paste directly into the Play Console.
+                Operating a personal Google Play account? We maintain continuous retention across the mandatory 14-day window and supply copy-paste ready answers for Parts 1, 2, and 3 of the Production Questionnaire.
               </p>
             </div>
           </section>

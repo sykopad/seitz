@@ -1,12 +1,12 @@
 import type { Metadata } from 'next';
 import { TesterNavbar } from '@/components/testers/TesterNavbar';
-import { FeedbackForm } from '@/components/testers/FeedbackForm';
+import { CategoryEvaluationForm } from '@/components/testers/CategoryEvaluationForm';
 import { Footer } from '@/components/shared/Footer';
 
 export const metadata: Metadata = {
-  title: '3-Minute Beta Check-In | Seitz Testing Lab',
+  title: 'Category-Specific QA & Market Viability Evaluation | Seitz Testing Lab',
   description:
-    'Complete your 3-minute closed beta check-in to confirm 14-day continuous participation and lock in your permanent lifetime Google Play promo code.',
+    'Execute real-device Android QA, stress-test category-specific heuristics, and submit crash telemetry to earn tester bounties and permanent lifetime software unlocks.',
   robots: {
     index: false,
     follow: true,
@@ -23,7 +23,7 @@ export default function FeedbackPage() {
         <TesterNavbar />
 
         <main className="flex-1 py-6">
-          <FeedbackForm />
+          <CategoryEvaluationForm />
         </main>
 
         <Footer />

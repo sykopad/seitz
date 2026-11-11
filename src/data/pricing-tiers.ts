@@ -50,7 +50,7 @@ export const serviceTiers: ServiceTierItem[] = [
       'Backend synchronization (Supabase / Firebase / custom REST APIs)',
       'Core device capabilities (camera, storage, push notifications, offline local caching)',
       'Google Play Console preparation: store listing assets, privacy policy integration, target SDK compliance',
-      'Closed Testing Cohort Coordination: Direct access to the Seitz Testing Lab (/testers) to satisfy the 12-tester / 14-day requirement'
+      'Android QA & Market Viability Testing: Direct access to the Seitz Testing Lab (/testers) for multi-OEM stress testing, crash telemetry, and optional 14-day Play Console compliance clearance'
     ]
   },
   {
@@ -74,18 +74,18 @@ export const serviceTiers: ServiceTierItem[] = [
 
 export const standaloneClosedTestingService = {
   id: 'google-play-closed-testing-fasttrack',
-  title: 'Google Play Closed Testing Fast-Track (12 Testers / 14 Days)',
-  focusArea: 'Google Play Store Compliance & Production Access',
+  title: 'Android QA & Market Viability Cohort (+ Google Play Compliance Track)',
+  focusArea: 'Real-Device Hardware Stress Testing & Play Store Readiness',
   rateUSD: 299,
   rateZAR: 5500,
   timeline: '16 to 18 Days Total',
-  cohortSize: '15 Verified Human Testers (3-device buffer included)',
-  retentionWindow: '14 Continuous Days',
+  cohortSize: '20 Verified Human Testers (8-device buffer included)',
+  retentionWindow: '14 Continuous Days (Optional for Compliance)',
   features: [
-    '15 verified human testers on physical Android hardware across diverse OS versions',
-    'Guaranteed 14-day continuous retention monitoring with reserve replacement buffer',
-    'Authentic private feedback submitted via Google Play Console to demonstrate engagement',
-    'Assistance setting up closed track opt-in URLs and Google Groups in Play Console',
-    'Production Application Readiness Guide answering the 3 mandatory Play Console questionnaire sections'
+    '20 verified human testers on physical Android hardware across diverse OEMs (Samsung, Pixel, Xiaomi, etc.)',
+    'Category-specific UX heuristics audit, crash telemetry, and Market Viability Index calculation',
+    'Direct tester cash bounty distribution ($10.00/tester) ensuring authentic motivation and rigorous feedback',
+    'Guaranteed 14-day continuous retention monitoring with reserve replacement buffer for personal developer accounts',
+    '1-Click master sync via seitz@googlegroups.com and complete Production Questionnaire answer preparation'
   ]
 };

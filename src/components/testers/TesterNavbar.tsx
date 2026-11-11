@@ -32,12 +32,12 @@ export function TesterNavbar() {
       description: 'Track verified tester points, rank level & gift cards',
     },
     {
-      name: '3-Min Daily Check-In',
+      name: 'QA & Viability Evaluation',
       href: '/testers/feedback',
       icon: MessageSquare,
-      badge: 'Active',
+      badge: 'Bounties',
       badgeColor: 'emerald',
-      description: 'Log daily usage, report bugs & maintain your 14-day streak',
+      description: 'Audit category heuristics, report crashes & earn tester bounties',
     },
     {
       name: 'Community App Vote',
