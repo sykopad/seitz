@@ -12,6 +12,7 @@ import {
   ExternalLink,
 } from 'lucide-react';
 import { GooglePlayIcon } from '@/components/icons/GooglePlayIcon';
+import { getProductDetailHref } from '@/data/apps-catalog';
 import { UnlockedAppStatus } from '@/app/actions/account';
 
 interface UnlockedAppsListProps {
@@ -89,7 +90,9 @@ export function UnlockedAppsList({ unlockedApps }: UnlockedAppsListProps) {
                       <Clock className="w-3.5 h-3.5 text-amber-600" />
                       Continuous Retention:
                     </span>
-                    <span className="text-emerald-700 font-bold">14-Day Closed Track Active</span>
+                    <span className="text-emerald-700 font-bold">
+                      {app.status === 'production' ? 'Production Release Live' : '14-Day Closed Track Active'}
+                    </span>
                   </div>
 
                   <div className="flex items-center justify-between text-[11px] font-mono text-slate-600">
@@ -113,10 +116,10 @@ export function UnlockedAppsList({ unlockedApps }: UnlockedAppsListProps) {
                   </a>
                 ) : (
                   <Link
-                    href={`/apps/${app.slug}`}
+                    href={getProductDetailHref(app)}
                     className="flex-1 py-2 px-3 rounded-xl bg-slate-100 hover:bg-slate-200 text-slate-800 font-mono text-xs text-center flex items-center justify-center gap-1.5 transition"
                   >
-                    <span>View App Specs</span>
+                    <span>View {app.kind === 'game' ? 'Game' : 'App'} Specs</span>
                   </Link>
                 )}
 

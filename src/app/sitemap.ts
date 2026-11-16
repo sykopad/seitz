@@ -1,5 +1,5 @@
 import { MetadataRoute } from 'next';
-import { appsCatalog } from '@/data/apps-catalog';
+import { appsCatalog, getAllGames } from '@/data/apps-catalog';
 
 export default function sitemap(): MetadataRoute.Sitemap {
   const baseUrl = 'https://seitz.co.za';
@@ -12,6 +12,18 @@ export default function sitemap(): MetadataRoute.Sitemap {
       lastModified: currentDate,
       changeFrequency: 'weekly',
       priority: 1.0,
+    },
+    {
+      url: `${baseUrl}/apps`,
+      lastModified: currentDate,
+      changeFrequency: 'weekly',
+      priority: 0.95,
+    },
+    {
+      url: `${baseUrl}/games`,
+      lastModified: currentDate,
+      changeFrequency: 'weekly',
+      priority: 0.95,
     },
     {
       url: `${baseUrl}/testers`,
@@ -80,8 +92,16 @@ export default function sitemap(): MetadataRoute.Sitemap {
     url: `${baseUrl}/apps/${app.slug}`,
     lastModified: currentDate,
     changeFrequency: 'weekly',
-    priority: app.status === 'closed_testing' ? 0.85 : 0.75,
+    priority: app.status === 'production' ? 0.9 : app.status === 'closed_testing' ? 0.85 : 0.75,
   }));
 
-  return [...staticRoutes, ...appRoutes];
+  // Dynamic game showcase pages
+  const gameRoutes: MetadataRoute.Sitemap = getAllGames().map((game) => ({
+    url: `${baseUrl}/games/${game.slug}`,
+    lastModified: currentDate,
+    changeFrequency: 'weekly',
+    priority: game.status === 'production' ? 0.92 : 0.8,
+  }));
+
+  return [...staticRoutes, ...appRoutes, ...gameRoutes];
 }

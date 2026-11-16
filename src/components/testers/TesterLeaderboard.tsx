@@ -153,7 +153,7 @@ export function TesterLeaderboard() {
             >
               {appsCatalog.map((app) => (
                 <option key={app.slug} value={app.slug} className="bg-white text-slate-900">
-                  {app.name} ({app.status === 'closed_testing' ? 'Active Beta' : 'Pipeline'})
+                  {app.name} ({app.status === 'production' ? 'Production' : app.status === 'closed_testing' ? 'Active Beta' : 'Pipeline'})
                 </option>
               ))}
             </select>

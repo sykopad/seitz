@@ -1,4 +1,5 @@
-export type AppStatus = 'closed_testing' | 'in_development';
+export type AppStatus = 'production' | 'closed_testing' | 'in_development';
+export type AppKind = 'app' | 'game';
 
 export interface AppMedia {
   icon: string;
@@ -24,6 +25,7 @@ export interface AppCatalogItem {
   name: string;
   shortName: string;
   tagline: string;
+  kind: AppKind;
   category: string;
   status: AppStatus;
   trackStatus: string;
@@ -53,15 +55,16 @@ export const appsCatalog: AppCatalogItem[] = [
     name: 'Mzansi Midnight',
     shortName: 'Mzansi Midnight',
     tagline: '5-Part Dice-and-Node Noir RPG Anthology Mapping South African State Capture',
+    kind: 'game',
     category: 'Noir RPG & Interactive Fiction',
-    status: 'closed_testing',
-    trackStatus: 'Active Closed Beta Track (14-Day Retention)',
-    currentTesters: 11,
+    status: 'production',
+    trackStatus: 'Live on Google Play (Production)',
+    currentTesters: 15,
     targetTesters: 15,
-    openSlots: 4,
+    openSlots: 0,
     communityVotes: 148,
     voteThreshold: 50,
-    testingDuration: '14 Continuous Days on Real Android Device',
+    testingDuration: 'Completed 14-Day Closed Beta (Production Release)',
     reward: 'Free Lifetime Full Edition Unlock + Supporter Badge',
     rewardValue: '$19.99 USD / R350 ZAR',
     media: {
@@ -117,7 +120,7 @@ export const appsCatalog: AppCatalogItem[] = [
     },
     workspacePath: 'C:\\Users\\Faiz\\Documents\\workspaces\\mzansi-midnight',
     googlePlayPackage: 'za.co.mzansimidnight.app',
-    playStoreUrl: 'https://play.google.com/store/apps/details?id=za.co.mzansimidnight.app&hl=en',
+    playStoreUrl: 'https://play.google.com/store/apps/details?id=za.co.mzansimidnight.app',
     featured: true,
   },
   {
@@ -125,6 +128,7 @@ export const appsCatalog: AppCatalogItem[] = [
     name: 'OmniRemote: Universal Smart TV Remote',
     shortName: 'OmniRemote',
     tagline: 'Universal Zero-Lag Smart TV Remote Hub for Samsung, Roku, LG & 30+ Brands',
+    kind: 'app',
     category: 'Utilities & Smart Home',
     status: 'closed_testing',
     trackStatus: 'Active Closed Beta Track (14-Day Retention)',
@@ -188,8 +192,8 @@ export const appsCatalog: AppCatalogItem[] = [
       specialized: 'Capacitor Haptics, Web Speech API, Wake-on-LAN Magic Packets',
     },
     workspacePath: 'C:\\Users\\Faiz\\Documents\\workspaces\\samsung-remote',
-    googlePlayPackage: 'co.za.omniremote.app',
-    playStoreUrl: 'https://play.google.com/store/apps/details?id=co.za.omniremote.app',
+    googlePlayPackage: 'com.omniremoteuniversal.app',
+    playStoreUrl: 'https://play.google.com/store/apps/details?id=com.omniremoteuniversal.app',
     featured: true,
   },
   {
@@ -197,6 +201,7 @@ export const appsCatalog: AppCatalogItem[] = [
     name: 'Clean and Clean',
     shortName: 'Clean and Clean',
     tagline: 'Nationwide Grassroots Civic Action & Environmental Gamification Platform',
+    kind: 'app',
     category: 'Civic & GovTech',
     status: 'closed_testing',
     trackStatus: 'Active Closed Beta Track (14-Day Retention)',
@@ -264,6 +269,7 @@ export const appsCatalog: AppCatalogItem[] = [
     name: 'Decolonize: South Africa',
     shortName: 'Decolonize',
     tagline: 'Asymmetric Board Game & Neocolonial Flow Network Simulation',
+    kind: 'game',
     category: 'Strategy Games & Simulations',
     status: 'in_development',
     trackStatus: 'Community Voting Track (Target: 50 Votes)',
@@ -327,6 +333,7 @@ export const appsCatalog: AppCatalogItem[] = [
     name: 'Mira: AI Wardrobe & Stylist',
     shortName: 'Mira',
     tagline: 'AI-Powered Mobile Wardrobe Intelligence & Personal Color Stylist for Women',
+    kind: 'app',
     category: 'AI & Fashion Tech',
     status: 'in_development',
     trackStatus: 'Community Voting Track (Target: 50 Votes)',
@@ -390,6 +397,7 @@ export const appsCatalog: AppCatalogItem[] = [
     name: 'Payday (Trust-Buster)',
     shortName: 'Payday',
     tagline: 'The Collective Commonwealth Engine: Cooperative Board Game Inverting Monopoly',
+    kind: 'game',
     category: 'Co-op Strategy Board Games',
     status: 'in_development',
     trackStatus: 'Community Voting Track (Target: 50 Votes)',
@@ -453,6 +461,7 @@ export const appsCatalog: AppCatalogItem[] = [
     name: 'Mzansi Syndicate: Cape Flats & Taxi Wars',
     shortName: 'Mzansi Syndicate',
     tagline: 'South African Underworld Strategy & RPG Territorial Simulation',
+    kind: 'game',
     category: 'Strategy & RPG Simulations',
     status: 'in_development',
     trackStatus: 'Community Voting Track (Target: 50 Votes)',
@@ -516,6 +525,7 @@ export const appsCatalog: AppCatalogItem[] = [
     name: 'Mzansi Trivia Road Trip (Toll Plaza)',
     shortName: 'Toll Plaza',
     tagline: 'Multiplayer South African Trivia Road Trip Across National Highways',
+    kind: 'game',
     category: 'Cultural Trivia Board Games',
     status: 'in_development',
     trackStatus: 'Community Voting Track (Target: 50 Votes)',
@@ -579,15 +589,16 @@ export const appsCatalog: AppCatalogItem[] = [
     name: 'Would You Rather (Mzansi Edition)',
     shortName: 'Would You Rather',
     tagline: 'Multi-Age Cultural Dilemma Party Game with Synchronized Rooms & Live Duels',
+    kind: 'game',
     category: 'Party Games & Social Dilemmas',
-    status: 'closed_testing',
-    trackStatus: 'Active Closed Beta Track (14-Day Retention)',
-    currentTesters: 8,
+    status: 'production',
+    trackStatus: 'Live on Google Play (Production)',
+    currentTesters: 15,
     targetTesters: 15,
-    openSlots: 7,
-    communityVotes: 52,
+    openSlots: 0,
+    communityVotes: 84,
     voteThreshold: 50,
-    testingDuration: '14 Continuous Days on Real Android Device',
+    testingDuration: 'Completed 14-Day Closed Beta (Production Release)',
     reward: 'Lifetime Party Host Pass + Custom Duel Rooms',
     rewardValue: '$9.99 USD / R180 ZAR',
     media: {
@@ -644,15 +655,16 @@ export const appsCatalog: AppCatalogItem[] = [
     name: 'Debate League',
     shortName: 'Debate League',
     tagline: 'Digital Operating Platform for Competitive Parliamentary Debate & Forensics',
+    kind: 'app',
     category: 'EdTech & AI Forensics',
-    status: 'in_development',
-    trackStatus: 'Community Voting Track (Target: 50 Votes)',
-    currentTesters: 0,
+    status: 'closed_testing',
+    trackStatus: 'Active Closed Beta Track (14-Day Retention)',
+    currentTesters: 8,
     targetTesters: 15,
-    openSlots: 15,
-    communityVotes: 25,
+    openSlots: 7,
+    communityVotes: 56,
     voteThreshold: 50,
-    testingDuration: '14 Days upon Closed Beta Release',
+    testingDuration: '14 Continuous Days on Real Android Device',
     reward: 'Lifetime Adjudicator & Coach Pro Tier',
     rewardValue: '$39.99 USD / R699 ZAR',
     media: {
@@ -700,6 +712,8 @@ export const appsCatalog: AppCatalogItem[] = [
       specialized: 'Google Gemini AI Audio/STT, Web Audio Gavel Engine',
     },
     workspacePath: 'C:\\Users\\Faiz\\Documents\\workspaces\\debate-league',
+    googlePlayPackage: 'com.debateleague.app',
+    playStoreUrl: 'https://play.google.com/store/apps/details?id=com.debateleague.app',
     featured: true,
   },
 ];
@@ -708,10 +722,30 @@ export function getAppBySlug(slug: string): AppCatalogItem | undefined {
   return appsCatalog.find((app) => app.slug === slug);
 }
 
+export function getAppsByKind(kind: AppKind): AppCatalogItem[] {
+  return appsCatalog.filter((app) => app.kind === kind);
+}
+
+export function getAllApps(): AppCatalogItem[] {
+  return getAppsByKind('app');
+}
+
+export function getAllGames(): AppCatalogItem[] {
+  return getAppsByKind('game');
+}
+
+export function getProductionItems(): AppCatalogItem[] {
+  return appsCatalog.filter((app) => app.status === 'production');
+}
+
 export function getActiveTestingApps(): AppCatalogItem[] {
   return appsCatalog.filter((app) => app.status === 'closed_testing');
 }
 
 export function getVotingProjects(): AppCatalogItem[] {
   return appsCatalog.filter((app) => app.status === 'in_development');
+}
+
+export function getProductDetailHref(item: Pick<AppCatalogItem, 'slug' | 'kind'>): string {
+  return item.kind === 'game' ? `/games/${item.slug}` : `/apps/${item.slug}`;
 }

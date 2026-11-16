@@ -117,7 +117,10 @@ export function DeletionRequestForm() {
                 Clean and Clean (za.co.cleanandclean.app)
               </option>
               <option value="OmniRemote" className="bg-white text-slate-900">
-                OmniRemote (co.za.omniremote.app)
+                OmniRemote (com.omniremoteuniversal.app)
+              </option>
+              <option value="Debate League" className="bg-white text-slate-900">
+                Debate League (com.debateleague.app)
               </option>
               <option value="Mzansi Midnight" className="bg-white text-slate-900">
                 Mzansi Midnight (za.co.mzansimidnight.app)

@@ -23,16 +23,16 @@ export function GoogleGroupAccessCard({ userEmail }: GoogleGroupAccessCardProps)
         <div className="space-y-1.5">
           <div className="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-full bg-emerald-50 border border-emerald-300 text-emerald-800 text-[11px] font-mono font-semibold">
             <Users className="w-3.5 h-3.5 text-emerald-600" />
-            <span>Centralized Tester Group • 1 Join = All 4 Apps</span>
+            <span>Centralized Tester Group • 1 Join = All Apps &amp; Games</span>
           </div>
           <h2 className="font-display text-xl sm:text-2xl font-bold text-slate-950 tracking-tight flex items-center gap-2">
             <span>Seitz Google Group All-Access Pass</span>
             <span className="text-xs font-mono font-semibold px-2 py-0.5 rounded-md bg-sky-100 text-sky-800">
-              4 Apps Authorized
+              {SEITZ_APPS_WITH_GOOGLE_GROUP_ACCESS.length} Releases Linked
             </span>
           </h2>
           <p className="text-xs sm:text-sm text-slate-600 max-w-2xl leading-relaxed">
-            All our Google Play games use the central group{' '}
+            Our Google Play apps and games use the central group{' '}
             <code className="px-1.5 py-0.5 rounded bg-slate-100 font-mono text-emerald-700 font-bold">
               {SEITZ_GOOGLE_GROUP.email}
             </code>{' '}
@@ -75,6 +75,15 @@ export function GoogleGroupAccessCard({ userEmail }: GoogleGroupAccessCardProps)
                   <div className="flex items-center gap-2">
                     <span className="text-xs font-mono font-bold text-slate-400">
                       0{index + 1}
+                    </span>
+                    <span
+                      className={`text-[10px] font-mono uppercase px-2 py-0.5 rounded border font-semibold ${
+                        app.status === 'production'
+                          ? 'bg-emerald-50 border-emerald-200 text-emerald-800'
+                          : 'bg-sky-50 border-sky-200 text-sky-800'
+                      }`}
+                    >
+                      {app.status === 'production' ? 'Production' : 'Closed Testing'}
                     </span>
                     <span className="text-[10px] font-mono uppercase px-2 py-0.5 rounded bg-white border border-slate-200 text-slate-600 font-semibold">
                       {app.category}

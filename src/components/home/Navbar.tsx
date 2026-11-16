@@ -8,32 +8,35 @@ import {
   X,
   ArrowUpRight,
   Smartphone,
+  Gamepad2,
   Layers,
   ShieldCheck,
   Cpu,
 } from 'lucide-react';
 import { UserAuthButton } from '@/components/auth/UserAuthButton';
 import { NavDropdown, NavDropdownItem } from '@/components/navigation/NavDropdown';
+import { getActiveTestingApps } from '@/data/apps-catalog';
 
 export function Navbar() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
+  const activeClosedCount = getActiveTestingApps().length;
 
   const solutionItems: NavDropdownItem[] = [
     {
       name: 'Capabilities & Scope',
-      href: '#capabilities',
+      href: '/#capabilities',
       icon: Layers,
       description: 'Full-stack engineering, bespoke APIs & cloud infrastructure',
     },
     {
       name: 'Systems Architecture',
-      href: '#solutions',
+      href: '/#solutions',
       icon: Cpu,
       description: 'Distributed services, real-time sockets & resilient pipelines',
     },
     {
       name: 'Platforms & Stacks',
-      href: '#platforms',
+      href: '/#platforms',
       icon: Smartphone,
       description: 'Next.js App Router, native Android Kotlin & Apify web scrapers',
     },
@@ -71,22 +74,38 @@ export function Navbar() {
           </div>
 
           {/* Desktop Navigation Links (Clean Hierarchy) */}
-          <nav className="hidden lg:flex items-center gap-1 xl:gap-2">
+          <nav className="hidden lg:flex items-center gap-1 xl:gap-1.5">
             <NavDropdown label="Solutions" items={solutionItems} />
 
-            <a
-              href="#case-studies"
-              className="px-3.5 py-2 rounded-lg text-xs font-medium text-slate-600 hover:text-slate-950 hover:bg-slate-100/80 transition"
+            <Link
+              href="/apps"
+              className="px-3 py-2 rounded-lg text-xs font-medium text-slate-600 hover:text-sky-700 hover:bg-sky-50/70 transition inline-flex items-center gap-1.5"
+            >
+              <Smartphone className="w-3.5 h-3.5 text-sky-600" />
+              <span>Apps</span>
+            </Link>
+
+            <Link
+              href="/games"
+              className="px-3 py-2 rounded-lg text-xs font-medium text-slate-600 hover:text-violet-700 hover:bg-violet-50/70 transition inline-flex items-center gap-1.5"
+            >
+              <Gamepad2 className="w-3.5 h-3.5 text-violet-600" />
+              <span>Games</span>
+            </Link>
+
+            <Link
+              href="/#case-studies"
+              className="px-3 py-2 rounded-lg text-xs font-medium text-slate-600 hover:text-slate-950 hover:bg-slate-100/80 transition"
             >
               Case Studies
-            </a>
+            </Link>
 
-            <a
-              href="#pricing"
-              className="px-3.5 py-2 rounded-lg text-xs font-medium text-slate-600 hover:text-slate-950 hover:bg-slate-100/80 transition"
+            <Link
+              href="/#pricing"
+              className="px-3 py-2 rounded-lg text-xs font-medium text-slate-600 hover:text-slate-950 hover:bg-slate-100/80 transition"
             >
               Pricing
-            </a>
+            </Link>
 
             <Link
               href="/testers"
@@ -95,7 +114,7 @@ export function Navbar() {
               <Smartphone className="w-3.5 h-3.5 text-emerald-600" />
               <span>Testing Lab</span>
               <span className="px-1.5 py-0.2 rounded-full bg-emerald-200/80 text-emerald-900 text-[9px] font-bold">
-                4 Live
+                {activeClosedCount} Live
               </span>
             </Link>
           </nav>
@@ -104,13 +123,13 @@ export function Navbar() {
           <div className="hidden sm:flex items-center gap-3">
             <UserAuthButton compact={false} />
 
-            <a
-              href="#contact"
+            <Link
+              href="/#contact"
               className="px-4.5 py-2.5 rounded-xl bg-gradient-to-r from-sky-500 via-sky-600 to-emerald-600 hover:from-sky-400 hover:to-emerald-500 text-white font-display font-bold text-xs tracking-wide uppercase transition shadow-md shadow-sky-500/20 flex items-center gap-1.5 shrink-0"
             >
               <span>Start a Project</span>
               <ArrowUpRight className="w-4 h-4 stroke-[2.5]" />
-            </a>
+            </Link>
           </div>
 
           {/* Mobile menu toggle */}
@@ -161,20 +180,36 @@ export function Navbar() {
             <div className="pt-2 border-t border-slate-100 px-4 py-1 text-[10px] font-mono uppercase tracking-wider text-slate-400 font-bold">
               Explore Seitz
             </div>
-            <a
-              href="#case-studies"
+            <Link
+              href="/apps"
+              onClick={() => setMobileMenuOpen(false)}
+              className="px-4 py-2 rounded-xl text-sm font-medium text-slate-700 hover:text-sky-800 hover:bg-sky-50 transition flex items-center gap-2"
+            >
+              <Smartphone className="w-4 h-4 text-sky-600" />
+              <span>Applications (/apps)</span>
+            </Link>
+            <Link
+              href="/games"
+              onClick={() => setMobileMenuOpen(false)}
+              className="px-4 py-2 rounded-xl text-sm font-medium text-slate-700 hover:text-violet-800 hover:bg-violet-50 transition flex items-center gap-2"
+            >
+              <Gamepad2 className="w-4 h-4 text-violet-600" />
+              <span>Games (/games)</span>
+            </Link>
+            <Link
+              href="/#case-studies"
               onClick={() => setMobileMenuOpen(false)}
               className="px-4 py-2 rounded-xl text-sm font-medium text-slate-700 hover:text-slate-950 hover:bg-slate-50 transition"
             >
               Case Studies
-            </a>
-            <a
-              href="#pricing"
+            </Link>
+            <Link
+              href="/#pricing"
               onClick={() => setMobileMenuOpen(false)}
               className="px-4 py-2 rounded-xl text-sm font-medium text-slate-700 hover:text-slate-950 hover:bg-slate-50 transition"
             >
               Pricing
-            </a>
+            </Link>
 
             <Link
               href="/testers"
@@ -186,20 +221,20 @@ export function Navbar() {
                 The Seitz Testing Lab
               </span>
               <span className="text-[10px] uppercase font-mono bg-emerald-500/20 px-2 py-0.5 rounded text-emerald-900 font-bold">
-                4 Live Cohorts
+                {activeClosedCount} Live Cohorts
               </span>
             </Link>
           </div>
 
           <div className="pt-2 border-t border-slate-100">
-            <a
-              href="#contact"
+            <Link
+              href="/#contact"
               onClick={() => setMobileMenuOpen(false)}
               className="w-full py-3 rounded-xl bg-gradient-to-r from-sky-500 to-emerald-600 text-white font-display font-bold text-xs uppercase tracking-wider text-center flex items-center justify-center gap-1.5 transition shadow-sm"
             >
               <span>Start a Project</span>
               <ArrowUpRight className="w-4 h-4 stroke-[2.5]" />
-            </a>
+            </Link>
           </div>
         </div>
       )}

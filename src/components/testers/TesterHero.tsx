@@ -4,8 +4,13 @@ import React from 'react';
 import Link from 'next/link';
 import { Smartphone, Gift, MessageSquare, ArrowRight, Sparkles, ShieldCheck } from 'lucide-react';
 import { GooglePlayIcon } from '@/components/icons/GooglePlayIcon';
+import { getActiveTestingApps, getProductionItems, getVotingProjects } from '@/data/apps-catalog';
 
 export function TesterHero() {
+  const activeClosedCount = getActiveTestingApps().length;
+  const productionCount = getProductionItems().length;
+  const pipelineCount = getVotingProjects().length;
+
   const statBadges = [
     {
       label: '100% Free Access to Paid Apps',
@@ -47,7 +52,9 @@ export function TesterHero() {
         <div className="flex flex-wrap items-center justify-between gap-3 mb-10 pb-5 border-b border-slate-200">
           <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-emerald-50 border border-emerald-200 text-emerald-800 text-xs font-mono font-medium">
             <span className="w-2 h-2 rounded-full bg-emerald-500 animate-pulse" />
-            <span>LAB STATUS: 4 ACTIVE CLOSED BETA TRACKS • 6 PIPELINE BUILDS</span>
+            <span>
+              LAB STATUS: {productionCount} PRODUCTION • {activeClosedCount} CLOSED BETA TRACKS • {pipelineCount} PIPELINE BUILDS
+            </span>
           </div>
 
           <div className="inline-flex items-center gap-2 text-xs font-mono text-slate-600 bg-slate-100 px-3.5 py-1.5 rounded-full border border-slate-200 font-medium">
@@ -86,7 +93,7 @@ export function TesterHero() {
               href="#cohorts"
               className="w-full sm:w-auto px-7 py-4 rounded-xl bg-slate-100 hover:bg-slate-200 text-slate-800 font-display font-semibold text-sm transition border border-slate-200 shadow-2xs flex items-center justify-center gap-2"
             >
-              <span>Explore 4 Active Cohorts</span>
+              <span>Explore {activeClosedCount} Active Cohorts</span>
             </a>
             <Link
               href="/testers/leaderboard"

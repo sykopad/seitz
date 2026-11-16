@@ -8,6 +8,7 @@ import {
   X,
   ArrowLeft,
   Smartphone,
+  Gamepad2,
   ArrowRight,
   ShieldCheck,
   Gift,
@@ -18,9 +19,11 @@ import {
 } from 'lucide-react';
 import { UserAuthButton } from '@/components/auth/UserAuthButton';
 import { NavDropdown, NavDropdownItem } from '@/components/navigation/NavDropdown';
+import { getActiveTestingApps } from '@/data/apps-catalog';
 
 export function TesterNavbar() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
+  const activeClosedCount = getActiveTestingApps().length;
 
   const toolItems: NavDropdownItem[] = [
     {
@@ -93,8 +96,8 @@ export function TesterNavbar() {
             </Link>
           </div>
 
-          {/* Desktop Navigation Links (Clean 4-Item Hierarchy) */}
-          <nav className="hidden lg:flex items-center gap-1 xl:gap-2">
+          {/* Desktop Navigation Links */}
+          <nav className="hidden lg:flex items-center gap-1 xl:gap-1.5">
             <a
               href="/testers#cohorts"
               className="inline-flex items-center gap-2 px-3 py-2 rounded-lg text-xs font-medium text-slate-700 hover:text-slate-950 hover:bg-slate-100/80 transition"
@@ -106,12 +109,21 @@ export function TesterNavbar() {
               <span>Active Cohorts</span>
             </a>
 
-            <a
-              href="/testers#how-it-works"
-              className="px-3 py-2 rounded-lg text-xs font-medium text-slate-600 hover:text-slate-950 hover:bg-slate-100/80 transition"
+            <Link
+              href="/apps"
+              className="px-3 py-2 rounded-lg text-xs font-medium text-slate-600 hover:text-sky-700 hover:bg-sky-50/70 transition inline-flex items-center gap-1.5"
             >
-              How It Works
-            </a>
+              <Smartphone className="w-3.5 h-3.5 text-sky-600" />
+              <span>Apps</span>
+            </Link>
+
+            <Link
+              href="/games"
+              className="px-3 py-2 rounded-lg text-xs font-medium text-slate-600 hover:text-violet-700 hover:bg-violet-50/70 transition inline-flex items-center gap-1.5"
+            >
+              <Gamepad2 className="w-3.5 h-3.5 text-violet-600" />
+              <span>Games</span>
+            </Link>
 
             <NavDropdown label="Tester Tools" items={toolItems} />
 
@@ -188,8 +200,26 @@ export function TesterNavbar() {
               className="px-4 py-2 rounded-xl text-sm font-medium text-slate-700 hover:text-slate-950 hover:bg-slate-50 transition flex items-center gap-2"
             >
               <span className="w-2 h-2 rounded-full bg-emerald-500"></span>
-              <span>Active Cohorts (4 Live)</span>
+              <span>Active Cohorts ({activeClosedCount} Live)</span>
             </a>
+
+            <Link
+              href="/apps"
+              onClick={() => setMobileMenuOpen(false)}
+              className="px-4 py-2 rounded-xl text-sm font-medium text-slate-700 hover:text-sky-800 hover:bg-sky-50 transition flex items-center gap-2"
+            >
+              <Smartphone className="w-4 h-4 text-sky-600" />
+              <span>Applications (/apps)</span>
+            </Link>
+
+            <Link
+              href="/games"
+              onClick={() => setMobileMenuOpen(false)}
+              className="px-4 py-2 rounded-xl text-sm font-medium text-slate-700 hover:text-violet-800 hover:bg-violet-50 transition flex items-center gap-2"
+            >
+              <Gamepad2 className="w-4 h-4 text-violet-600" />
+              <span>Games (/games)</span>
+            </Link>
 
             <a
               href="/testers#how-it-works"

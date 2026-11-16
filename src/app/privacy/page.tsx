@@ -41,7 +41,7 @@ export default function PrivacyPolicyPage() {
     {
       permission: 'Local Network Access & Wi-Fi Multicast',
       technicalName: 'ACCESS_WIFI_STATE, CHANGE_WIFI_MULTICAST_STATE, INTERNET',
-      apps: 'OmniRemote: Universal Smart TV Remote (co.za.omniremote.app)',
+      apps: 'OmniRemote: Universal Smart TV Remote (com.omniremoteuniversal.app)',
       purpose:
         'Used solely on your local Wi-Fi network to discover Smart TVs via UPnP / SSDP protocols, authenticate local TLS WebSockets with Samsung (port 8001/8002) and LG displays (port 3000/3001), and dispatch HTTP ECP commands to Roku TVs (port 8060). Zero video, audio, or display control telemetry is ever sent to or processed by external cloud servers.',
     },
@@ -207,7 +207,7 @@ export default function PrivacyPolicyPage() {
                   <span className="font-display font-bold text-slate-900 block">Pipeline Apps & Games</span>
                   <span className="text-[11px] font-mono text-amber-700 block">za.co.seitz.*</span>
                   <span className="text-[11px] text-slate-600 block">
-                    Decolonize: South Africa, Mira AI, Payday (Trust-Buster), Mzansi Syndicate, Toll Plaza, Debate League.
+                    Decolonize: South Africa, Mira AI, Payday (Trust-Buster), Mzansi Syndicate, Toll Plaza.
                   </span>
                 </div>
               </div>

@@ -120,7 +120,7 @@ export async function sendTesterWelcomeEmail(tester: {
           </div>
 
           <p style="color: #334155; font-size: 14px; line-height: 1.6;">
-            Your single email registration connects you to our centralized testing group: <strong style="color: #047857;">seitz@googlegroups.com</strong>. Because this group is linked across all our apps on Google Play Console, <strong>you have instant access to test all 4 live apps</strong>!
+            Your single email registration connects you to our centralized testing group: <strong style="color: #047857;">seitz@googlegroups.com</strong>. Because this group is linked across our apps on Google Play Console, <strong>you have instant access to our active closed beta tracks and production releases</strong>!
           </p>
 
           <!-- Group Confirmation Box -->
@@ -146,45 +146,29 @@ export async function sendTesterWelcomeEmail(tester: {
             <!-- OmniRemote -->
             <tr>
               <td style="background: #f8fafc; border: 1px solid #e2e8f0; border-radius: 10px; padding: 14px;">
-                <div style="font-weight: bold; color: #0f172a; font-size: 14px;">1. OmniRemote (Universal IR & WiFi Remote)</div>
-                <div style="font-size: 12px; color: #64748b; margin: 4px 0 10px 0;">Samsung, LG, Sony, Roku & Android TV hardware protocol control.</div>
+                <div style="font-weight: bold; color: #0f172a; font-size: 14px;">1. OmniRemote (Universal Smart TV Remote — Closed Testing)</div>
+                <div style="font-size: 12px; color: #64748b; margin: 4px 0 10px 0;">Samsung, LG, Sony, Roku &amp; Universal Smart TV control over local Wi-Fi.</div>
                 <div>
-                  <a href="https://play.google.com/apps/testing/co.za.omniremote.app" target="_blank" style="display: inline-block; background: #0284c7; color: #ffffff; font-size: 11px; font-weight: bold; padding: 6px 12px; border-radius: 6px; text-decoration: none; margin-right: 8px;">
+                  <a href="https://play.google.com/apps/testing/com.omniremoteuniversal.app" target="_blank" style="display: inline-block; background: #0284c7; color: #ffffff; font-size: 11px; font-weight: bold; padding: 6px 12px; border-radius: 6px; text-decoration: none; margin-right: 8px;">
                     Opt-In on Play Store →
                   </a>
-                  <a href="https://play.google.com/store/apps/details?id=co.za.omniremote.app" target="_blank" style="display: inline-block; background: #e2e8f0; color: #334155; font-size: 11px; font-weight: 600; padding: 6px 12px; border-radius: 6px; text-decoration: none;">
+                  <a href="https://play.google.com/store/apps/details?id=com.omniremoteuniversal.app" target="_blank" style="display: inline-block; background: #e2e8f0; color: #334155; font-size: 11px; font-weight: 600; padding: 6px 12px; border-radius: 6px; text-decoration: none;">
                     Direct Store Page
                   </a>
                 </div>
               </td>
             </tr>
 
-            <!-- Would You Rather -->
+            <!-- Debate League -->
             <tr>
               <td style="background: #f8fafc; border: 1px solid #e2e8f0; border-radius: 10px; padding: 14px;">
-                <div style="font-weight: bold; color: #0f172a; font-size: 14px;">2. Would You Rather (Dilemmas & Party Game)</div>
-                <div style="font-size: 12px; color: #64748b; margin: 4px 0 10px 0;">500+ philosophical, absurd, and party dilemma cards with local multiplayer.</div>
+                <div style="font-weight: bold; color: #0f172a; font-size: 14px;">2. Debate League (Parliamentary Debate OS — Closed Testing)</div>
+                <div style="font-size: 12px; color: #64748b; margin: 4px 0 10px 0;">Case prep flowpad, WSDC/BP timers, Gemini AI sparring &amp; tournament ballots.</div>
                 <div>
-                  <a href="https://play.google.com/apps/testing/co.za.wouldyourather.app" target="_blank" style="display: inline-block; background: #0284c7; color: #ffffff; font-size: 11px; font-weight: bold; padding: 6px 12px; border-radius: 6px; text-decoration: none; margin-right: 8px;">
+                  <a href="https://play.google.com/apps/testing/com.debateleague.app" target="_blank" style="display: inline-block; background: #0284c7; color: #ffffff; font-size: 11px; font-weight: bold; padding: 6px 12px; border-radius: 6px; text-decoration: none; margin-right: 8px;">
                     Opt-In on Play Store →
                   </a>
-                  <a href="https://play.google.com/store/apps/details?id=co.za.wouldyourather.app" target="_blank" style="display: inline-block; background: #e2e8f0; color: #334155; font-size: 11px; font-weight: 600; padding: 6px 12px; border-radius: 6px; text-decoration: none;">
-                    Direct Store Page
-                  </a>
-                </div>
-              </td>
-            </tr>
-
-            <!-- Mzansi Midnight -->
-            <tr>
-              <td style="background: #f8fafc; border: 1px solid #e2e8f0; border-radius: 10px; padding: 14px;">
-                <div style="font-weight: bold; color: #0f172a; font-size: 14px;">3. Mzansi Midnight (SA True Crime & Paranormal)</div>
-                <div style="font-size: 12px; color: #64748b; margin: 4px 0 10px 0;">Audio-narrated investigative South African mysteries and folklore stories.</div>
-                <div>
-                  <a href="https://play.google.com/apps/testing/za.co.mzansimidnight.app" target="_blank" style="display: inline-block; background: #0284c7; color: #ffffff; font-size: 11px; font-weight: bold; padding: 6px 12px; border-radius: 6px; text-decoration: none; margin-right: 8px;">
-                    Opt-In on Play Store →
-                  </a>
-                  <a href="https://play.google.com/store/apps/details?id=za.co.mzansimidnight.app" target="_blank" style="display: inline-block; background: #e2e8f0; color: #334155; font-size: 11px; font-weight: 600; padding: 6px 12px; border-radius: 6px; text-decoration: none;">
+                  <a href="https://play.google.com/store/apps/details?id=com.debateleague.app" target="_blank" style="display: inline-block; background: #e2e8f0; color: #334155; font-size: 11px; font-weight: 600; padding: 6px 12px; border-radius: 6px; text-decoration: none;">
                     Direct Store Page
                   </a>
                 </div>
@@ -194,14 +178,40 @@ export async function sendTesterWelcomeEmail(tester: {
             <!-- Clean & Clean -->
             <tr>
               <td style="background: #f8fafc; border: 1px solid #e2e8f0; border-radius: 10px; padding: 14px;">
-                <div style="font-weight: bold; color: #0f172a; font-size: 14px;">4. Clean and Clean (Cleaning Services Booking)</div>
-                <div style="font-size: 12px; color: #64748b; margin: 4px 0 10px 0;">Real-time booking, vetted cleaners, and instant appointment scheduling.</div>
+                <div style="font-weight: bold; color: #0f172a; font-size: 14px;">3. Clean and Clean (Civic Cleanup Platform — Closed Testing)</div>
+                <div style="font-size: 12px; color: #64748b; margin: 4px 0 10px 0;">Geospatial cleanup mapping, bag audits, and ward leaderboards.</div>
                 <div>
                   <a href="https://play.google.com/apps/testing/za.co.cleanandclean.app" target="_blank" style="display: inline-block; background: #0284c7; color: #ffffff; font-size: 11px; font-weight: bold; padding: 6px 12px; border-radius: 6px; text-decoration: none; margin-right: 8px;">
                     Opt-In on Play Store →
                   </a>
                   <a href="https://play.google.com/store/apps/details?id=za.co.cleanandclean.app" target="_blank" style="display: inline-block; background: #e2e8f0; color: #334155; font-size: 11px; font-weight: 600; padding: 6px 12px; border-radius: 6px; text-decoration: none;">
                     Direct Store Page
+                  </a>
+                </div>
+              </td>
+            </tr>
+
+            <!-- Mzansi Midnight (Production) -->
+            <tr>
+              <td style="background: #f8fafc; border: 1px solid #e2e8f0; border-radius: 10px; padding: 14px;">
+                <div style="font-weight: bold; color: #0f172a; font-size: 14px;">4. Mzansi Midnight (Noir RPG Game — Production)</div>
+                <div style="font-size: 12px; color: #64748b; margin: 4px 0 10px 0;">5-part South African state capture dice-and-node noir RPG anthology.</div>
+                <div>
+                  <a href="https://play.google.com/store/apps/details?id=za.co.mzansimidnight.app" target="_blank" style="display: inline-block; background: #059669; color: #ffffff; font-size: 11px; font-weight: bold; padding: 6px 12px; border-radius: 6px; text-decoration: none;">
+                    Get on Google Play (Production) →
+                  </a>
+                </div>
+              </td>
+            </tr>
+
+            <!-- Would You Rather (Production) -->
+            <tr>
+              <td style="background: #f8fafc; border: 1px solid #e2e8f0; border-radius: 10px; padding: 14px;">
+                <div style="font-weight: bold; color: #0f172a; font-size: 14px;">5. Would You Rather (Cultural Dilemma Party Game — Production)</div>
+                <div style="font-size: 12px; color: #64748b; margin: 4px 0 10px 0;">Multi-age cultural dilemma party game with synchronized rooms &amp; 1v1 duels.</div>
+                <div>
+                  <a href="https://play.google.com/store/apps/details?id=co.za.wouldyourather.app" target="_blank" style="display: inline-block; background: #059669; color: #ffffff; font-size: 11px; font-weight: bold; padding: 6px 12px; border-radius: 6px; text-decoration: none;">
+                    Get on Google Play (Production) →
                   </a>
                 </div>
               </td>

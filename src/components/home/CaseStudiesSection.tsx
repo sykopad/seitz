@@ -3,7 +3,7 @@
 import React from 'react';
 import Image from 'next/image';
 import Link from 'next/link';
-import { ArrowUpRight, CheckCircle2, Smartphone } from 'lucide-react';
+import { ArrowUpRight, CheckCircle2, Smartphone, Gamepad2 } from 'lucide-react';
 
 export function CaseStudiesSection() {
   const caseStudies = [
@@ -52,7 +52,7 @@ export function CaseStudiesSection() {
       impact:
         'Seamless transition from closed beta to full production readiness with zero cohort churn and 100% policy compliance.',
       tags: ['Android', 'Play Console', 'Google Groups Sync', 'Closed Testing', 'Supabase'],
-      liveUrl: '/apps/mzansi-midnight',
+      liveUrl: '/games/mzansi-midnight',
       externalUrl: '/testers',
     },
   ];
@@ -60,43 +60,48 @@ export function CaseStudiesSection() {
   const featuredShowcaseApps = [
     {
       slug: 'mzansi-midnight',
+      href: '/games/mzansi-midnight',
       name: 'Mzansi Midnight',
-      category: 'Noir RPG Anthology',
-      status: 'Closed Beta (11/15)',
+      category: 'Noir RPG Game',
+      status: 'Production Live',
       icon: '/images/projects/mzansi-midnight/icon.png',
       accent: 'text-emerald-700 bg-emerald-50 border-emerald-200',
     },
     {
-      slug: 'cleanandclean',
-      name: 'Clean and Clean',
-      category: 'Civic GIS Platform',
-      status: 'Closed Beta (9/15)',
-      icon: '/images/projects/cleanandclean-icon.png',
-      accent: 'text-emerald-700 bg-emerald-50 border-emerald-200',
-    },
-    {
-      slug: 'omniremote',
-      name: 'OmniRemote',
-      category: 'Universal Smart TV Remote',
-      status: 'Closed Beta (10/15)',
-      icon: '/images/projects/omniremote/icon.png',
-      accent: 'text-emerald-700 bg-emerald-50 border-emerald-200',
-    },
-    {
       slug: 'would-you-rather',
+      href: '/games/would-you-rather',
       name: 'Would You Rather',
-      category: 'Party Game & Dilemmas',
-      status: 'Closed Beta (8/15)',
+      category: 'Party Game',
+      status: 'Production Live',
       icon: '/images/projects/would-you-rather/icon.png',
       accent: 'text-emerald-700 bg-emerald-50 border-emerald-200',
     },
     {
-      slug: 'decolonize',
-      name: 'Decolonize: South Africa',
-      category: 'Strategy & Economic Sim',
-      status: 'Community Voting',
-      icon: '/images/projects/decolonize-icon.svg',
-      accent: 'text-amber-700 bg-amber-50 border-amber-200',
+      slug: 'debate-league',
+      href: '/apps/debate-league',
+      name: 'Debate League',
+      category: 'Parliamentary Debate App',
+      status: 'Closed Beta (8/15)',
+      icon: '/images/projects/schooler-logo.svg',
+      accent: 'text-sky-700 bg-sky-50 border-sky-200',
+    },
+    {
+      slug: 'omniremote',
+      href: '/apps/omniremote',
+      name: 'OmniRemote',
+      category: 'Universal TV Remote App',
+      status: 'Closed Beta (10/15)',
+      icon: '/images/projects/omniremote/icon.png',
+      accent: 'text-sky-700 bg-sky-50 border-sky-200',
+    },
+    {
+      slug: 'cleanandclean',
+      href: '/apps/cleanandclean',
+      name: 'Clean and Clean',
+      category: 'Civic GIS App',
+      status: 'Closed Beta (9/15)',
+      icon: '/images/projects/cleanandclean-icon.png',
+      accent: 'text-sky-700 bg-sky-50 border-sky-200',
     },
   ];
 
@@ -216,7 +221,7 @@ export function CaseStudiesSection() {
         ))}
       </div>
 
-      {/* Interactive App Ecosystem Strip Linking to /apps/[slug] */}
+      {/* Interactive App & Game Ecosystem Strip Linking to /apps and /games */}
       <div className="mt-12 studio-panel rounded-2xl p-6 sm:p-8 border border-slate-200 bg-white shadow-xs">
         <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4 mb-6">
           <div>
@@ -227,20 +232,35 @@ export function CaseStudiesSection() {
               Explore Dedicated App &amp; Game Architecture Pages
             </h3>
           </div>
-          <Link
-            href="/testers"
-            className="inline-flex items-center gap-2 text-xs font-mono text-emerald-800 hover:text-emerald-950 bg-emerald-50 px-3.5 py-2 rounded-xl border border-emerald-200 transition shrink-0 font-semibold"
-          >
-            <Smartphone className="w-3.5 h-3.5 text-emerald-600" />
-            <span>View Full 10-App Roster (/testers) →</span>
-          </Link>
+          <div className="flex flex-wrap items-center gap-2 shrink-0">
+            <Link
+              href="/apps"
+              className="inline-flex items-center gap-1.5 text-xs font-mono text-sky-800 hover:text-sky-950 bg-sky-50 px-3.5 py-2 rounded-xl border border-sky-200 transition font-semibold"
+            >
+              <Smartphone className="w-3.5 h-3.5 text-sky-600" />
+              <span>Applications (/apps)</span>
+            </Link>
+            <Link
+              href="/games"
+              className="inline-flex items-center gap-1.5 text-xs font-mono text-violet-800 hover:text-violet-950 bg-violet-50 px-3.5 py-2 rounded-xl border border-violet-200 transition font-semibold"
+            >
+              <Gamepad2 className="w-3.5 h-3.5 text-violet-600" />
+              <span>Games (/games)</span>
+            </Link>
+            <Link
+              href="/testers"
+              className="inline-flex items-center gap-1.5 text-xs font-mono text-emerald-800 hover:text-emerald-950 bg-emerald-50 px-3.5 py-2 rounded-xl border border-emerald-200 transition font-semibold"
+            >
+              <span>Testing Lab →</span>
+            </Link>
+          </div>
         </div>
 
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-4">
           {featuredShowcaseApps.map((app) => (
             <Link
               key={app.slug}
-              href={`/apps/${app.slug}`}
+              href={app.href}
               className="p-4 rounded-xl bg-slate-50 hover:bg-white border border-slate-200 hover:border-sky-300 transition group flex items-center gap-3.5 shadow-2xs"
             >
               <div className="relative w-12 h-12 rounded-xl overflow-hidden border border-slate-200 bg-white shrink-0">

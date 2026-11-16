@@ -92,7 +92,7 @@ export async function registerTester(data: TesterRegistrationData): Promise<Test
       };
     }
 
-    // Automatically enroll user in Seitz Google Group (authorizes all 4 Google Play apps)
+    // Automatically enroll user in Seitz Google Group (authorizes all Google Play closed-testing tracks)
     await enrollUserInSeitzGoogleGroup(
       data.googleEmail.trim().toLowerCase(),
       data.fullName.trim(),
@@ -101,7 +101,7 @@ export async function registerTester(data: TesterRegistrationData): Promise<Test
 
     return {
       success: true,
-      message: `Welcome to the Seitz Testing Lab, ${data.fullName.split(' ')[0]}! You are officially enrolled in seitz@googlegroups.com with instant closed-track access to all 4 live Google Play apps. Check your inbox for your 1-click opt-in links!`,
+      message: `Welcome to the Seitz Testing Lab, ${data.fullName.split(' ')[0]}! You are officially enrolled in seitz@googlegroups.com with instant closed-track access across our active Google Play apps. Check your inbox for your 1-click opt-in links!`,
     };
   } catch (err: unknown) {
     console.error('Unexpected tester registration error:', err);

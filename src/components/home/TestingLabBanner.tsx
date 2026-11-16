@@ -72,8 +72,17 @@ export function TestingLabBanner() {
                 href="/testers/vote"
                 className="w-full sm:w-auto px-6 py-2.5 rounded-xl bg-white hover:bg-slate-50 text-slate-800 font-mono text-xs text-center flex items-center justify-center gap-1.5 transition border border-slate-200 shadow-2xs"
               >
-                <span>Vote on 6 Pipeline Apps →</span>
+                <span>Vote on Pipeline Builds →</span>
               </Link>
+              <div className="flex items-center justify-center lg:justify-end gap-2 text-[11px] font-mono">
+                <Link href="/apps" className="text-sky-700 hover:underline font-semibold">
+                  Browse Apps (/apps)
+                </Link>
+                <span className="text-slate-300">•</span>
+                <Link href="/games" className="text-violet-700 hover:underline font-semibold">
+                  Browse Games (/games)
+                </Link>
+              </div>
             </div>
           </div>
         </div>

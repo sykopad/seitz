@@ -15,7 +15,7 @@ import {
   Layers,
   Award,
 } from 'lucide-react';
-import { getVotingProjects } from '@/data/apps-catalog';
+import { getVotingProjects, getProductDetailHref } from '@/data/apps-catalog';
 import { AppVoteButton } from '@/components/apps/AppVoteButton';
 import {
   getCommunitySuggestions,
@@ -47,6 +47,7 @@ export function CommunityVotingHub() {
     type: 'studio' as const,
     id: p.slug,
     slug: p.slug,
+    detailHref: getProductDetailHref(p),
     name: p.name,
     tagline: p.tagline,
     category: p.category,
@@ -63,6 +64,7 @@ export function CommunityVotingHub() {
     type: 'community' as const,
     id: s.id,
     slug: s.slug,
+    detailHref: `/apps/${s.slug}`,
     name: s.title,
     tagline: s.tagline,
     category: s.category,
@@ -331,7 +333,7 @@ export function CommunityVotingHub() {
 
                 {!isCommunity && (
                   <Link
-                    href={`/apps/${item.slug}`}
+                    href={item.detailHref}
                     className="w-full py-2.5 rounded-xl bg-slate-100 hover:bg-slate-200 text-slate-700 hover:text-slate-950 font-mono text-xs text-center flex items-center justify-center gap-1.5 transition border border-slate-200 font-medium"
                   >
                     <span>Explore Story &amp; Tech Specs</span>

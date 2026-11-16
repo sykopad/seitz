@@ -3,12 +3,13 @@
 import React from 'react';
 import Link from 'next/link';
 import Image from 'next/image';
-import { Smartphone, Clock, Gift, Users, ArrowRight, ExternalLink } from 'lucide-react';
-import { getActiveTestingApps } from '@/data/apps-catalog';
+import { Smartphone, Clock, Gift, Users, ArrowRight, ExternalLink, CheckCircle2, Gamepad2 } from 'lucide-react';
+import { getActiveTestingApps, getProductionItems, getProductDetailHref } from '@/data/apps-catalog';
 import { GooglePlayIcon } from '@/components/icons/GooglePlayIcon';
 
 export function ActiveCohorts() {
   const activeApps = getActiveTestingApps();
+  const productionItems = getProductionItems();
 
   return (
     <section id="cohorts" className="py-20 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto">
@@ -24,7 +25,7 @@ export function ActiveCohorts() {
         </p>
       </div>
 
-      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 max-w-7xl mx-auto">
+      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 max-w-7xl mx-auto">
         {activeApps.map((app) => (
           <div
             key={app.slug}
@@ -53,7 +54,7 @@ export function ActiveCohorts() {
                 </div>
                 <div className="min-w-0">
                   <h3 className="font-display text-xl font-bold text-slate-950 group-hover:text-emerald-700 transition">
-                    <Link href={`/apps/${app.slug}`} className="hover:underline">
+                    <Link href={getProductDetailHref(app)} className="hover:underline">
                       {app.name}
                     </Link>
                   </h3>
@@ -142,7 +143,7 @@ export function ActiveCohorts() {
               )}
 
               <Link
-                href={`/apps/${app.slug}`}
+                href={getProductDetailHref(app)}
                 className="w-full py-2 rounded-xl bg-slate-100 hover:bg-slate-200 text-slate-700 hover:text-slate-950 font-mono text-[11px] text-center flex items-center justify-center gap-1 transition border border-slate-200 font-medium"
               >
                 <span>Architecture &amp; Screenshots</span>
@@ -152,6 +153,46 @@ export function ActiveCohorts() {
           </div>
         ))}
       </div>
+
+      {/* Graduated Production Releases Callout */}
+      {productionItems.length > 0 && (
+        <div className="mt-10 p-6 sm:p-8 rounded-2xl bg-emerald-50/70 border border-emerald-200 flex flex-col lg:flex-row lg:items-center justify-between gap-6">
+          <div className="space-y-1.5">
+            <div className="inline-flex items-center gap-2 text-xs font-mono uppercase tracking-wider text-emerald-800 font-bold">
+              <CheckCircle2 className="w-4 h-4 text-emerald-600" />
+              <span>Graduated to Google Play Production</span>
+            </div>
+            <h3 className="font-display text-lg sm:text-xl font-bold text-slate-950">
+              {productionItems.map((p) => p.shortName).join(' & ')} Passed 14-Day Closed Testing
+            </h3>
+            <p className="text-xs sm:text-sm text-slate-600 max-w-2xl">
+              These titles completed their 15-device closed beta cycles and are now live on Google Play Production. Browse our full{' '}
+              <Link href="/games" className="text-violet-700 font-semibold hover:underline">
+                Games (/games)
+              </Link>{' '}
+              and{' '}
+              <Link href="/apps" className="text-sky-700 font-semibold hover:underline">
+                Applications (/apps)
+              </Link>{' '}
+              directories.
+            </p>
+          </div>
+
+          <div className="flex flex-wrap items-center gap-2.5 shrink-0">
+            {productionItems.map((prod) => (
+              <Link
+                key={prod.slug}
+                href={getProductDetailHref(prod)}
+                className="inline-flex items-center gap-2 px-4 py-2.5 rounded-xl bg-white hover:bg-emerald-100/60 border border-emerald-300 text-xs font-mono font-semibold text-emerald-900 transition shadow-2xs"
+              >
+                <Gamepad2 className="w-3.5 h-3.5 text-emerald-600" />
+                <span>{prod.shortName}</span>
+                <ArrowRight className="w-3 h-3" />
+              </Link>
+            ))}
+          </div>
+        </div>
+      )}
     </section>
   );
 }

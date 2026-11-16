@@ -76,6 +76,16 @@ export function Footer() {
             </span>
             <ul className="space-y-2 text-xs text-slate-600">
               <li>
+                <Link href="/apps" className="hover:text-sky-600 transition font-medium text-slate-800">
+                  Applications Directory (/apps)
+                </Link>
+              </li>
+              <li>
+                <Link href="/games" className="hover:text-violet-600 transition font-medium text-slate-800">
+                  Games Hub &amp; Arcade (/games)
+                </Link>
+              </li>
+              <li>
                 <Link href="/#capabilities" className="hover:text-sky-600 transition">
                   Capabilities &amp; Services
                 </Link>
@@ -134,6 +144,14 @@ export function Footer() {
                 Test upcoming Android utilities and indie games across 14-day cohorts to unlock free lifetime promo codes.
               </p>
               <div className="pt-1 flex flex-wrap gap-2 text-[10px] font-mono">
+                <Link href="/apps" className="text-sky-700 hover:underline font-semibold">
+                  Apps (/apps)
+                </Link>
+                <span className="text-slate-300">•</span>
+                <Link href="/games" className="text-violet-700 hover:underline font-semibold">
+                  Games (/games)
+                </Link>
+                <span className="text-slate-300">•</span>
                 <Link href="/testers/vote" className="text-amber-700 hover:underline font-semibold">
                   Community Vote
                 </Link>

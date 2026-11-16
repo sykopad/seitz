@@ -74,7 +74,7 @@ export function HeroSection() {
     {
       value: '10+',
       label: 'Ecosystem Apps & Games',
-      sub: '4 Active Beta Cohorts • 6 Pipeline',
+      sub: '2 Production • 3 Closed Beta • 5 Pipeline',
       color: 'text-sky-600',
     },
     {
