@@ -1,0 +1,78 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" fill="none">
+  <defs>
+    <linearGradient id="bgGrad" x1="0" y1="0" x2="512" y2="512" gradientUnits="userSpaceOnUse">
+      <stop offset="0%" stop-color="#062E19" />
+      <stop offset="100%" stop-color="#0A3F23" />
+    </linearGradient>
+    <linearGradient id="amberStreak" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0%" stop-color="#F59E0B" stop-opacity="0.15" />
+      <stop offset="100%" stop-color="#FBBF24" />
+    </linearGradient>
+    <linearGradient id="ledgerGrad" x1="250" y1="70" x2="465" y2="335" gradientUnits="userSpaceOnUse">
+      <stop offset="0%" stop-color="#1E5631" />
+      <stop offset="100%" stop-color="#0F331C" />
+    </linearGradient>
+    <linearGradient id="posBody" x1="120" y1="125" x2="310" y2="365" gradientUnits="userSpaceOnUse">
+      <stop offset="0%" stop-color="#27272A" />
+      <stop offset="100%" stop-color="#09090B" />
+    </linearGradient>
+  </defs>
+
+  <!-- Background -->
+  <rect width="512" height="512" rx="96" fill="url(#bgGrad)" />
+
+  <!-- Speed Streaks -->
+  <rect x="40" y="182" width="76" height="16" rx="8" fill="url(#amberStreak)" />
+  <rect x="24" y="218" width="96" height="16" rx="8" fill="url(#amberStreak)" />
+  <rect x="46" y="254" width="74" height="16" rx="8" fill="url(#amberStreak)" />
+  <rect x="64" y="290" width="60" height="14" rx="7" fill="url(#amberStreak)" />
+
+  <!-- Mali Ya Bantu Ledger Book -->
+  <g transform="rotate(7 355 205)">
+    <rect x="255" y="76" width="196" height="252" rx="22" fill="url(#ledgerGrad)" stroke="#3B7A50" stroke-width="4" />
+    <rect x="272" y="76" width="14" height="252" fill="#0B2615" opacity="0.6" />
+    <!-- Gold Emblem -->
+    <circle cx="364" cy="144" r="14" fill="#EAB308" />
+    <circle cx="337" cy="153" r="10" fill="#D97706" />
+    <circle cx="391" cy="153" r="10" fill="#D97706" />
+    <path d="M326 176c0-10 17-16 38-16s38 6 38 16v6h-76v-6z" fill="#EAB308" />
+    <rect x="322" y="196" width="84" height="10" rx="5" fill="#EAB308" opacity="0.9" />
+    <rect x="322" y="218" width="84" height="10" rx="5" fill="#EAB308" opacity="0.75" />
+    <rect x="322" y="240" width="58" height="10" rx="5" fill="#EAB308" opacity="0.65" />
+    <!-- Clasp -->
+    <rect x="414" y="198" width="44" height="28" rx="14" fill="#174528" stroke="#3B7A50" stroke-width="3" />
+    <circle cx="428" cy="212" r="8" fill="#FBBF24" />
+  </g>
+
+  <!-- Receipt Paper -->
+  <path d="M126 70c22-14 78-18 102 6l14 58-108 14-8-78z" fill="#F8FAFC" />
+  <rect x="148" y="88" width="56" height="7" rx="3.5" fill="#CBD5E1" />
+  <rect x="150" y="104" width="46" height="7" rx="3.5" fill="#CBD5E1" />
+  <rect x="152" y="120" width="60" height="7" rx="3.5" fill="#CBD5E1" />
+
+  <!-- POS Terminal Body -->
+  <rect x="114" y="126" width="194" height="236" rx="28" fill="url(#posBody)" stroke="#3F3F46" stroke-width="4" />
+  <!-- POS Screen -->
+  <rect x="136" y="146" width="150" height="94" rx="14" fill="#F8FAFC" />
+  <circle cx="211" cy="193" r="32" fill="#10B981" />
+  <path d="M196 193l10 10 21-22" stroke="#FFFFFF" stroke-width="8" stroke-linecap="round" stroke-linejoin="round" />
+
+  <!-- Keypad Grid -->
+  <rect x="142" y="256" width="38" height="16" rx="5" fill="#52525B" />
+  <rect x="192" y="256" width="38" height="16" rx="5" fill="#52525B" />
+  <rect x="242" y="256" width="38" height="16" rx="5" fill="#52525B" />
+
+  <rect x="142" y="280" width="38" height="16" rx="5" fill="#52525B" />
+  <rect x="192" y="280" width="38" height="16" rx="5" fill="#52525B" />
+  <rect x="242" y="280" width="38" height="16" rx="5" fill="#52525B" />
+
+  <!-- Red / Amber / Green Action Keys -->
+  <rect x="142" y="306" width="38" height="22" rx="6" fill="#EF4444" />
+  <rect x="192" y="306" width="38" height="22" rx="6" fill="#FBBF24" />
+  <rect x="242" y="306" width="38" height="22" rx="6" fill="#10B981" />
+
+  <!-- Wordmark -->
+  <text x="256" y="446" text-anchor="middle" font-family="system-ui, -apple-system, Segoe UI, Roboto, sans-serif" font-weight="900" font-style="italic" font-size="82" letter-spacing="-2">
+    <tspan fill="#FFFFFF">Spaza</tspan><tspan fill="#FBBF24">Quik</tspan>
+  </text>
+</svg>

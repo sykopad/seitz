@@ -119,7 +119,7 @@ export default function TermsOfServicePage() {
                 Mobile Application License Grant (EULA)
               </h2>
               <p>
-                Subject to your compliance with these Terms, Seitz grants you a personal, revocable, non-exclusive, non-transferable, non-sublicensable limited license to download, install, and use our mobile applications (including <em>Mzansi Midnight</em>, <em>OmniRemote</em>, <em>Clean and Clean</em>, <em>Would You Rather</em>, and related experimental builds) solely for your personal, non-commercial entertainment and utility on compatible Android devices that you own or control.
+                Subject to your compliance with these Terms, Seitz grants you a personal, revocable, non-exclusive, non-transferable, non-sublicensable limited license to download, install, and use our mobile applications (including <em>Mzansi Midnight</em>, <em>OmniRemote</em>, <em>SpazaQuik</em>, <em>Debate League</em>, <em>Clean and Clean</em>, <em>Would You Rather</em>, and related experimental builds) solely for your personal, non-commercial entertainment and utility on compatible Android devices that you own or control.
               </p>
               <div className="flex flex-wrap gap-2 pt-1">
                 {publishedApps.map((app) => (

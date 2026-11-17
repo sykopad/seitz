@@ -143,6 +143,22 @@ export async function sendTesterWelcomeEmail(tester: {
           </p>
 
           <table style="width: 100%; border-collapse: separate; border-spacing: 0 10px;">
+            <!-- SpazaQuik -->
+            <tr>
+              <td style="background: #f8fafc; border: 1px solid #e2e8f0; border-radius: 10px; padding: 14px;">
+                <div style="font-weight: bold; color: #0f172a; font-size: 14px;">1. SpazaQuik (Offline Micro-POS &amp; Credit Book — Closed Testing)</div>
+                <div style="font-size: 12px; color: #64748b; margin: 4px 0 10px 0;">Sub-3-second offline spaza POS, Mali Ya Bantu credit ledger &amp; P2P Bluetooth sync.</div>
+                <div>
+                  <a href="https://play.google.com/apps/testing/co.za.spazaquik" target="_blank" style="display: inline-block; background: #0284c7; color: #ffffff; font-size: 11px; font-weight: bold; padding: 6px 12px; border-radius: 6px; text-decoration: none; margin-right: 8px;">
+                    Opt-In on Play Store →
+                  </a>
+                  <a href="https://play.google.com/store/apps/details?id=co.za.spazaquik" target="_blank" style="display: inline-block; background: #e2e8f0; color: #334155; font-size: 11px; font-weight: 600; padding: 6px 12px; border-radius: 6px; text-decoration: none;">
+                    Direct Store Page
+                  </a>
+                </div>
+              </td>
+            </tr>
+
             <!-- OmniRemote -->
             <tr>
               <td style="background: #f8fafc; border: 1px solid #e2e8f0; border-radius: 10px; padding: 14px;">

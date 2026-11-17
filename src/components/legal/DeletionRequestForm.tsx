@@ -116,6 +116,9 @@ export function DeletionRequestForm() {
               <option value="Clean and Clean" className="bg-white text-slate-900">
                 Clean and Clean (za.co.cleanandclean.app)
               </option>
+              <option value="SpazaQuik" className="bg-white text-slate-900">
+                SpazaQuik (za.co.spazaquick)
+              </option>
               <option value="OmniRemote" className="bg-white text-slate-900">
                 OmniRemote (com.omniremoteuniversal.app)
               </option>

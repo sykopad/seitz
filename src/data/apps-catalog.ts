@@ -716,6 +716,72 @@ export const appsCatalog: AppCatalogItem[] = [
     playStoreUrl: 'https://play.google.com/store/apps/details?id=com.debateleague.app',
     featured: true,
   },
+  {
+    slug: 'spazaquik',
+    name: 'SpazaQuik: Offline Micro-POS & Credit Book',
+    shortName: 'SpazaQuik',
+    tagline: 'Sub-3-Second Offline Micro-POS, Mali Ya Bantu Credit Ledger & P2P Bluetooth Sync',
+    kind: 'app',
+    category: 'FinTech & Township Retail POS',
+    status: 'closed_testing',
+    trackStatus: 'Active Closed Beta Track (14-Day Retention)',
+    currentTesters: 7,
+    targetTesters: 15,
+    openSlots: 8,
+    communityVotes: 64,
+    voteThreshold: 50,
+    testingDuration: '14 Continuous Days on Real Android Device',
+    reward: 'Free Lifetime SpazaQuik Pro Multi-Store License',
+    rewardValue: '$29.99 USD / R499 ZAR',
+    media: {
+      icon: '/images/projects/spazaquik/icon.svg',
+      screenshots: [],
+    },
+    summary:
+      'An offline-first Android Kotlin & Jetpack Compose Micro-POS, informal customer credit ledger (Mali Ya Bantu), and zero-data Bluetooth P2P multi-phone sync engine engineered for South African spaza shops and Android Go devices.',
+    description:
+      'SpazaQuik enables neighborhood township merchants to ring up cash, card, and credit sales in under 3 seconds without mobile data. Built on an immutable append-only Room SQLite ledger stamped with 64-bit Hybrid Logical Clocks (HLC), it features high-contrast #121212 AMOLED tile grids, exact integer-cents ZAR math, Mali Ya Bantu debtor trust scoring with isiZulu/Sesotho/English SMS & WhatsApp statements, offline en-ZA voice-to-basket, encrypted .sqbak backups, and multi-staff Bluetooth/Nearby sync.',
+    highlights: [
+      'Sub-3-second tap-to-record POS grid with velocity-sorted staples, smart ZAR change pills, and 5-second non-destructive UNDO',
+      'Mali Ya Bantu credit ledger with materialized CustomerBalanceView, heuristic trust scores (10-100), and Cash vs EFT repayment tracking',
+      'Zero-data P2P staff sync over Google Nearby Connections (P2P_CLUSTER) and Bluetooth Classic RFCOMM fallback for non-GMS Huawei devices',
+      'Dual-mode SMS reminders (Direct SIM & Cloud Webhook) in isiZulu, Sesotho, and English plus 1-tap WhatsApp customer statements',
+      'Offline en-ZA voice-to-basket supporting township synonyms, AES-GCM encrypted .sqbak nightly backups, and Excel/CSV cash-up exports',
+    ],
+    keyMechanics: [
+      {
+        title: 'Immutable HLC Append-Only Ledger',
+        description:
+          'Sales, reversals, and repayments append immutable rows stamped with 64-bit Hybrid Logical Clocks (HLC) and integer-cents ZAR math inside Room WAL mode.',
+      },
+      {
+        title: 'Mali Ya Bantu Credit & Trust Scoring',
+        description:
+          'Tracks township nicknames, credit limits with 2-tap PIN overrides, historical customer statements, and dynamic trust scores updated on every repayment.',
+      },
+      {
+        title: 'Zero-Data P2P Bluetooth & RFCOMM Sync',
+        description:
+          'Exchanges GZIP-compressed delta batches across staff phones without Wi-Fi or mobile data, with automatic Bluetooth SPP fallback on non-GMS handsets.',
+      },
+      {
+        title: 'Encrypted Backups & Excel Cash-Up',
+        description:
+          'Creates AES-256-GCM encrypted .sqbak snapshots for WhatsApp backup sharing and exports multi-sheet .xlsx/.csv daily and weekly reconciliations.',
+      },
+    ],
+    techStack: {
+      frontend: 'Android Kotlin, Jetpack Compose (Material 3), Hilt DI',
+      backend: 'Coroutines, StateFlow, WorkManager & Google Play Billing 8.0',
+      database: 'Room SQLite (WAL Mode, Schema v5) + PBKDF2/AES-GCM Backups',
+      styling: 'High-Contrast #121212 AMOLED Outdoor Retail Theme',
+      specialized: 'Nearby Connections + BT RFCOMM Sync, Offline en-ZA Speech, 72 Unit Tests',
+    },
+    workspacePath: 'C:\\Users\\Faiz\\Documents\\workspaces\\spazaquik',
+    googlePlayPackage: 'za.co.spazaquick',
+    playStoreUrl: 'https://play.google.com/store/apps/details?id=co.za.spazaquik',
+    featured: true,
+  },
 ];
 
 export function getAppBySlug(slug: string): AppCatalogItem | undefined {

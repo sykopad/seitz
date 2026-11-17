@@ -60,6 +60,13 @@ export default function PrivacyPolicyPage() {
         'Used to photograph municipal cleanup sites for bag-audit verification, or to upload personal garment photos / single-selfie color analysis. Media is encrypted and stored in secure private Supabase Storage buckets or processed locally inside the browser using WebAssembly. Camera access is strictly opt-in and triggered solely by explicit user action.',
     },
     {
+      permission: 'Bluetooth / Nearby Sync, Microphone & Optional SMS Dispatch',
+      technicalName: 'BLUETOOTH_SCAN, BLUETOOTH_CONNECT, RECORD_AUDIO, SEND_SMS',
+      apps: 'SpazaQuik (za.co.spazaquick)',
+      purpose:
+        'Used strictly on-device for zero-data staff phone P2P ledger synchronization via Nearby Connections / Bluetooth RFCOMM, offline en-ZA voice-to-basket speech parsing, and user-initiated Mali Ya Bantu credit receipt SMS dispatch. All POS sales, customer credit ledgers, and AES-GCM encrypted .sqbak backups remain locally on your device.',
+    },
+    {
       permission: 'Push Notifications',
       technicalName: 'POST_NOTIFICATIONS',
       apps: 'The Seitz Testing Lab, All Closed Beta Applications',

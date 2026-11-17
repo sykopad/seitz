@@ -20,6 +20,18 @@ export interface GroupConnectedApp {
 
 export const SEITZ_APPS_WITH_GOOGLE_GROUP_ACCESS: GroupConnectedApp[] = [
   {
+    name: 'SpazaQuik: Offline Micro-POS & Credit Book',
+    shortName: 'SpazaQuik',
+    slug: 'spazaquik',
+    kind: 'app',
+    status: 'closed_testing',
+    packageId: 'za.co.spazaquick',
+    optInUrl: 'https://play.google.com/apps/testing/co.za.spazaquik',
+    storeUrl: 'https://play.google.com/store/apps/details?id=co.za.spazaquik',
+    category: 'FinTech & Retail POS',
+    description: 'Sub-3-second offline micro-POS, Mali Ya Bantu credit book, and zero-data P2P Bluetooth sync for spaza shops.',
+  },
+  {
     name: 'OmniRemote: Universal IR & WiFi Remote',
     shortName: 'OmniRemote',
     slug: 'omniremote',

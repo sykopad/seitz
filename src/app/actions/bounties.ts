@@ -58,6 +58,17 @@ const activeClientBountiesSeed: ClientBountyItem[] = [
     status: 'recruiting',
     clientFunded: true,
   },
+  {
+    id: 'bounty-spaza-04',
+    appName: 'SpazaQuik: Offline Micro-POS & Credit Book',
+    packageName: 'za.co.spazaquick',
+    bountyAmountUsd: 10.0,
+    retentionDaysRequired: 14,
+    currentRetentionDays: 3,
+    hasSubmittedFeedback: false,
+    status: 'recruiting',
+    clientFunded: true,
+  },
 ];
 
 // In-memory payout mapping: email -> paypalPayoutEmail

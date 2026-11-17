@@ -4,6 +4,7 @@ import React from 'react';
 import Image from 'next/image';
 import Link from 'next/link';
 import { ArrowUpRight, CheckCircle2, Smartphone, Gamepad2 } from 'lucide-react';
+import { appsCatalog } from '@/data/apps-catalog';
 
 export function CaseStudiesSection() {
   const caseStudies = [
@@ -86,21 +87,21 @@ export function CaseStudiesSection() {
       accent: 'text-sky-700 bg-sky-50 border-sky-200',
     },
     {
+      slug: 'spazaquik',
+      href: '/apps/spazaquik',
+      name: 'SpazaQuik',
+      category: 'Offline Retail Micro-POS',
+      status: 'Closed Beta (7/15)',
+      icon: '/images/projects/spazaquik/icon.svg',
+      accent: 'text-sky-700 bg-sky-50 border-sky-200',
+    },
+    {
       slug: 'omniremote',
       href: '/apps/omniremote',
       name: 'OmniRemote',
       category: 'Universal TV Remote App',
       status: 'Closed Beta (10/15)',
       icon: '/images/projects/omniremote/icon.png',
-      accent: 'text-sky-700 bg-sky-50 border-sky-200',
-    },
-    {
-      slug: 'cleanandclean',
-      href: '/apps/cleanandclean',
-      name: 'Clean and Clean',
-      category: 'Civic GIS App',
-      status: 'Closed Beta (9/15)',
-      icon: '/images/projects/cleanandclean-icon.png',
       accent: 'text-sky-700 bg-sky-50 border-sky-200',
     },
   ];
@@ -226,7 +227,7 @@ export function CaseStudiesSection() {
         <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4 mb-6">
           <div>
             <span className="text-[11px] font-mono uppercase tracking-wider text-emerald-700 font-bold block mb-1">
-              Live Product Roster • 10 In-House Builds
+              Live Product Roster • {appsCatalog.length} In-House Builds
             </span>
             <h3 className="font-display text-xl font-bold text-slate-950">
               Explore Dedicated App &amp; Game Architecture Pages

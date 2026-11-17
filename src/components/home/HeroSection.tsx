@@ -23,10 +23,20 @@ import { FiverrIcon } from '@/components/icons/FiverrIcon';
 import { LinkedinIcon } from '@/components/icons/LinkedinIcon';
 import { ApifyIcon } from '@/components/icons/ApifyIcon';
 import { PROFESSIONAL_LINKS } from '@/data/social-links';
+import {
+  appsCatalog,
+  getActiveTestingApps,
+  getProductionItems,
+  getVotingProjects,
+} from '@/data/apps-catalog';
 
 export function HeroSection() {
   const [copied, setCopied] = useState(false);
   const email = 'byseitz.agency@gmail.com';
+  const totalCatalogCount = appsCatalog.length;
+  const prodCount = getProductionItems().length;
+  const closedCount = getActiveTestingApps().length;
+  const pipelineCount = getVotingProjects().length;
 
   const handleCopyEmail = () => {
     navigator.clipboard.writeText(email);
@@ -49,7 +59,7 @@ export function HeroSection() {
     {
       code: 'SYS-02 // ANDROID QA & VIABILITY LAB',
       title: 'Real-Device Android QA & Viability Testing',
-      stack: '10 Apps Tested • 73+ Real Device Pool • Stress Telemetry',
+      stack: `${totalCatalogCount} Apps & Games • 73+ Real Device Pool • Stress Telemetry`,
       metric: 'Production Viability',
       href: '/testers',
       accent: 'text-emerald-400',
@@ -72,9 +82,9 @@ export function HeroSection() {
 
   const statsStrip = [
     {
-      value: '10+',
+      value: `${totalCatalogCount}+`,
       label: 'Ecosystem Apps & Games',
-      sub: '2 Production • 3 Closed Beta • 5 Pipeline',
+      sub: `${prodCount} Production • ${closedCount} Closed Beta • ${pipelineCount} Pipeline`,
       color: 'text-sky-600',
     },
     {
