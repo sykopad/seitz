@@ -779,7 +779,7 @@ export const appsCatalog: AppCatalogItem[] = [
     },
     workspacePath: 'C:\\Users\\Faiz\\Documents\\workspaces\\spazaquik',
     googlePlayPackage: 'za.co.spazaquick',
-    playStoreUrl: 'https://play.google.com/store/apps/details?id=co.za.spazaquik',
+    playStoreUrl: 'https://play.google.com/store/apps/details?id=za.co.spazaquick',
     featured: true,
   },
 ];
